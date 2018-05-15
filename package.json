@@ -1,10 +1,10 @@
 {
-  "name": "brennan-gerrymandering-2018",
+  "name": "house-gerrymandering-2018",
   "version": "1.0.0",
   "description": "Mapping the threshold required to win house congressional races in 2018.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/developmentseed/brennan-gerrymandering-2018.git"
+    "url": "https://github.com/developmentseed/house-gerrymandering-2018.git"
   },
   "author": {
     "name": "Development Seed",
@@ -12,14 +12,14 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/developmentseed/brennan-gerrymandering-2018/issues"
+    "url": "https://github.com/developmentseed/house-gerrymandering-2018/issues"
   },
-  "homepage": "https://github.com/developmentseed/brennan-gerrymandering-2018",
+  "homepage": "https://github.com/developmentseed/house-gerrymandering-2018",
   "scripts": {
     "serve": "gulp serve"
   },
   "engines": {
-    "node": "8.9x"
+    "node": "8.9.x"
   },
   "browserify": {
     "transform": [
@@ -37,7 +37,8 @@
         }
       ],
       "require-globify",
-      "envify"
+      "envify",
+      "browserify-data"
     ]
   },
   "devDependencies": {
@@ -50,6 +51,7 @@
     "babelify": "^8.0.0",
     "browser-sync": "^2.18.8",
     "browserify": "^15.1.0",
+    "browserify-data": "^0.2.0",
     "del": "^3.0.0",
     "envify": "^4.0.0",
     "eslint": "^4.10.0",
@@ -74,6 +76,7 @@
     "gulp-sourcemaps": "^2.4.1",
     "gulp-uglify": "^3.0.0",
     "gulp-useref": "^3.1.2",
+    "ndjson-cli": "^0.3.1",
     "node-notifier": "^5.1.2",
     "node-sass": "^4.5.1",
     "require-globify": "^1.4.1",
@@ -82,7 +85,14 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "d3": "^5.4.0",
+    "d3-geo": "^1.10.0",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0",
+    "topojson": "^3.0.2"
   }
 }
