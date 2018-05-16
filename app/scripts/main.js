@@ -5,11 +5,16 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
 import store from './store';
+
 import Map from './components/map';
+import Slider from './components/slider';
 
 const Root = () => (
   <Provider store={store}>
-    <Map width='100%' height='600px'/>
+    <main>
+      <Map width='100%' height='600px'/>
+      <Slider/>
+    </main>
   </Provider>
 );
 
