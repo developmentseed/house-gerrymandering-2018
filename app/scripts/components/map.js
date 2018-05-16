@@ -39,13 +39,25 @@ class Map extends React.Component {
     const ctx = select(this.map.current).node().getContext('2d');
     const path = geoPath().projection(projection).context(ctx);
 
+    const { geo, vote } = this.props;
+    ctx.clearRect(0, 0, width, height);
     ctx.beginPath();
-    path({type: 'FeatureCollection', features: this.props.geo.districts});
-    ctx.fillStyle = '#dcd8d2'
-    ctx.fill()
-    ctx.lineWidth = '1'
-    ctx.strokeStyle = '#c9c4bc'
-    ctx.stroke()
+    path({type: 'FeatureCollection', features: geo.districts.filter(d => d.properties.threshold >= vote.natl)});
+    ctx.fillStyle = '#ff0000';
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    path({type: 'FeatureCollection', features: geo.districts.filter(d => d.properties.threshold < vote.natl)});
+    ctx.fillStyle = '#0000ff';
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    path({type: 'FeatureCollection', features: geo.districts});
+    ctx.strokeStyle = '#dddddd';
+    ctx.lineWidth = 0.4;
+    ctx.stroke();
   }
 
   render () {
@@ -65,7 +77,8 @@ class Map extends React.Component {
 }
 
 const selector = (state) => ({
-  geo: state.geo
+  geo: state.geo,
+  vote: state.vote
 });
 
 export default connect(selector)(Map);
