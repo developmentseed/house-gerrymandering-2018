@@ -1,7 +1,7 @@
 'use strict';
 import React from 'react';
 import { connect } from 'react-redux';
-import { geoPath } from 'd3-geo';
+import { geoPath, geoAlbersUsa } from 'd3-geo';
 import { select } from 'd3';
 
 class Map extends React.Component {
@@ -10,20 +10,21 @@ class Map extends React.Component {
     this.setHeight = this.setHeight.bind(this);
     this.renderMap = this.renderMap.bind(this);
     this.cont = React.createRef();
+    this.map = React.createRef();
     this.state = { width: null, height: null };
   }
 
   componentDidMount () {
     window.addEventListener('resize', this.setHeight);
-    this.context = select(this.cont.current).node().getContext('2d');
-    this.path = geoPath().context(this.context);
-    this.renderMap();
+    this.setHeight();
   }
 
   componentWillUnmount () {
     window.removeEventListener('resize', this.setHeight);
-    this.path = null;
-    this.context = null;
+  }
+
+  componentDidUpdate () {
+    this.renderMap();
   }
 
   setHeight () {
@@ -32,9 +33,14 @@ class Map extends React.Component {
   }
 
   renderMap () {
-    const { context: ctx } = this;
+    const { width, height } = this.state;
+    const fc = { type: 'FeatureCollection', features: this.props.geo.districts };
+    const projection = geoAlbersUsa().fitExtent([[0, 0], [width, height]], fc);
+    const ctx = select(this.map.current).node().getContext('2d');
+    const path = geoPath().projection(projection).context(ctx);
+
     ctx.beginPath();
-    this.path({type: 'FeatureCollection', features: this.props.geo.districts});
+    path({type: 'FeatureCollection', features: this.props.geo.districts});
     ctx.fillStyle = '#dcd8d2'
     ctx.fill()
     ctx.lineWidth = '1'
@@ -48,7 +54,12 @@ class Map extends React.Component {
       height
     } = this.props;
     return (
-      <canvas ref={this.cont} style={{ width, height }} className='map__cont' />
+      <div ref={this.cont} style={{ width, height }} className='map__cont'>
+        {this.state.width && this.state.height ?
+          <canvas ref={this.map} width={this.state.width} height={this.state.height} className='map' />
+            : null
+        }
+      </div>
     );
   }
 }
