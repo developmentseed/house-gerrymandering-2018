@@ -1,0 +1,15 @@
+.district {
+  cursor: pointer;
+  stroke: $district-stroke;
+  stroke-width: $district-stroke-width;
+  &:hover {
+    stroke: $district-stroke-hover;
+    stroke-width: $district-stroke-width-hover;
+  }
+  &--red {
+    fill: $district-red;
+  }
+  &--blue {
+    fill: $district-blue;
+  }
+}
