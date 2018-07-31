@@ -1,0 +1,43 @@
+@mixin sans-serif {
+  font-family: "nimbus-sans", "Nimbus Sans L", Helvetica, Arial, sans-serif;
+}
+
+@mixin label {
+  color: $dark-gray;
+  font-size: $small-text;
+  font-weight: $bold-text;
+  letter-spacing: 0.02rem;
+}
+
+@mixin transparent {
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+@mixin appearance-none {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+}
+
+@mixin cursor-grab {
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: -ms-grab;
+  cursor: grab;
+}
+
+$_box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.95);
+@mixin box-shadow {
+  -webkit-box-shadow: $_box-shadow;
+  -moz-box-shadow: $_box-shadow;
+  box-shadow: $_box-shadow;
+}
+
+$_inset_box_shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.95);
+@mixin inset-box-shadow {
+  -webkit-box-shadow: $_inset_box_shadow;
+  -moz-box-shadow: $_inset_box_shadow;
+  box-shadow: $_inset_box_shadow;
+}

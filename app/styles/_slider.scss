@@ -1,0 +1,85 @@
+$slider-track-height: 8px;
+.slider__cont {
+  margin: 1rem auto;
+  width: 40%;
+}
+
+.slider {
+  display: block;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.slider__label {
+  @include label;
+  text-transform: uppercase;
+}
+
+@mixin slider-thumb {
+  @include appearance-none;
+  @include cursor-grab;
+  @include box-shadow;
+  background: $white;
+  border-radius: 50%;
+
+  height: 24px;
+  width: 24px;
+
+  position: relative;
+}
+
+@mixin slider-track-gradient {
+  background: rgb(48,110,159);
+  background: -moz-linear-gradient(90deg, rgba(48,110,159,1) 0%, rgba(27,82,128,1) 30%, rgba(143,35,35,1) 70%, rgba(214,70,64,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(48,110,159,1) 0%, rgba(27,82,128,1) 30%, rgba(143,35,35,1) 70%, rgba(214,70,64,1) 100%);
+  background: linear-gradient(90deg, rgba(48,110,159,1) 0%, rgba(27,82,128,1) 30%, rgba(143,35,35,1) 70%, rgba(214,70,64,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#306e9f",endColorstr="#d64640",GradientType=1);
+}
+
+@mixin slider-track {
+  @include slider-track-gradient;
+  @include inset-box-shadow;
+  cursor: pointer;
+  border-radius: $slider-track-height / 2;
+  height: $slider-track-height;
+}
+
+input[type=range] {
+  @include appearance-none;
+  background: transparent;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-slider-thumb {
+    @include slider-thumb;
+    margin-top: -8px;
+    &:active {
+      cursor: -webkit-grabbing;
+    }
+  }
+  &::-moz-range-thumb {
+    @include slider-thumb;
+  }
+  &::-ms-thumb {
+    @include slider-thumb;
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include slider-track;
+  }
+  &::-moz-range-track {
+    @include slider-track;
+  }
+  &::-ms-track {
+    @include transparent;
+    cursor: pointer;
+    border-radius: $slider-track-height / 2;
+    height: $slider-track-height;
+    width: 100%;
+  }
+  &::-ms-fill-lower {
+    @include slider-track-gradient;
+  }
+}
