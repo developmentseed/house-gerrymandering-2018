@@ -4,7 +4,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
-import store from './store';
+import store from './get-store';
 
 import Map from './components/map';
 import Slider from './components/slider';
@@ -12,7 +12,7 @@ import Slider from './components/slider';
 const Root = () => (
   <Provider store={store}>
     <main>
-      <Map width='100%' height='600px'/>
+      <Map width='100%' height='600px' useCanvas={false}/>
       <Slider/>
     </main>
   </Provider>
