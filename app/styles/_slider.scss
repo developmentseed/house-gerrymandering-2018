@@ -1,6 +1,7 @@
 $slider-track-height: 8px;
 $slider-thumb-height: 24px;
 $slider-padding: 1rem;
+$range-label-offset: 1px;
 .slider__cont {
   margin: 3rem auto 1rem;
   text-align: center;
@@ -93,7 +94,6 @@ input[type=range] {
   width: 100%;
 }
 
-$range-label-offset: 5px;
 .range__label__inner {
   position: relative;
 }
