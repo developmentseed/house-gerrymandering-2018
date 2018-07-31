@@ -20,10 +20,6 @@ class Slider extends React.Component {
     const width = right - left;
     return (
       <div className='slider__cont'>
-        <label className='slider__label'>
-          Percentage of Votes
-          <input className='slider' type='range' min={0} max={100} value={vote.natl} onChange={this.setVote} />
-        </label>
         <figure className='range__label'>
           <div className='range__label__inner'>
             <span className='range__label__limit range__label__limit--left' style={{left: left + '%'}} />
@@ -31,6 +27,10 @@ class Slider extends React.Component {
             <span className='range__label__limit range__label__limit--right' style={{left: right + '%'}} />
           </div>
         </figure>
+        <label className='slider__label'>
+          Percentage of Votes
+          <input className='slider' type='range' min={0} max={100} value={vote.natl} onChange={this.setVote} />
+        </label>
       </div>
     );
   }

@@ -107,9 +107,9 @@ $range-label-offset: 5px;
   border-top-left-radius: 1px;
   border-top-right-radius: 1px;
 
-  height: $slider-track-height * 1.5 + $slider-thumb-height / 2 + $range-label-offset;
+  height: $slider-track-height;
   width: 2px;
-  margin-top: -$slider-track-height * 1.5;
+  margin-top: $slider-thumb-height / 2 + $range-label-offset;
 
   position: absolute;
   &--left {
@@ -121,6 +121,6 @@ $range-label-offset: 5px;
 
 .range__label__span {
   height: 2px;
-  margin-top: $slider-thumb-height / 2 + $range-label-offset;
+  margin-top: $slider-thumb-height / 2 + $range-label-offset + $slider-track-height;
   position: absolute;
 }
