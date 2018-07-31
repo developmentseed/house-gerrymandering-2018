@@ -1,7 +1,9 @@
 $slider-track-height: 8px;
+$slider-thumb-height: 24px;
 .slider__cont {
   margin: 3rem auto 1rem;
   text-align: center;
+  position: relative;
   width: 40%;
 }
 
@@ -23,10 +25,8 @@ $slider-track-height: 8px;
   background: $white;
   border-radius: 50%;
 
-  height: 24px;
-  width: 24px;
-
-  position: relative;
+  height: $slider-thumb-height;
+  width: $slider-thumb-height;
 }
 
 @mixin slider-track-gradient {
@@ -83,4 +83,44 @@ input[type=range] {
   &::-ms-fill-lower {
     @include slider-track-gradient;
   }
+}
+
+.range__label {
+  bottom: 1rem;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+}
+
+$range-label-offset: 5px;
+.range__label__inner {
+  position: relative;
+}
+
+.range__label__limit,
+.range__label__span {
+  background: #AAAAAA;
+  background: rgba(170, 170, 170, 0.5);
+}
+
+.range__label__limit {
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+
+  height: $slider-track-height * 1.5 + $slider-thumb-height / 2 + $range-label-offset;
+  width: 2px;
+  margin-top: -$slider-track-height * 1.5;
+
+  position: absolute;
+  &--left {
+  }
+  &--right {
+    margin-left: -2px;
+  }
+}
+
+.range__label__span {
+  height: 2px;
+  margin-top: $slider-thumb-height / 2 + $range-label-offset;
+  position: absolute;
 }

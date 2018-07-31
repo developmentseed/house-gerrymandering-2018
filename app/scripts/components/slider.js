@@ -14,12 +14,23 @@ class Slider extends React.Component {
   }
 
   render () {
+    const { vote, demLimit, repLimit } = this.props;
+    const left = 100 - demLimit;
+    const right = repLimit;
+    const width = right - left;
     return (
       <div className='slider__cont'>
         <label className='slider__label'>
           Percentage of Votes
-          <input className='slider' type='range' min={30} max={70} value={this.props.vote.natl} onChange={this.setVote} />
+          <input className='slider' type='range' min={0} max={100} value={vote.natl} onChange={this.setVote} />
         </label>
+        <figure className='range__label'>
+          <div className='range__label__inner'>
+            <span className='range__label__limit range__label__limit--left' style={{left: left + '%'}} />
+            <span className='range__label__span' style={{left: left + '%', width: width + '%'}} />
+            <span className='range__label__limit range__label__limit--right' style={{left: right + '%'}} />
+          </div>
+        </figure>
       </div>
     );
   }
