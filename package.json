@@ -16,7 +16,8 @@
   },
   "homepage": "https://github.com/developmentseed/house-gerrymandering-2018",
   "scripts": {
-    "serve": "gulp serve"
+    "serve": "gulp serve",
+    "lint": "eslint app/scripts/ --ext .js"
   },
   "engines": {
     "node": "8.9.x"
