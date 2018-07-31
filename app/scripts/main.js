@@ -12,8 +12,8 @@ import Slider from './components/slider';
 const Root = () => (
   <Provider store={store}>
     <main>
-      <Map width='100%' height='600px' useCanvas={false}/>
       <Slider/>
+      <Map width='100%' height='600px' useCanvas={false}/>
     </main>
   </Provider>
 );

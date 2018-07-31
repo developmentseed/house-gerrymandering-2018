@@ -21,7 +21,10 @@ class Slider extends React.Component {
   render () {
     return (
       <div className='slider__cont' style={style}>
-        <input type='range' min={30} max={70} value={this.props.vote.natl} onChange={this.setVote} />
+        <label className='slider__label'>
+          Percentage of Votes
+          <input className='slider' type='range' min={30} max={70} value={this.props.vote.natl} onChange={this.setVote} />
+        </label>
         <p>{this.props.vote.natl}</p>
       </div>
     );
