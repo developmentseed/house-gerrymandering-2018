@@ -126,20 +126,29 @@ input[type=range] {
   position: absolute;
 }
 
+.range__label__indicator {
+  color: $med-gray;
+  font-size: $small-text;
+  left: 50%;
+  margin-top: $slider-thumb-height / 2 + $range-label-offset + $slider-track-height + 8px;
+  position: absolute;
+  @include transform(translateX(-50%));
+}
+
 .range__marker {
   font-size: 1rem;
   font-weight: $bold-text;
   line-height: 1rem;
   position: absolute;
-  top: -0.7rem;
+  margin-top: -0.7rem;
 }
 
 .range__marker--left {
-  left: -2.5rem;
   color: $blue;
+  left: -3rem;
 }
 
 .range__marker--right {
-  right: -2.5rem;
   color: $red;
+  right: -3rem;
 }

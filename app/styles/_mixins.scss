@@ -41,3 +41,10 @@ $_inset_box_shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.95);
   -moz-box-shadow: $_inset_box_shadow;
   box-shadow: $_inset_box_shadow;
 }
+
+@mixin transform ($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  -moz-transform: $property;
+  transform: $property;
+}

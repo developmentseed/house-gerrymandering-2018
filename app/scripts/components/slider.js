@@ -39,6 +39,7 @@ class Slider extends React.Component {
             <span className='range__label__limit range__label__limit--left' style={{left: leftPct + '%'}} />
             <span className='range__label__span' style={{left: leftPct + '%', width: width + '%'}} />
             <span className='range__label__limit range__label__limit--right' style={{left: rightPct + '%'}} />
+            <span className='range__label__indicator' style={{left: leftPct + width / 2 + '%'}}>historic range</span>
 
             <span className='range__marker range__marker--left'>{100 - tally}%</span>
             <span className='range__marker range__marker--right'>{tally}%</span>
