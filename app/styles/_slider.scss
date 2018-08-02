@@ -125,3 +125,21 @@ input[type=range] {
   margin-top: $slider-thumb-height / 2 + $range-label-offset + $slider-track-height;
   position: absolute;
 }
+
+.range__marker {
+  font-size: 1rem;
+  font-weight: $bold-text;
+  line-height: 1rem;
+  position: absolute;
+  top: -0.7rem;
+}
+
+.range__marker--left {
+  left: -2.5rem;
+  color: $blue;
+}
+
+.range__marker--right {
+  right: -2.5rem;
+  color: $red;
+}

@@ -12,7 +12,11 @@ import Slider from './components/slider';
 const Root = () => (
   <Provider store={store}>
     <main>
-      <Slider demLimit={58} repLimit={55} />
+      <Slider
+        demLimit={.8}
+        repLimit={.55}
+        offset={.20}
+      />
       <Map width='100%' height='600px' useCanvas={false}/>
     </main>
   </Provider>
