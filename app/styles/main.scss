@@ -34,4 +34,9 @@
 /* Main
    ========================================================================== */
 
+@import "settings";
+@import "mixins";
 @import "base";
+@import "map";
+@import "slider";
+@import "head-to-head";
