@@ -8,6 +8,7 @@ import store from './get-store';
 
 import Map from './components/map';
 import Slider from './components/slider';
+import Head2Head from './components/head-to-head';
 
 const Root = () => (
   <Provider store={store}>
@@ -17,6 +18,7 @@ const Root = () => (
         repLimit={0.59}
         offset={0.20}
       />
+      <Head2Head />
       <Map width='100%' height='600px' useCanvas={false}/>
     </main>
   </Provider>

@@ -15,13 +15,15 @@ $red: #D64640;
 $dark-red: #8F2323;
 
 /* Text sizes */
+$large-text: 1.75rem;
 $small-text: 0.875rem;
 $bold-text: 600;
+$base-text: 400;
 
 /* Map stroke and fill colors */
 $district-stroke: #FEFEFE;
 $district-stroke-width: 0.3;
 $district-stroke-hover: #FFFFFF;
 $district-stroke-width-hover: 1.2;
-$district-red: #D64640;
-$district-blue: #306E9F;
+$district-red: $red;
+$district-blue: $blue;
