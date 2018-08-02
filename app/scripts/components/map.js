@@ -70,13 +70,13 @@ class Map extends React.Component {
     const { geo, vote } = this.props;
     ctx.clearRect(0, 0, width, height);
     ctx.beginPath();
-    path({type: 'FeatureCollection', features: geo.districts.filter(d => d.properties.threshold >= vote.natl)});
+    path({type: 'FeatureCollection', features: geo.districts.filter(d => d.properties.threshold < vote.natl)});
     ctx.fillStyle = rep;
     ctx.fill();
     ctx.closePath();
 
     ctx.beginPath();
-    path({type: 'FeatureCollection', features: geo.districts.filter(d => d.properties.threshold < vote.natl)});
+    path({type: 'FeatureCollection', features: geo.districts.filter(d => d.properties.threshold >= vote.natl)});
     ctx.fillStyle = dem;
     ctx.fill();
     ctx.closePath();
@@ -96,8 +96,8 @@ class Map extends React.Component {
           {geo.districts.map(d => (
             <path
               className={c('district', {
-                'district--red': d.properties.threshold >= vote.natl,
-                'district--blue': d.properties.threshold < vote.natl
+                'district--blue': d.properties.threshold >= vote.natl,
+                'district--red': d.properties.threshold < vote.natl
               })}
               key={d.properties.id}
               d={districtPaths[d.properties.id]}
