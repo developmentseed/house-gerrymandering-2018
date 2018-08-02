@@ -32,7 +32,6 @@ $hh-track-height: 16px;
 
 .hh__figure {
   @include box-shadow;
-  border-radius: 1px;
   height: $hh-track-height;
   flex-basis: 100%;
   position: relative;
@@ -41,9 +40,6 @@ $hh-track-height: 16px;
 .hh__figure__span {
   height: $hh-track-height;
   position: absolute;
-  &:last-child {
-    border-left: 1px solid $white;
-  }
 }
 
 .hh__figure__span--dem {
@@ -52,6 +48,7 @@ $hh-track-height: 16px;
 
 .hh__figure__span--rep {
   background: $red;
+  border-left: 1px solid $white;
 }
 
 .hh__figure__center {
@@ -67,4 +64,9 @@ $hh-track-height: 16px;
   font-size: $small-text;
   line-height: 1.3rem;
   margin: 0.5rem 0 0;
+}
+
+.hh__delta__num {
+  font-weight: $bold-text;
+  display: block;
 }
