@@ -37,6 +37,10 @@ class Slider extends React.Component {
     // the national vote tally, or a state-wide tally.
     const tally = vote.natl;
 
+    // Determine the republican and democratic deltas under this tally
+    const demDelta = 100 - tally - 50;
+    const repDelta = tally - 50;
+
     // Determine if we're currently in an unrealistic scenario
     const isUnrealistic = tally < (1 - demLimit) * 100 ||
       tally > repLimit * 100;
@@ -45,7 +49,7 @@ class Slider extends React.Component {
       <div className='slider__cont'>
         {isUnrealistic ? (
           <figure className='range__warning'>
-            <figcaption>Result unlikely based on past results</figcaption>
+            <figcaption>Scenario unlikely based on past results</figcaption>
           </figure>
         ) : null}
         <figure className='range__label'>
@@ -56,8 +60,8 @@ class Slider extends React.Component {
             <span className='range__label__span' style={{left: leftPct + '%', width: width + '%'}} />
             <span className='range__label__limit range__label__limit--right' style={{left: rightPct + '%'}} />
 
-            <span className='range__marker range__marker--left'>{100 - tally}%</span>
-            <span className='range__marker range__marker--right'>{tally}%</span>
+            {demDelta > 0 ? <span className='range__marker range__marker--left'>+{demDelta}%</span> : null}
+            {repDelta > 0 ? <span className='range__marker range__marker--right'>+{repDelta}%</span> : null}
           </div>
         </figure>
         <label className='slider__label'>
