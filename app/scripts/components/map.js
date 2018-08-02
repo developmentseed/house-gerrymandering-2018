@@ -45,7 +45,7 @@ class Map extends React.Component {
 
   setHeight () {
     const { width, height } = this.cont.current.getBoundingClientRect();
-    const { districts } = this.props.geo;
+    const { districts } = this.props;
     const fc = { type: 'FeatureCollection', features: districts };
     this.projection = geoAlbersUsa().fitExtent([[0, 0], [width, height]], fc);
 
@@ -67,37 +67,38 @@ class Map extends React.Component {
     const ctx = select(this.map.current).node().getContext('2d');
     const path = geoPath().projection(this.projection).context(ctx);
 
-    const { geo, vote } = this.props;
+    const { districts, vote } = this.props;
     ctx.clearRect(0, 0, width, height);
     ctx.beginPath();
-    path({type: 'FeatureCollection', features: geo.districts.filter(d => d.properties.threshold < vote.natl)});
+    path({type: 'FeatureCollection', features: districts.filter(d => d.properties.threshold < vote.natl)});
     ctx.fillStyle = rep;
     ctx.fill();
     ctx.closePath();
 
     ctx.beginPath();
-    path({type: 'FeatureCollection', features: geo.districts.filter(d => d.properties.threshold >= vote.natl)});
+    path({type: 'FeatureCollection', features: districts.filter(d => d.properties.threshold > vote.natl)});
     ctx.fillStyle = dem;
     ctx.fill();
     ctx.closePath();
 
     ctx.beginPath();
-    path({type: 'FeatureCollection', features: geo.districts});
+    path({type: 'FeatureCollection', features: districts});
     ctx.strokeStyle = districtStrokeColor;
     ctx.lineWidth = districtStrokeWidth;
     ctx.stroke();
   }
 
   renderSvgMap () {
-    const { vote, geo } = this.props;
+    const { districts, vote } = this.props;
     return (
       <svg width={this.state.width} height={this.state.height} className='map'>
         <g className='districts'>
-          {geo.districts.map(d => (
+          {districts.map(d => (
             <path
               className={c('district', {
-                'district--blue': d.properties.threshold >= vote.natl,
-                'district--red': d.properties.threshold < vote.natl
+                'district--blue': d.properties.threshold > vote.natl,
+                'district--red': d.properties.threshold < vote.natl,
+                'district--tie': d.properties.threshold === vote.natl
               })}
               key={d.properties.id}
               d={districtPaths[d.properties.id]}
@@ -130,7 +131,7 @@ class Map extends React.Component {
 }
 
 const selector = (state) => ({
-  geo: state.geo,
+  districts: state.geo.districts,
   vote: state.vote
 });
 
