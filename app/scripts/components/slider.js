@@ -1,7 +1,8 @@
-'use strict'
+'use strict';
 import React from 'react';
 import { connect } from 'react-redux';
 import { setNatlVote } from '../actions';
+import { scaleLinear } from 'd3';
 
 class Slider extends React.Component {
   constructor (props) {
@@ -25,8 +26,11 @@ class Slider extends React.Component {
     } = this.props;
     // Calculate where the unrealistic scenario markers will go
     const offset = this.getOffset();
-    const leftPct = Math.round((1 - demLimit - offset) * 100);
-    const rightPct = Math.round((repLimit + offset) * 100);
+    const scale = scaleLinear()
+      .domain([offset, 1 - offset])
+      .range([0, 100]);
+    const leftPct = scale(1 - demLimit);
+    const rightPct = scale(repLimit);
     const width = rightPct - leftPct;
 
     // TODO props or state should control whether this looks at

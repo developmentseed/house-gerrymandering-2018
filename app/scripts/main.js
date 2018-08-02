@@ -13,9 +13,9 @@ const Root = () => (
   <Provider store={store}>
     <main>
       <Slider
-        demLimit={.8}
-        repLimit={.55}
-        offset={.20}
+        demLimit={0.55}
+        repLimit={0.59}
+        offset={0.20}
       />
       <Map width='100%' height='600px' useCanvas={false}/>
     </main>
