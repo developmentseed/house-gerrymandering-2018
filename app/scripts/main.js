@@ -16,7 +16,7 @@ const Root = () => (
       <Slider
         demLimit={0.55}
         repLimit={0.59}
-        offset={0.20}
+        offset={0.35}
       />
       <Head2Head />
       <Map width='100%' height='600px' useCanvas={false}/>
