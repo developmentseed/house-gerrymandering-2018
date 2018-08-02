@@ -36,14 +36,25 @@ class Slider extends React.Component {
     // TODO props or state should control whether this looks at
     // the national vote tally, or a state-wide tally.
     const tally = vote.natl;
+
+    // Determine if we're currently in an unrealistic scenario
+    const isUnrealistic = tally < (1 - demLimit) * 100 ||
+      tally > repLimit * 100;
+
     return (
       <div className='slider__cont'>
+        {isUnrealistic ? (
+          <figure className='range__warning'>
+            <figcaption>Result unlikely based on past results</figcaption>
+          </figure>
+        ) : null}
         <figure className='range__label'>
           <div className='range__label__inner'>
+            <figcaption className='range__label__indicator' style={{left: leftPct + width / 2 + '%'}}>historic range</figcaption>
+
             <span className='range__label__limit range__label__limit--left' style={{left: leftPct + '%'}} />
             <span className='range__label__span' style={{left: leftPct + '%', width: width + '%'}} />
             <span className='range__label__limit range__label__limit--right' style={{left: rightPct + '%'}} />
-            <span className='range__label__indicator' style={{left: leftPct + width / 2 + '%'}}>historic range</span>
 
             <span className='range__marker range__marker--left'>{100 - tally}%</span>
             <span className='range__marker range__marker--right'>{tally}%</span>
