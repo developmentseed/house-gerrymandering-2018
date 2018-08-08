@@ -6,14 +6,16 @@ import { Provider } from 'react-redux';
 
 import store from './get-store';
 
+import App from './components/app';
 import Map from './components/map';
 import Slider from './components/slider';
 import Head2Head from './components/head-to-head';
 import Legend from './components/legend';
+import Tooltip from './components/tooltip';
 
 const Root = () => (
   <Provider store={store}>
-    <main>
+    <App>
       <Slider
         demLimit={0.55}
         repLimit={0.59}
@@ -22,7 +24,8 @@ const Root = () => (
       <Head2Head />
       <Map width='100%' height='600px' useCanvas={false} />
       <Legend />
-    </main>
+      <Tooltip />
+    </App>
   </Provider>
 );
 
