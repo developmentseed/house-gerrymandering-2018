@@ -9,6 +9,7 @@ import store from './get-store';
 import Map from './components/map';
 import Slider from './components/slider';
 import Head2Head from './components/head-to-head';
+import Legend from './components/legend';
 
 const Root = () => (
   <Provider store={store}>
@@ -19,7 +20,8 @@ const Root = () => (
         offset={0.35}
       />
       <Head2Head />
-      <Map width='100%' height='600px' useCanvas={false}/>
+      <Map width='100%' height='600px' useCanvas={false} />
+      <Legend />
     </main>
   </Provider>
 );
