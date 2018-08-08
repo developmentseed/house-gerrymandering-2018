@@ -33,3 +33,23 @@
 .legend__item--dem {
   @include party-icon($blue);
 }
+
+.tooltip__cont {
+  @include box-shadow;
+  background-color: $white;
+  border-radius: 2px;
+  margin-top: -4em;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding: 0.5rem;
+  position: fixed;
+}
+
+.tooltip__cont__right {
+  margin-left: 2em;
+}
+
+.tooltiop__cont__left {
+  margin-left: -2em;
+}
