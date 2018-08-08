@@ -10,6 +10,7 @@ import {
   districtStrokeColor,
   districtStrokeWidth
 } from '../static/settings';
+import { syncMouse } from '../actions';
 
 const districtPaths = {};
 
@@ -20,7 +21,10 @@ class Map extends React.Component {
     this.renderCanvasMap = this.renderCanvasMap.bind(this);
     this.renderSvgMap = this.renderSvgMap.bind(this);
     this.getMapElement = this.getMapElement.bind(this);
-    this.renderCount = 0;
+
+    // Mouse events
+    this.syncMouseMove = this.syncMouseMove.bind(this);
+    this.syncMouseOut = this.syncMouseOut.bind(this);
 
     this.cont = React.createRef();
     this.map = React.createRef();
@@ -102,6 +106,9 @@ class Map extends React.Component {
               })}
               key={d.properties.id}
               d={districtPaths[d.properties.id]}
+              onMouseMove={this.syncMouseMove}
+              onMouseOut={this.syncMouseOut}
+              data-id={d.properties.id}
             />
           ))}
         </g>
@@ -115,6 +122,22 @@ class Map extends React.Component {
     } else {
       return this.renderSvgMap();
     }
+  }
+
+  syncMouseMove (e) {
+    const id = e.currentTarget.getAttribute('data-id');
+    const next = {
+      event: 'mousemove',
+      district: id,
+      x: e.pageX,
+      y: e.pageY
+    };
+    this.props.syncMouse(next);
+  }
+
+  syncMouseOut () {
+    const next = { event: null };
+    this.props.syncMouse(next);
   }
 
   render () {
@@ -135,4 +158,4 @@ const selector = (state) => ({
   vote: state.vote
 });
 
-export default connect(selector)(Map);
+export default connect(selector, { syncMouse })(Map);
