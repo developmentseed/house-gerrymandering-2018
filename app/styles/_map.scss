@@ -19,6 +19,15 @@
   &--tie {
     fill: $district-tie;
   }
+  &--red--out {
+    fill: $district-light-red;
+  }
+  &--blue--out {
+    fill: $district-light-blue;
+  }
+  &--tie--out {
+    fill: $district-light-tie;
+  }
 }
 
 .districts--zoomed .district {

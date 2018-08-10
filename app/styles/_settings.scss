@@ -9,9 +9,11 @@ $black: #000000;
 $warning: #E05D30;
 
 $blue: #306E9F;
+$light-blue: lighten($blue, 20%);
 $dark-blue: #1B5280;
 
 $red: #D64640;
+$light-red: lighten($red, 20%);
 $dark-red: #8F2323;
 
 /* Text sizes */
@@ -30,3 +32,6 @@ $district-stroke-width-hover: 1.2;
 $district-red: $red;
 $district-blue: $blue;
 $district-tie: $light-gray;
+$district-light-red: $light-red;
+$district-light-blue: $light-blue;
+$district-light-tie: lighten($light-gray, 20%);
