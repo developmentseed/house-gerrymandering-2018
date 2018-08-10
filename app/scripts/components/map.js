@@ -52,7 +52,7 @@ class Map extends React.Component {
   // Use componentDidUpdate to animate between states and national
   componentDidUpdate (prevProps) {
     const { selected } = this.props;
-    if (selected && selected !== prevProps) {
+    if (selected && selected !== prevProps.selected) {
       const { width, height } = this.state;
       const bounds = this.path.bounds(selected);
       const dx = bounds[1][0] - bounds[0][0];
