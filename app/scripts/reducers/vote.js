@@ -13,7 +13,8 @@ const initialNationalVote = 50;
 const initialGeoState = Object.assign({
   districts,
   focused: null,
-  selected: null
+  selected: null,
+  selectedIdMap: null
 }, getNatlCount(districts, initialNationalVote));
 
 export function geo (state = initialGeoState, { type, next }) {
@@ -65,12 +66,12 @@ function getNatlCount (districts, vote) {
 function getSelectedState (districts, districtId) {
   // a null value here will reset the map view to national
   if (!districtId) {
-    return { selected: null };
+    return { selected: null, selectedIdMap: null };
   }
   const selected = getStateDistricts(districts, districtId);
   const idMap = new Map(selected.map(d => [d.properties.id, true]));
   const merged = merge(raw, raw.objects.districts.geometries.filter(d => idMap.has(d.properties.id)));
-  return { selected: merged };
+  return { selected: merged, selectedIdMap: idMap };
 }
 
 const initialVoteState = {

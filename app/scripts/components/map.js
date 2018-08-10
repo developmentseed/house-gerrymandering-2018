@@ -36,7 +36,8 @@ class Map extends React.Component {
     this.state = {
       width: null,
       height: null,
-      transform: ''
+      transform: '',
+      lockMouseEvents: false
     };
   }
 
@@ -59,14 +60,14 @@ class Map extends React.Component {
       const dy = bounds[1][1] - bounds[0][1];
       const x = (bounds[0][0] + bounds[1][0]) / 2;
       const y = (bounds[0][1] + bounds[1][1]) / 2;
-      const scale = 0.9 / Math.max(dx / width, dy / height);
+      const scale = 0.85 / Math.max(dx / width, dy / height);
       const translate = [width / 2 - scale * x, height / 2 - scale * y];
       const transform = `translate(${translate})scale(${scale})`;
 
       select(this.refs.districts).transition()
         .duration(400)
         .attr('transform', transform)
-        .on('end', () => this.setState({ transform }));
+        .on('end', () => this.setState({ transform, lockMouseEvents: false }));
     }
   }
 
@@ -116,28 +117,31 @@ class Map extends React.Component {
   }
 
   renderSvgMap () {
-    const { districts, vote, selected } = this.props;
+    const { districts, vote, selected, selectedIdMap } = this.props;
     return (
       <svg width={this.state.width} height={this.state.height} className='map'>
         <rect width={this.state.width} height={this.state.height} className='map__bg' />
         <g ref='districts' transform={this.state.transform} className={c('districts', {
           'districts--zoomed': !!selected
         })}>
-          {districts.map(d => (
-            <path
-              className={c('district', {
-                'district--blue': d.properties.threshold > vote.natl,
-                'district--red': d.properties.threshold < vote.natl,
-                'district--tie': d.properties.threshold === vote.natl
-              })}
+          {districts.map(d => {
+            // District classname
+            let outcome = d.properties.threshold > vote.natl ? '--blue'
+              : d.properties.threshold < vote.natl ? '--red' : '--tie';
+            // Unfocused district, aka zoomed into a different state
+            if (selectedIdMap && !selectedIdMap.has(d.properties.id)) {
+              outcome += '--out';
+            }
+            return <path
+              className={c('district', `district${outcome}`)}
               key={d.properties.id}
               d={districtPaths[d.properties.id]}
               onMouseMove={this.syncMouseMove}
               onMouseOut={this.syncMouseOut}
               onClick={this.syncMouseClick}
               data-id={d.properties.id}
-            />
-          ))}
+            />;
+          })}
         </g>
       </svg>
     );
@@ -152,6 +156,7 @@ class Map extends React.Component {
   }
 
   syncMouseMove (e) {
+    if (this.state.lockMouseEvents) return;
     const id = e.currentTarget.getAttribute('data-id');
     const next = {
       event: 'mousemove',
@@ -163,18 +168,16 @@ class Map extends React.Component {
   }
 
   syncMouseOut () {
-    const next = { event: null };
-    this.props.syncMouseLocation(next);
+    if (this.state.lockMouseEvents) return;
+    this.props.syncMouseLocation({ event: null });
   }
 
   syncMouseClick (e) {
+    if (this.state.lockMouseEvents) return;
     const id = e.currentTarget.getAttribute('data-id');
-    const next = {
-      event: 'click',
-      locked: true
-    };
-    this.props.syncMouseLocation(next);
+    this.props.syncMouseLocation({ event: null });
     this.props.syncSelectedState(id);
+    this.setState({ lockMouseEvents: true });
   }
 
   render () {
@@ -193,7 +196,8 @@ class Map extends React.Component {
 const selector = (state) => ({
   districts: state.geo.districts,
   vote: state.vote,
-  selected: state.geo.selected
+  selected: state.geo.selected,
+  selectedIdMap: state.geo.selectedIdMap
 });
 
 export default connect(selector, {

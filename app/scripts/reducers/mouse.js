@@ -4,12 +4,11 @@ const initialState = {
   event: null,
   district: null,
   x: 0,
-  y: 0,
-  locked: false
+  y: 0
 };
 
 function mouse (state = initialState, { type, next }) {
-  if (type === 'sync_mouse_location' && (!state.locked || (next.hasOwnProperty('locked') && !next.locked))) {
+  if (type === 'sync_mouse_location') {
     state = Object.assign({}, state, next);
   }
   return state;
