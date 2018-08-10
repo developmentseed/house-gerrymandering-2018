@@ -116,11 +116,13 @@ class Map extends React.Component {
   }
 
   renderSvgMap () {
-    const { districts, vote } = this.props;
+    const { districts, vote, selected } = this.props;
     return (
       <svg width={this.state.width} height={this.state.height} className='map'>
         <rect width={this.state.width} height={this.state.height} className='map__bg' />
-        <g className='districts' ref='districts' transform={this.state.transform}>
+        <g ref='districts' transform={this.state.transform} className={c('districts', {
+          'districts--zoomed': !!selected
+        })}>
           {districts.map(d => (
             <path
               className={c('district', {
