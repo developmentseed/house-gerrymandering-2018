@@ -10,7 +10,10 @@ import {
   districtStrokeColor,
   districtStrokeWidth
 } from '../static/settings';
-import { syncMouse } from '../actions';
+import {
+  syncMouseLocation,
+  syncSelectedState
+} from '../actions';
 
 const districtPaths = {};
 
@@ -25,11 +28,16 @@ class Map extends React.Component {
     // Mouse events
     this.syncMouseMove = this.syncMouseMove.bind(this);
     this.syncMouseOut = this.syncMouseOut.bind(this);
+    this.syncMouseClick = this.syncMouseClick.bind(this);
 
     this.cont = React.createRef();
     this.map = React.createRef();
 
-    this.state = { width: null, height: null };
+    this.state = {
+      width: null,
+      height: null,
+      transform: ''
+    };
   }
 
   componentDidMount () {
@@ -41,9 +49,24 @@ class Map extends React.Component {
     window.removeEventListener('resize', this.setHeight);
   }
 
-  componentDidUpdate () {
-    if (this.props.useCanvas) {
-      this.renderCanvasMap();
+  // Use componentDidUpdate to animate between states and national
+  componentDidUpdate (prevProps) {
+    const { selected } = this.props;
+    if (selected && selected !== prevProps) {
+      const { width, height } = this.state;
+      const bounds = this.path.bounds(selected);
+      const dx = bounds[1][0] - bounds[0][0];
+      const dy = bounds[1][1] - bounds[0][1];
+      const x = (bounds[0][0] + bounds[1][0]) / 2;
+      const y = (bounds[0][1] + bounds[1][1]) / 2;
+      const scale = 0.9 / Math.max(dx / width, dy / height);
+      const translate = [width / 2 - scale * x, height / 2 - scale * y];
+      const transform = `translate(${translate})scale(${scale})`;
+
+      select(this.refs.districts).transition()
+        .duration(400)
+        .attr('transform', transform)
+        .on('end', () => this.setState({ transform }));
     }
   }
 
@@ -56,7 +79,7 @@ class Map extends React.Component {
     // Cache all district paths.
     // This uses more memory but saves a ton of time on reach successive render.
     if (!this.props.useCanvas) {
-      let path = geoPath().projection(this.projection);
+      let path = this.path = geoPath().projection(this.projection);
       districts.forEach(function (d) {
         districtPaths[d.properties.id] = path(d);
       });
@@ -96,7 +119,8 @@ class Map extends React.Component {
     const { districts, vote } = this.props;
     return (
       <svg width={this.state.width} height={this.state.height} className='map'>
-        <g className='districts'>
+        <rect width={this.state.width} height={this.state.height} className='map__bg' />
+        <g className='districts' ref='districts' transform={this.state.transform}>
           {districts.map(d => (
             <path
               className={c('district', {
@@ -108,6 +132,7 @@ class Map extends React.Component {
               d={districtPaths[d.properties.id]}
               onMouseMove={this.syncMouseMove}
               onMouseOut={this.syncMouseOut}
+              onClick={this.syncMouseClick}
               data-id={d.properties.id}
             />
           ))}
@@ -132,12 +157,22 @@ class Map extends React.Component {
       x: e.pageX,
       y: e.pageY
     };
-    this.props.syncMouse(next);
+    this.props.syncMouseLocation(next);
   }
 
   syncMouseOut () {
     const next = { event: null };
-    this.props.syncMouse(next);
+    this.props.syncMouseLocation(next);
+  }
+
+  syncMouseClick (e) {
+    const id = e.currentTarget.getAttribute('data-id');
+    const next = {
+      event: 'click',
+      locked: true
+    };
+    this.props.syncMouseLocation(next);
+    this.props.syncSelectedState(id);
   }
 
   render () {
@@ -155,7 +190,11 @@ class Map extends React.Component {
 
 const selector = (state) => ({
   districts: state.geo.districts,
-  vote: state.vote
+  vote: state.vote,
+  selected: state.geo.selected
 });
 
-export default connect(selector, { syncMouse })(Map);
+export default connect(selector, {
+  syncMouseLocation,
+  syncSelectedState
+})(Map);
