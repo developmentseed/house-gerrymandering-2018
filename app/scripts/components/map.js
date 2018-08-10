@@ -54,16 +54,7 @@ class Map extends React.Component {
   componentDidUpdate (prevProps) {
     const { selected } = this.props;
     if (selected && selected !== prevProps.selected) {
-      const { width, height } = this.state;
-      const bounds = this.path.bounds(selected);
-      const dx = bounds[1][0] - bounds[0][0];
-      const dy = bounds[1][1] - bounds[0][1];
-      const x = (bounds[0][0] + bounds[1][0]) / 2;
-      const y = (bounds[0][1] + bounds[1][1]) / 2;
-      const scale = 0.85 / Math.max(dx / width, dy / height);
-      const translate = [width / 2 - scale * x, height / 2 - scale * y];
-      const transform = `translate(${translate})scale(${scale})`;
-
+      const transform = this.getTransform(this.path, this.state);
       select(this.refs.districts).transition()
         .duration(400)
         .attr('transform', transform)
@@ -76,18 +67,31 @@ class Map extends React.Component {
     const { districts } = this.props;
     const fc = { type: 'FeatureCollection', features: districts };
     this.projection = geoAlbersUsa().fitExtent([[0, 0], [width, height]], fc);
-
     // Cache all district paths.
     // This uses more memory but saves a ton of time on reach successive render.
-    if (!this.props.useCanvas) {
-      let path = this.path = geoPath().projection(this.projection);
-      districts.forEach(function (d) {
-        districtPaths[d.properties.id] = path(d);
-      });
-    }
-
+    const path = this.path = geoPath().projection(this.projection);
+    districts.forEach(function (d) {
+      districtPaths[d.properties.id] = path(d);
+    });
+    const transform = this.getTransform(path, { width, height });
     // Trigger a re-render
-    this.setState({ width, height });
+    this.setState({ width, height, transform });
+  }
+
+  getTransform (path, { width, height }) {
+    const { selected } = this.props;
+    if (!selected) {
+      return '';
+    }
+    const bounds = path.bounds(selected);
+    const dx = bounds[1][0] - bounds[0][0];
+    const dy = bounds[1][1] - bounds[0][1];
+    const x = (bounds[0][0] + bounds[1][0]) / 2;
+    const y = (bounds[0][1] + bounds[1][1]) / 2;
+    const scale = 0.85 / Math.max(dx / width, dy / height);
+    const translate = [width / 2 - scale * x, height / 2 - scale * y];
+    const transform = `translate(${translate})scale(${scale})`;
+    return transform;
   }
 
   renderCanvasMap () {
@@ -148,11 +152,7 @@ class Map extends React.Component {
   }
 
   getMapElement () {
-    if (this.props.useCanvas) {
-      return <canvas ref={this.map} width={this.state.width} height={this.state.height} className='map' />;
-    } else {
-      return this.renderSvgMap();
-    }
+    return this.renderSvgMap();
   }
 
   syncMouseMove (e) {
