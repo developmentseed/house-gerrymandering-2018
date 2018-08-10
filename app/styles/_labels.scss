@@ -1,0 +1,60 @@
+@mixin party-icon ($color) {
+  &:before {
+    background-color: $color;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    left: -1.5rem;
+    position: absolute;
+  }
+}
+
+.slider__cont {
+  margin: 1rem 0;
+}
+
+.legend {
+  font-weight: $semi-bold-text;
+  display: flex;
+  justify-content: center;
+}
+
+.legend__item {
+  margin: 1rem 1rem 1rem 3rem;
+  position: relative;
+}
+
+.legend__item--rep {
+  @include party-icon($red);
+}
+
+.legend__item--dem {
+  @include party-icon($blue);
+}
+
+.tooltip__cont {
+  @include box-shadow;
+  background-color: $white;
+  border-radius: .25rem;
+  margin-top: -4em;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding: 1rem;
+  position: fixed;
+}
+
+.tooltip__cont__right {
+  margin-left: 2em;
+}
+
+.tooltiop__cont__left {
+  margin-left: -2em;
+}
+
+.tooltip__title {
+  font-size: $medium-text;
+  font-weight: $bold-text;
+}

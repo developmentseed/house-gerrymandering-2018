@@ -1,46 +1,18 @@
 'use strict';
 import { combineReducers } from 'redux';
-import { feature as toGeojson } from 'topojson';
-const raw = require('../static/tl_2016_us_cd115-quantized-topo.json');
-const districts = toGeojson(raw, raw.objects.districts).features;
+import mouse from './mouse';
+import { geo, vote } from './vote';
 
-const initialNationalVote = 50;
-
-// TODO: remove this and integrate actual data
-districts.forEach(d => {
-  d.properties.threshold = 35 + Math.random() * 30;
-});
-
-const initialGeoState = Object.assign({
-  districts
-}, getNatlCount(districts, initialNationalVote));
-
-function getNatlCount (districts, vote) {
-  const natlDemCount = districts.filter(d => d.properties.threshold > vote).length;
-  const natlRepCount = districts.filter(d => d.properties.threshold < vote).length;
-  return { natlDemCount, natlRepCount };
-}
-
-function geo (state = initialGeoState, { type, next }) {
-  switch (type) {
-    case 'SET_NATL_VOTE':
-      state = Object.assign({}, state, getNatlCount(state.districts, next.vote));
-      break;
-  }
-  return state;
-}
-
-const initialVoteState = {
-  natl: initialNationalVote
+const initialAppState = {
+  width: 0,
+  height: 0
 };
 
-function vote (state = initialVoteState, { type, next }) {
-  switch (type) {
-    case 'SET_NATL_VOTE':
-      state = Object.assign({}, state, { natl: next.vote });
-      break;
+function app (state = initialAppState, { type, next }) {
+  if (type === 'set_app_dimensions') {
+    state = Object.assign({}, state, { width: next.width, height: next.height });
   }
   return state;
 }
 
-export default combineReducers({ geo, vote });
+export default combineReducers({ app, geo, vote, mouse });
