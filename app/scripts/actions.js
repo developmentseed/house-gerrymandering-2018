@@ -4,8 +4,12 @@ export function setAppDimensions ({ width, height }) {
   return { type: 'set_app_dimensions', next: { width, height } };
 }
 
-export function syncMouse (next) {
-  return { type: 'sync_mouse', next };
+export function syncMouseLocation (next) {
+  return { type: 'sync_mouse_location', next };
+}
+
+export function syncSelectedState (districtId) {
+  return { type: 'sync_selected_state', next: { districtId } };
 }
 
 export function setNatlVote (vote) {
