@@ -37,12 +37,12 @@
 .tooltip__cont {
   @include box-shadow;
   background-color: $white;
-  border-radius: 2px;
+  border-radius: .25rem;
   margin-top: -4em;
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  padding: 0.5rem;
+  padding: 1rem;
   position: fixed;
 }
 
@@ -52,4 +52,9 @@
 
 .tooltiop__cont__left {
   margin-left: -2em;
+}
+
+.tooltip__title {
+  font-size: $medium-text;
+  font-weight: $bold-text;
 }
