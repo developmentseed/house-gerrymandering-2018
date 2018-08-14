@@ -1,12 +1,16 @@
 'use strict';
 import React from 'react';
 import { connect } from 'react-redux';
-import { setAppDimensions } from '../actions';
+import { setAppDimensions, getHistoricalData } from '../actions';
 
 class App extends React.Component {
   componentDidMount () {
     this.onResize();
     window.addEventListener('resize', this.onResize.bind(this));
+  }
+
+  componentWillMount () {
+    this.props.getHistoricalData();
   }
 
   componentWillUnmount () {
@@ -27,4 +31,4 @@ class App extends React.Component {
     );
   }
 }
-export default connect(null, { setAppDimensions })(App);
+export default connect(null, { setAppDimensions, getHistoricalData })(App);

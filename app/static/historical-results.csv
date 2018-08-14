@@ -1,0 +1,418 @@
+state,district,2012_winner,2012_party,2012_pct,2014_winner,2014_party,2014_pct,2016_winner,2016_party,2016_pct
+Alabama,1,Jo Bonner,R,97.9,Bradley Byrne,R,68.2,Bradley Byrne,R,96
+Alabama,2,Martha Roby,R,63.6,Martha Roby,R,67.3,Martha Roby,R,48.8
+Alabama,3,Mike Rogers,R,64,Mike Rogers,R,66.1,Mike Rogers,R,67
+Alabama,4,Robert Aderholt,R,74,Robert Aderholt,R,98.6,Robert Aderholt,R,98.5
+Alabama,5,Mo Brooks,R,64.9,Mo Brooks,R,74.4,Mo Brooks,R,66.7
+Alabama,6,Spencer Bachus,R,71.2,Gary Palmer,R,76.2,Gary Palmer,R,74.5
+Alabama,7,Terri Sewell,D,75.8,Terri Sewell,D,98.4,Terry Sewell,D,98.4
+Alaska,0,Don Young,R,63.9,Don Young,R,51,Don Young,R,50
+Arizona,1,Ann Kirkpatrick,D,48.8,Ann Kirkpatrick,D,52.6,Tom O'Halleran,D,50.7
+Arizona,2,Ron Barber,D,50.4,Martha McSally,R,50,Martha McSally,R,57
+Arizona,3,Raul Grijalva,D,58.4,Raul Grijalva,D,55.7,Raul Grijalva,D,98.6
+Arizona,4,Paul Gosar,R,66.8,Paul Gosar,R,70,Paul Gosar,R,71.5
+Arizona,5,Matt Salmon,R,67.2,Matt Salmon,R,69.6,Andy Biggs,R,64.1
+Arizona,6,David Schweikert,R,61.3,David Schweikert,R,64.9,David Schweikert,R,62.1
+Arizona,7,Ed Pastor,D,81.7,Ruben Gallego,D,74.9,Ruben Gallego,D,75.2
+Arizona,8,Trent Franks,R,63.3,Trent Franks,R,75.8,Trent Franks,R,68.5
+Arizona,9,Kyrsten Sinema,D,48.7,Kyrsten Sinema,D,54.7,Kyrsten Sinema,D,60.9
+Arkansas,1,Rick Crawford,R,56.2,Rick Crawford,R,63.3,Rick Crawford,R,76.3
+Arkansas,2,Tim Griffin,R,55.2,French Hill,R,51.9,French Hill,R,58.3
+Arkansas,3,Steve Womack,R,75.9,Steve Womack,R,79.4,Steven Womack,R,77.3
+Arkansas,4,Tom Cotton,R,59.5,Bruce Westerman,R,53.7,Bruce Westerman,R,74.9
+California,1,Doug La Malfa,R,57.4,Doug La Malfa,R,61,Doug La Malfa,R,59.1
+California,2,Jared Huffman,D,71.2,Jared Huffman,D,75,Jared Huffman,D,76.9
+California,3,John Garamendi,D,54.2,John Garamendi,D,52.7,John Garamendi,D,59.4
+California,4,Tom McClintock,R,61.1,Tom McClintock,R,60,Tom McClintock,R,62.7
+California,5,Mike Thompson,D,74.5,Mike Thompson,D,75.7,Mike Thompson,D,76.9
+California,6,Doris Matsui,D,75.1,Doris Matsui,D,72.7,Doris Matsui,D,75.4
+California,7,Ami Bera,D,51.7,Ami Bera,D,50.4,Ami Bera,D,51.2
+California,8,Paul Cook,R,57.4,Paul Cook,R,67.6,Paul Cook,R,62.3
+California,10,Jeff Denham,R,52.7,Jeff Denham,R,56.1,Jeff Denham,R,51.7
+California,11,George Miller,D,69.7,Mark DeSaulnier,D,67.3,Mark DeSaulnier,D,72.1
+California,12,Nancy Pelosi,D,85.1,Nancy Pelosi,D,83.3,Nancy Pelosi,D,80.9
+California,13,Barbara Lee,D,86.8,Barbara Lee,D,88.5,Barbara Lee,D,90.8
+California,14,Jackie Speier,D,78.9,Jackie Speier,D,76.7,Jackie Speier,D,80.9
+California,15,Eric Swalwell,D,52.1,Eric Swalwell,D,69.8,Eric Swalwell,D,73.8
+California,16,Jim Costa,D,57.4,Jim Costa,D,50.7,Jim Costa,D,58
+California,17,Mike Honda,D,73.5,Mike Honda,D,51.8,Ro Khanna,D,61
+California,18,Anna Eshoo,D,70.5,Anna Eshoo,D,67.8,Anna Eshoo,D,71.1
+California,19,Zoe Lofgren,D,73.2,Zoe Lofgren,D,67.2,Zoe Lofgren,D,73.9
+California,20,Sam Farr,D,74.1,Sam Farr,D,75.2,Jimmy Panetta,D,70.8
+California,21,David Valadao,R,57.8,David Valadao,R,57.8,David Valadao,R,56.7
+California,22,Devin Nunes,R,61.9,Devin Nunes,R,72,Devin Nunes,R,67.6
+California,23,Kevin McCarthy,R,73.2,Kevin McCarthy,R,74.8,Kevin McCarthy,R,69.2
+California,24,Lois Capps,D,55.1,Lois Capps,D,51.9,Salud Carbajal,D,53.4
+California,25,Buck McKeon,R,54.8,Stephen Knight,R,53.3,Stephen Knight,R,53.1
+California,26,Julia Brownley,D,52.7,Julia Brownley,D,51.3,Julia Brownley,D,60.4
+California,27,Judy Chu,D,64,Judy Chu,D,59.4,Judy Chu,D,67.4
+California,28,Adam Schiff,D,76.5,Adam Schiff,D,76.5,Adam Schiff,D,78
+California,29,Tony Cardenas,D,74.1,Tony Cardenas,D,74.6,Tony Cardenas,D,74.7
+California,30,Brad Sherman,D,60.3,Brad Sherman,D,65.6,Brad Sherman,D,72.6
+California,31,Gary Miller,R,55.2,Pete Aguilar,R,51.7,Pete Aguilar,R,56.1
+California,32,Grace Napolitano,D,65.7,Grace Napolitano,D,59.7,Grace Napolitano,D,61.6
+California,33,Henry Waxman,D,54,Ted Lieu,D,59.2,Ted Lieu,D,66.4
+California,34,Xavier Becerra,D,85.6,Xavier Becerra,D,72.5,Xavier Becerra,D,77.2
+California,35,Gloria Negrete McLeod,D,55.9,Norma Torres,D,63.5,Norma Torres,D,72.4
+California,36,Raul Ruiz,D,52.9,Raul Ruiz,D,54.2,Raul Ruiz,D,62.1
+California,37,Karen Bass,D,86.4,Karen Bass,D,84.3,Karen Bass,D,81.1
+California,38,Linda Sanchez,D,67.5,Linda Sanchez,D,59.1,Linda Sanchez,D,70.5
+California,39,Ed Royce,R,57.8,Ed Royce,R,68.5,Ed Royce,R,57.2
+California,40,Lucille Roybal-Allard,D,58.9,Lucille Roybal-Allard,D,61.2,Lucille Roybal-Allard,D,81.2
+California,41,Mark Takano,D,59,Mark Takano,D,56.6,Mark Takano,D,65
+California,42,Ken Calvert,R,60.6,Ken Calvert,R,65.7,Ken Calvert,R,58.8
+California,43,Maxine Waters,D,71.2,Maxine Waters,D,71,Maxine Waters,D,76.1
+California,44,Janice Hahn,D,60.2,Janice Hahn,D,86.7,Nanette Barragan,D,52.2
+California,45,John Campbell,R,58.5,Mimi Walters,R,65.1,Mimi Walters,R,58.6
+California,46,Loretta Sanchez,D,63.9,Loretta Sanchez,D,59.7,Lou Correa,D,70
+California,47,Alan Lowenthal,D,56.6,Alan Lowenthal,D,56,Alan Lowenthal,D,63.7
+California,48,Dana Rohrabacher,R,61,Dana Rohrabacher,R,64.1,Dana Rohrabacher,R,58.3
+California,49,Darrell Issa,R,58.2,Darrell Issa,R,60.2,Darrell Issa,R,50.3
+California,50,Duncan Hunter,R,67.7,Duncan Hunter,R,71.2,Duncan Hunter,R,63.5
+California,51,Juan Vargas,D,71.5,Juan Vargas,D,68.8,Juan Vargas,D,72.8
+California,52,Scott Peters,D,51.2,Scott Peters,D,51.6,Scott Peters,D,56.5
+California,53,Susan Davis,D,61.4,Susan Davis,D,58.8,Susan Davis,D,67
+California,9,Jerry McNerney,D,55.6,Jerry McNerney,D,52.4,Jerry McNerney,D,57.4
+Colorado,1,Diana DeGette,D,68.2,Diana DeGette,D,65.8,Diana DeGette,D,67.9
+Colorado,2,Jared Polis,D,55.7,Jared Polis,,56.7,Jared Polis,D,56.9
+Colorado,3,Scott Tipton,R,53.4,Scott Tipton,R,58,Scott Tipton,R,54.6
+Colorado,4,Cory Gardner,R,58.4,Ken Buck,R,64.7,Ken Buck,R,63.5
+Colorado,5,Doug Lamborn,R,65,Doug Lamborn,R,59.8,Doug Lamborn,R,62.3
+Colorado,6,Mike Coffman,R,47.8,Mike Coffman,R,51.9,Mike Coffman,R,50.9
+Colorado,7,Ed Perlmutter,D,53.5,Ed Perlmutter,D,55.1,Ed Perlmutter,D,55.2
+Connecticut,1,John Larson,D,69.7,John Larson,D,61.4,John Larson,D,64.1
+Connecticut,2,Joe Courtney,D,68.2,Joe Courtney,D,61.6,Joe Courtney,D,63.2
+Connecticut,3,Rosa L. DeLauro,D,74.7,Rosa L. DeLauro,D,66.9,Rosa L. DeLauro,D,69
+Connecticut,4,Jim Himes,D,60,Jim Himes,D,53.8,Jim Himes,D,59.9
+Connecticut,5,Elizabeth Esty,D,51.3,Elizabeth Esty,D,53.2,Elizabeth Esty,D,58
+Delaware,0,John Carney Jr.,D,64.7,John Carney Jr.,D,59.3,Lisa Rochester,D,56
+Florida,1,,,,,,,Matt Gaetz,R,69
+Florida,2,,,,,,,Neal Dunn,R,67
+Florida,3,,,,,,,Ted Yoho,R,57
+Florida,4,,,,,,,John Rutherford,R,70
+Florida,5,,,,,,,Al Lawson,D,64
+Florida,6,,,,,,,Ron DeSantis,R,59
+Florida,7,,,,,,,Stephanie Murphy,D,52
+Florida,8,,,,,,,Bill Posey,R,63
+Florida,9,,,,,,,Darren Soto,D,58
+Florida,10,,,,,,,Val Demings,D,65
+Florida,11,,,,,,,Daniel Webster,R,65
+Florida,12,,,,,,,Gus Bilirakis,R,69
+Florida,13,,,,,,,Charlie Crist,D,52
+Florida,14,,,,,,,Kathy Castor,D,62
+Florida,15,,,,,,,Dennis Ross,R,58
+Florida,16,,,,,,,Vern Buchanan,R,60
+Florida,17,,,,,,,Tom Rooney,R,62
+Florida,18,,,,,,,Brian Mast,R,54
+Florida,19,,,,,,,Francis Rooney,R,66
+Florida,20,,,,,,,Alcee Hastings,D,80
+Florida,21,,,,,,,Lois Frankel,D,63
+Florida,22,,,,,,,Ted Deutch,D,59
+Florida,23,,,,,,,Debbie Wasserman Schultz,D,57
+Florida,24,,,,,,,Frederica WIlson,D,100
+Florida,25,,,,,,,Mario Diaz-Balart,R,62
+Florida,26,,,,,,,Carlos Curbelo,R,53
+Florida,27,,,,,,,Ileana Ros-Lehtinen,R,55
+Georgia,1,Jack Kingston,R,63,Earl Carter,R,60.9,Earl Carter,R,99.6
+Georgia,2,Sanford Bishop,D,63.8,Sanford Bishop,D,59.2,Sanford Bishop,D,61.2
+Georgia,3,Lynn Westmoreland,R,100,Lynn Westmoreland,R,100,Drew Ferguson,R,68.3
+Georgia,4,Henry Johnson,D,73.6,Henry Johnson,D,100,Henry Johnson,D,75.7
+Georgia,5,John Lewis,D,84.4,John Lewis,D,100,John Lewis,D,84.4
+Georgia,6,Tom Price,R,64.5,Tom Price,R,66,Tom Price,R,61.7
+Georgia,7,Rob Woodall,R,62.2,Rob Woodall,R,65.4,Rob Woodall,R,60.4
+Georgia,8,Austin Scott,R,100,Austin Scott,R,100,Austin Scott,R,67.6
+Georgia,9,Doug Collins,R,76.2,Doug Collins,R,80.7,Doug Collins,R,100
+Georgia,10,Paul Broun,R,100,Jody Hice,R,66.5,Jody Hice,R,100
+Georgia,11,Phil Gingrey,R,68.6,Barry Loudermilk,R,100,Barry Loudermilk,R,67.4
+Georgia,12,John Barrow,D,53.7,Rick Allen,R,54.8,Rick Allen,R,61.6
+Georgia,13,David Scott,D,71.7,David Scott,D,100,David Scott,D,100
+Georgia,14,Tom Graves,R,73,Tom Graves,R,100,Tom Graves,R,100
+Hawaii,1,Colleen Hanabusa,D,53.5,Mark Takai,D,51.2,Colleen Hanabusa,D,71.9
+Hawaii,2,Tulsi Gabbard,D,76.9,Tulsi Gabbard,D,75.8,Tulsi Gabbard,D,81.2
+Idaho,1,Raul R. Labrador,R,63,Raul R. Labrador,R,65,Raul R. Labrador,R,68.2
+Idaho,2,Mike Simpson,R,65.1,Mike Simpson,R,61.4,Mike Simpson,R,62.9
+Illinois,1,Bobby Rush,D,73.8,Bobby Rush,D,73.1,Bobby Rush,D,74.1
+Illinois,2,Jesse Jackson Jr.,D,63.3,Robin Kelly,D,78.5,Robin Kelly,D,79.8
+Illinois,3,Daniel Lipinski,D,68.5,Daniel Lipinski,D,64.6,Daniel Lipinski,D,100
+Illinois,4,Luis Gutierrez,D,83,Luis Gutierrez,D,78.1,Luis Gutierrez,D,75.2
+Illinois,5,Mike Quigley,D,65.7,Mike Quigley,D,63.2,Mike Quigley,D,67.8
+Illinois,6,Peter Roskam,R,59.2,Peter Roskam,R,67.1,Peter Roskam,R,59.2
+Illinois,7,Danny Davis,D,84.6,Danny Davis,D,85.1,Danny Davis,D,84.2
+Illinois,8,Tammy Duckworth,D,54.7,Tammy Duckworth,D,55.7,Raja Krishnamoorthi,D,58.3
+Illinois,9,Jan Schakowsky,D,66.3,Jan Schakowsky,D,66.1,Jan Schakowsky,D,66.5
+Illinois,10,Brad Schneider,D,50.6,Bob Dold Jr.,R,51.3,Brad Schneider,D,53.7
+Illinois,11,Bill Foster,D,58.6,Bill Foster,D,53.5,Bill Foster,D,60.4
+Illinois,12,William Enyart,D,51.7,Mike Bost,R,52.5,Mike Bost,R,54.3
+Illinois,13,Rodney Davis,R,46.5,Rodney Davis,R,58.7,Rodney Davis,R,59.7
+Illinois,14,Randy Hultgren,R,58.8,Randy Hultgren,R,65.4,Randy Hultgren,R,59.3
+Illinois,15,John Shimkus,R,68.6,John Shimkus,R,74.9,John Shimkus,R,100
+Illinois,16,Adam Kinzinger,R,61.8,Adam Kinzinger,R,70.6,Adam Kinzinger,R,99.9
+Illinois,17,Cheri Bustos,D,53.3,Cheri Bustos,D,55.5,Cheri Bustos,D,60.3
+Illinois,18,Aaron Schock,R,74.2,Aaron Schock,R,74.7,Darin LaHood,R,72.1
+Indiana,1,Peter Visclosky,D,67.3,Peter Visclosky,D,60.8,Peter Visclosky,D,81.5
+Indiana,2,Jackie Walorski,R,49,Jackie Walorski,R,58.9,Jackie Walorski,R,59.3
+Indiana,3,Marlin Stutzman,R,67,Marlin Stutzman,R,65.8,Jim Banks,R,70.1
+Indiana,4,Todd Rokita,R,62,Todd Rokita,R,66.9,Todd Rokita,R,64.6
+Indiana,5,Susan Brooks,R,58.4,Susan Brooks,R,65.2,Susan Brooks,R,61.5
+Indiana,6,Luke Messer,R,59.1,Luke Messer,R,65.9,Luke Messer,R,69.1
+Indiana,7,Andre Carson,D,62.9,Andre Carson,D,54.7,Andre Carson,D,60
+Indiana,8,Larry Bucshon,R,53.4,Larry Bucshon,R,60.3,Larry Bucshon,R,63.7
+Indiana,9,Todd Young,R,55.4,Todd Young,R,62.2,Trey Hollingsworth,R,54.1
+Iowa,1,Bruce Braley,D,56.9,Rod Blum,R,51.1,Rod Blum,R,53.7
+Iowa,2,Dave Loebsack,D,55.6,Dave Loebsack,D,52.5,Dave Loebsack,D,53.7
+Iowa,3,Tom Latham,R,52.3,David Young,R,52.8,David Young,R,53.4
+Iowa,4,Steve King,R,53,Steve King,R,61.6,Steve King,R,61.2
+Kansas,1,Tim Huelskamp,R,100,Tim Huelskamp,R,68,Roger Marshall,R,65.9
+Kansas,2,Lynn Jenkins,R,57,Lynn Jenkins,R,57,Lynn Jenkins,R,60.9
+Kansas,3,Kevin Yoder,R,68.5,Kevin Yoder,R,60,Kevin Yoder,R,51.3
+Kansas,4,Mike Pompeo,R,62.2,Mike Pompeo,R,67,Mike Pompeo,R,60.7
+Kentucky,1,Ed Whitfield,R,69.6,Ed Whitfield,R,73.1,James Comer,R,72.6
+Kentucky,2,Brett Gurthie,R,64.3,Brett Gurthie,R,69.2,Brett Gurthie,R,100
+Kentucky,3,John Yarmuth,D,64,John Yarmuth,D,63.5,John Yarmuth,D,63.5
+Kentucky,4,Thomas Massie,R,62.1,Thomas Massie,R,67.7,Thomas Massie,R,71.3
+Kentucky,5,Hal Rogers,R,77.9,Hal Rogers,R,78.3,Hal Rogers,R,100
+Kentucky,6,Andy Barr,R,50.6,Andy Barr,R,60,Andy Barr,R,61.1
+Louisiana,1,Steve Scalise,R,66.6,Steve Scalise,R,77.6,Steve Scalise,R,74.6
+Louisiana,2,Cedric Richmond,D,55.2,Cedric Richmond,D,68.7,Cedric Richmond,D,69.8
+Louisiana,3,Charles Boustany Jr.,R,60.9,Charles Boustany Jr.,R,78.7,Clay Higgins,R,56.1
+Louisiana,4,John Fleming,R,75.3,John Fleming,R,73.4,Mike Johnson,R,65.2
+Louisiana,5,Rodney Alexander,R,77.8,Ralph Abraham,R,64.2,Ralph Abraham,R,81.6
+Louisiana,6,Bill Cassidy,R,79.4,Garret Graves,R,62.4,Garret Graves,R,62.7
+Maine,1,Chellie Pingree,D,62.1,Chellie Pingree,D,58,Chellie Pingree,D,58
+Maine,2,Mike Michaud,D,55.7,Bruce Poliquin,R,45.2,Bruce Poliquin,R,54.8
+Maryland,1,Andy Harris,R,63.4,Andy Harris,R,70.5,Andy Harris,R,67
+Maryland,2,Dutch Ruppersberger,D,65.6,Dutch Ruppersberger,D,61.3,Dutch Ruppersberger,D,62.1
+Maryland,3,John Sarbanes,D,66.8,John Sarbanes,D,59.6,John Sarbanes,D,63.2
+Maryland,4,Donna Edwards,D,77.2,Donna Edwards,D,70.2,Anthony Brown,D,74.1
+Maryland,5,Steny Hoyer,D,69.4,Steny Hoyer,D,64,Steny Hoyer,D,67.4
+Maryland,6,John Delaney,D,58.8,John Delaney,D,49.7,John Delaney,D,56
+Maryland,7,Elijah Cummings,D,76.5,Elijah Cummings,D,69.9,Elijah Cummings,D,74.9
+Maryland,8,Chris Van Hollen,D,63.4,Chris Van Hollen,D,60.2,Jamie Raskin,D,60.6
+Massachusetts,1,Richard Neal,D,77.8,Richard Neal,D,73.8,Richard Neal,D,73.3
+Massachusetts,2,Jim McGovern,D,75.6,Jim McGovern,D,71.9,Jim McGovern,D,98.2
+Massachusetts,3,Niki Tsongas,D,63.3,Niki Tsongas,D,60.3,Niki Tsongas,D,68.7
+Massachusetts,4,Joseph Kennedy III,D,59.3,Joseph Kennedy III,D,72.1,Joseph Kennedy III,D,70.1
+Massachusetts,5,Ed Markey,D,70.7,Katherine Clark,D,71,Katherine Clark,D,98.6
+Massachusetts,6,John Tierney,D,46.4,Seth Moulton,D,53.6,Seth Moulton,D,98.4
+Massachusetts,7,Michael Capuano,D,73.9,Michael Capuano,D,80.7,Michael Capuano,D,98.6
+Massachusetts,8,Stephen Lynch,D,71,Stephen Lynch,D,76.6,Stephen Lynch,D,72.4
+Massachusetts,9,William Keating,D,55.1,William Keating,D,53.1,William Keating,D,55.7
+Michigan,1,Dan Benishek,R,48.1,Dan Benishek,R,52.1,Jack Bergman,R,54.9
+Michigan,2,Bill Huizenga,R,61.2,Bill Huizenga,R,63.6,Bill Huizenga,R,62.6
+Michigan,3,Justin Amash,R,52.6,Justin Amash,R,57.9,Justin Amash,R,59.5
+Michigan,4,Dave Camp,R,63.1,John Moolenaar,R,56.5,John Moolenaar,R,61.6
+Michigan,5,Dan Kildee,D,65,Dan Kildee,D,66.7,Dan Kildee ,D,61.2
+Michigan,6,Fred Upton,R,54.6,Fred Upton,R,55.9,Fred Upton,R,58.6
+Michigan,7,Tim Walberg,R,53.3,Tim Walberg,R,53.5,Tim Walberg,R,55.1
+Michigan,8,Mike Rogers,R,58.6,Mike Bishop,R,54.6,Mike Bishop,R,56
+Michigan,9,Sander Levin,D,61.9,Sander Levin,D,60.4,Sander Levin,D,57.9
+Michigan,10,Candice Miller,R,68.8,Candice Miller,R,68.7,Paul Mitchell,R,63.1
+Michigan,11,Kerry Bentivolio,R,50.8,Dave Trott,R,56.2,David Trott,R,52.9
+Michigan,12,John D. Dingell,D,67.9,Debbie Dingell,D,65,Debbie Dingell,D,64.3
+Michigan,13,"John Conyers, Jr.",D,82.8,"John Conyers, Jr.",D,79.5,"John Conyers, Jr.",D,77.1
+Michigan,14,Gary Peters,D,82.3,Brenda Lawrence,D,77.8,Brenda Lawrence,D,78.5
+Minnesota,1,Tim Walz,D,57.5,Tim Walz,D,54.2,Tim Walz,D,50.3
+Minnesota,2,John Kline,R,54,John Kline,R,56,Jason Lewis,R,47
+Minnesota,3,Erik Paulsen,R,58.1,Erik Paulsen,R,62.1,Erik Paulsen,R,56.7
+Minnesota,4,Betty McCollum,D,62.3,Betty McCollum,D,61.2,Betty McCollum,D,57.8
+Minnesota,5,Keith Ellison,D,74.5,Keith Ellison,D,70.8,Keith Ellison,D,69.1
+Minnesota,6,Michele Bachmann,R,50.5,Tom Emmer,R,56.3,Tom Emmer ,R,65.6
+Minnesota,7,Collin Peterson,D,60.4,Collin Peterson,D,54.2,Collin Peterson,D,52.5
+Minnesota,8,Rick Nolan,D,54.3,Rick Nolan,D,48.5,Rick Nolan,D,50.2
+Mississippi,1,Alan Nunnelee,R,60.4,Alan Nunnelee,R,67.9,Trent Kelly,R,68.7
+Mississippi,2,Bennie Thompson,D,67.1,Bennie Thompson,D,67.7,Bennie Thompson,D,67.1
+Mississippi,3,Gregg Harper,R,80,Gregg Harper,R,68.9,Gregg Harper,R,66.2
+Mississippi,4,Steven Palazzo,R,64.1,Steven Palazzo,R,69.9,Steven Palazzo,R,65
+Missouri,1,William Lacy Clay,D,78.7,William Lacy Clay,D,73,William Lacy Clay,D,75.5
+Missouri,2,Ann Wagner,R,60.1,Ann Wagner,R,64.1,Ann Wagner,R,58.5
+Missouri,3,Blaine Luetkemeyer,R,63.5,Blaine Luetkemeyer,R,68.3,Blaine Luetkemeyer,R,67.8
+Missouri,4,Vicky Hartzler,R,60.3,Vicky Hartzler,R,68.1,Vicky Hartzler,R,67.8
+Missouri,5,Emanuel Cleaver,D,60.5,Emanuel Cleaver,D,51.6,Emanuel Cleaver,D,58.8
+Missouri,6,Sam Graves,R,65,Sam Graves,R,66.7,Sam Graves,R,68
+Missouri,7,Billy Long,R,63.9,Billy Long,R,63.5,Billy Long,R,67.5
+Missouri,8,Jo Ann Emerson,R,71.9,Jason Smith,R,66.7,Jason Smith,R,74.4
+Montana,0,Steve Daines,R,53.3,Ryan Zinke,R,55.4,Ryan Zinke,R,56.2
+Nebraska,1,Jeff Fortenberry,R,68.3,Jeff Fortenberry,R,68.8,Jeff Fortenberry,R,69.5
+Nebraska,2,Lee Terry,R,50.8,Brad Ashford,D,49,Don Bacon,R,48.9
+Nebraska,3,Adrian Smith,R,74.2,Adrian Smith,R,75.4,Adrian Smith,R,100
+Nevada,1,Dina Titus,D,63.6,Dina Titus,D,56.8,Dina Titus,D,61.9
+Nevada,2,Mark Amodei,R,57.6,Mark Amodei,R,65.7,Mark Amodei,R,58.3
+Nevada,3,Joe Heck,R,50.4,Joe Heck,R,60.8,Jacky Rosen,D,47.2
+Nevada,4,Steven Horsford,D,50.1,Cresent Hardy,R,48.5,Ruben Kihuen,D,48.5
+New Hampshire,1,Carol Shea-Porter,D,49.8,Frank Guinta,R,51.7,Carol Shea-Porter,D,44.3
+New Hampshire,2,Ann McLane Kuster,D,50.2,Annie Kuster ,D,54.9,Annie Kuster ,D,49.8
+New Jersey,1,Rob Andrews,D,68.2,Donald Norcross,D,57.4,Donald Norcross,D,60
+New Jersey,2,Frank LoBiondo,R,57.7,Frank LoBiondo,R,61.5,Frank LoBiondo,R,59.2
+New Jersey,3,Jon Runyan,R,53.7,Tom MacArthur,R,54,Tom MacArthur	R,R,59.3
+New Jersey,4,Chris Smith,R,63.7,Chris Smith,R,68,Chris Smith,R,63.7
+New Jersey,5,Scott Garrett ,R,55,Scott Garrett,R,55.4,Josh Gottheimer,D,51.1
+New Jersey,6,Frank Pallone ,D,63.3,Frank Pallone,D,59.9,Frank Pallone,D,63.7
+New Jersey,7,Leonard Lance ,R,57.2,Leonard Lance,R,59.3,Leonard Lance ,R,54.1
+New Jersey,8,Albio Sires,D,78,Albio Sires,D,77.4,Albio Sires,D,77
+New Jersey,9,Bill Pascrell,D,74,Bill Pascrell,D,68.5,Bill Pascrell,D,69.7
+New Jersey,10,Donald Payne Jr.,D,87.6,Donald Payne Jr.,D,85.4,Donald Payne Jr.	D,D,85.7
+New Jersey,11,Rodney Frelinghuysen,R,58.8,Rodney Frelinghuysen,R,62.6,Rodney Frelinghuysen,R,58
+New Jersey,12,"Rush D. Holt, Jr.",D,69.2,Bonnie Watson Coleman,D,61,Bonnie Watson Coleman,D,62.9
+New Mexico,1,Michelle Lujan Grisham,D,59.1,Michelle Lujan Grisham,D,58.6,Michelle Lujan Grisham,D,65.1
+New Mexico,2,Steve Pearce,R,59.1,Steve Pearce,R,64.4,Steve Pearce,R,62.70%
+New Mexico,3,Ben Ray Lujan,D,63.1,Ben Ray Lujan,D,61.5,Ben Ray Lujan,D,62.4
+New York,1,Tim Bishop,D,49.3,Lee Zeldin,R,53.2,Lee Zeldin ,R,58.2
+New York,2,Peter T. King,R,52.2,Peter King,R,64.9,Peter King,R,62.1
+New York,3,Steve Israel,D,51.5,Steve Israel,D,52.6,Tom Suozzi,D,53
+New York,4,Carolyn McCarthy,D,54.7,Kathleen M. Rice,D,51.2,Kathleen M. Rice,D,59.6
+New York,5,Gregory Meeks,D,74.8,Gregory Meeks,D,80.2,Gregory Meeks,D,85.5
+New York,6,Grace Meng,D,59.6,Grace Meng,D,71.6,Grace Meng,D,72.1
+New York,7,Nydia Velazquez,D,79,Nydia Velazquez,D,82.6,Nydia Velazquez,D,90.8
+New York,8,Hakeem Jeffries,D,77.9,Hakeem Jeffries,D,81.2,Hakeem Jeffries,D,93.3
+New York,9,Yvette Clarke,D,77.9,Yvette Clarke,D,81.4,Yvette Clarke,D,92.4
+New York,10,Jerrold Nadler,D,69.8,Jerrold Nadler,D,78.7,Jerrold Nadler,D,78.1
+New York,11,Michael Grimm,R,48,Michael Grimm,R,53.1,Daniel Donovan,R,61.6
+New York,12,Carolyn Maloney,D,72.1,Carolyn Maloney,D,77.2,Carolyn Maloney,D,83.2
+New York,13,Carolyn Maloney,D,75,Charles Rangel,D,74.5,Adriano Espaillat,D,88.8
+New York,14,Joseph Crowley,D,70.6,Joseph Crowley,D,74.7,Joseph Crowley,D,82.9
+New York,15,Jose E. Serrano,D,85.5,Jose Serrano,D,89.6,Jose Serrano,D,95.3
+New York,16,Eliot Engel ,D,66.4,Eliot Engel,D,71.9,Eliot Engel,D,94.7
+New York,17,Nita Lowey,D,57.6,Nita Lowey,D,54,Nita Lowey,D,100
+New York,18,Sean Maloney,D,48.7,Sean Maloney,D,47.7,Sean Maloney,D,55.6
+New York,19,Chris Gibson,R,49,Chris Gibson,R,62.6,John Faso,R,54.1
+New York,20,Paul Tonko,D,64,Paul Tonko,D,59,Paul Tonko,D,67.9
+New York,21,Bill Owens,D,47.1,Elise Stefanik,R,53,Elise Stefanik,R,65.3
+New York,22,Richard Hanna,R,56.4,Richard Hanna,R,74,Claudia Tenney,R,46.5
+New York,23,Tom Reed,R,49.2,Tom Reed,R,57.8,Tom Reed,R,57.6
+New York,24,Dan Maffei,D,47.1,John Katko,R,58.2,John Katko,R,60.6
+New York,25,Louise Slaughter,D,55.7,Louise Slaughter,D,49.3,Louise Slaughter,D,56.2
+New York,26,Brian Higgins,D,69.7,Brian Higgins,D,65.1,Brian Higgins,D,74.6
+New York,27,Chris Collins,R,48.9,Chris Collins,R,67.2,Chris Collins,R,67.2
+North Carolina,1,,,,,,,G.K. Butterfield ,D,68.6
+North Carolina,10,,,,,,,Patrick McHenry,R,63.1
+North Carolina,11,,,,,,,Mark Meadows,R,64.1
+North Carolina,12,,,,,,,Alma Adams,D,67
+North Carolina,13,,,,,,,Ted Budd,R,56.1
+North Carolina,2,,,,,,,George Holding,R,56.7
+North Carolina,3,,,,,,,Walter Jones,R,67.2
+North Carolina,4,,,,,,,David Price,D,68.2
+North Carolina,5,,,,,,,Virginia Foxx,R,58.4
+North Carolina,6,,,,,,,Mark Walker ,R,59.2
+North Carolina,7,,,,,,,David Rouzer,R,60.9
+North Carolina,8,,,,,,,Richard Hudson ,R,58.8
+North Carolina,9,,,,,,,Robert Pittenger,R,58.2
+North Dakota,0,Kevin Cramer,R,54.9,Kevin Cramer,R,55.5,Kevin Cramer,R,69.1
+Ohio,1,Steve Chabot,R,57.7,Steve Chabot,R,63.2,Steve Chabot,R,59.2
+Ohio,2,Brad Wenstrup,R,58.6,Brad Wenstrup,R,66,Brad Wenstrup,R,65
+Ohio,3,Joyce Beatty,D,68.3,Joyce Beatty,D,64.1,Joyce Beatty,D,68.6
+Ohio,4,Jim Jordan,R,58.4,Jim Jordan,R,67.7,Jim Jordan,R,68
+Ohio,5,Bob Latta,R,57.3,Bob Latta,R,66.5,Bob Latta,R,70.9
+Ohio,6,Bill Johnson,R,53.3,Bill Johnson,R,58.2,Bill Johnson,R,70.7
+Ohio,7,Bob Gibbs,R,56.4,Bob Gibbs,R,100,Bob Gibbs,R,64
+Ohio,8,John Boehner,R,99.2,John Boehner,R,67.2,Warren Davidson,R,68.8
+Ohio,9,Marcy Kaptur ,D,73,Marcy Kaptur ,D,67.7,Marcy Kaptur ,D,68.7
+Ohio,10,Mike Turner,R,59.5,Mike Turner,R,65.2,Mike Turner,R,64.1
+Ohio,11,Marcia L. Fudge ,D,100,Marcia L. Fudge ,D,79.5,Marcia L. Fudge ,D,80.3
+Ohio,12,Patrick J. Tiberi,R,63.5,Patrick J. Tiberi,R,68.1,Patrick J. Tiberi,R,66.6
+Ohio,13,Tim Ryan,D,72.8,Tim Ryan,D,68.5,Tim Ryan,D,67.7
+Ohio,14,David Joyce,R,54,David Joyce,R,63.3,David Joyce,R,62.6
+Ohio,15,Steve Stivers,R,61.6,Steve Stivers,R,66,Steve Stivers,R,66.2
+Ohio,16,James B. Renacci,R,52,James B. Renacci,R,63.7,James B. Renacci,R,65.3
+Oklahoma,1,Jim Bridenstine,R,63.5,Jim Bridenstine,R,0,Jim Bridenstine,R,100
+Oklahoma,2,Markwayne Mullin,R,57.3,Markwayne Mullin,R,70,Markwayne Mullin,R,70.6
+Oklahoma,3,Frank Lucas,R,75.3,Frank Lucas,R,77.9,Frank Lucas,R,78.3
+Oklahoma,4,Tom Cole ,R,67.9,Tom Cole ,R,70.8,Tom Cole ,R,69.6
+Oklahoma,5,James Lankford,R,58.7,Steve Russell,R,60.1,Steve Russell,R,57.1
+Oregon,1,Suzanne Bonamici,D,59.6,Suzanne Bonamici,D,57.3,Suzanne Bonamici,D,59.6
+Oregon,2,Greg Walden,R,68.6,Greg Walden,R,70.4,Greg Walden,R,71.7
+Oregon,3,Earl Blumenauer,D,74.5,Earl Blumenauer,D,72.3,Earl Blumenauer,D,71.8
+Oregon,4,Peter DeFazio,D,59.1,Peter DeFazio,D,58.6,Peter DeFazio,D,55.5
+Oregon,5,Kurt Schrader,D,54,Kurt Schrader,D,53.7,Kurt Schrader,D,53.5
+Rhode Island,1,David Cicilline,D,53,David Cicilline,D,59.5,David Cicilline,D,64.5
+Rhode Island,2,James R. Langevin,D,55.7,James R. Langevin,D,62.2,James R. Langevin,D,58.1
+South Carolina,1,Timothy Scott ,R,62,Mark Sanford,R,93.4,Mark Sanford,R,58.6
+South Carolina,2,Joe Wilson,R,96.3,Joe Wilson,R,62.4,Joe Wilson,R,60.2
+South Carolina,3,Jeff Duncan,R,66.5,Jeff Duncan,R,71.2,Jeff Duncan,R,72.8
+South Carolina,4,Trey Gowdy,R,64.9,Trey Gowdy,R,84.8,Trey Gowdy,R,67.2
+South Carolina,5,Mick Mulvaney,R,59.2,Mick Mulvaney,R,60.6,Mick Mulvaney,R,55.5
+South Carolina,6,James Clyburn,D,93.6,James Clyburn,D,72.5,James Clyburn,D,70.1
+South Carolina,7,Tom Rice,R,55.5,Tom Rice,R,60,Tom Rice,R,61
+South Dakota,0,Kristi Noem,R,57.4,Kristi Noem,R,66.5,Kristi Noem,R,64.1
+Tennessee,1,Phil Roe ,R,76,Phil Roe ,R,82.8,Phil Roe ,R,78.4
+Tennessee,2,"John Duncan, Jr.",R,74.4,"John Duncan, Jr.",R,72.5,"John Duncan, Jr.",R,75.6
+Tennessee,3,Charles Fleischmann,R,61.5,Charles Fleischmann,R,62.4,Charles Fleischmann,R,66.4
+Tennessee,4,Scott DesJarlais,R,55.8,Scott DesJarlais,R,58.3,Scott DesJarlais,R,65
+Tennessee,5,Jim Cooper,D,65.2,Jim Cooper,D,62.3,Jim Cooper,D,62.6
+Tennessee,6,Diane Black,R,76.4,Diane Black,R,71.1,Diane Black,R,71.1
+Tennessee,7,Marsha Blackburn,R,71,Marsha Blackburn,R,70,Marsha Blackburn,R,72.2
+Tennessee,8,Stephen Lee Fincher,R,68.3,Stephen Lee Fincher,R,70.8,Stephen Lee Fincher,R,68.8
+Tennessee,9,Steve Cohen,D,75.1,Steve Cohen,D,75,Steve Cohen,D,78.7
+Texas,1,Louie Gohmert,R,71.4,Louie Gohmert,R,77.5,Louie Gohmert,R,73.9
+Texas,2,Ted Poe,R,64.8,Ted Poe,R,67.9,Ted Poe,R,60.6
+Texas,3,Sam Johnson,R,100,Sam Johnson,R,82,Sam Johnson,R,61.2
+Texas,4,Ralph M. Hall ,R,73,John Ratcliffe,R,100,John Ratcliffe,R,88
+Texas,5,Jeb Hensarling,R,64.4,Jeb Hensarling,R,85.4,Jeb Hensarling,R,80.6
+Texas,6,Joe Barton,R,58,Joe Barton,R,61.1,Joe Barton,R,61.1
+Texas,7,John Culberson,R,60.8,John Culberson,R,63.3,John Culberson,R,56.2
+Texas,8,Kevin Brady,R,77.3,Kevin Brady,R,89.3,Kevin Brady,R,100
+Texas,9,Al Green,D,78.5,Al Green,D,90.8,Al Green,D,80.6
+Texas,10,Michael McCaul,R,60.5,Michael McCaul,R,62.2,Michael McCaul,R,57.3
+Texas,11,Mike Conaway,R,78.6,Mike Conaway,R,90.3,Mike Conaway,R,89.5
+Texas,12,Kay Granger,R,70.9,Kay Granger,R,71.3,Kay Granger,R,69.4
+Texas,13,Mac Thornberry,R,91,Mac Thornberry,R,84.3,Mac Thornberry,R,90
+Texas,14,Randy Weber,R,53.5,Randy Weber,R,61.9,Randy Weber,R,61.9
+Texas,15,Ruben Hinojosa,D,60.9,Ruben Hinojosa,D,54,Vicente Gonzalez,D,57.3
+Texas,16,Beto O'Rourke,D,65.4,Beto O'Rourke,D,67.5,Beto O'Rourke,D,85.7
+Texas,17,Bill Flores,R,79.9,Bill Flores,R,64.6,Bill Flores,R,60.8
+Texas,18,Sheila Jackson Lee,D,75,Sheila Jackson Lee,D,71.8,Sheila Jackson Lee,D,73.5
+Texas,19,Randy Neugebauer,R,85,Randy Neugebauer,R,77.1,Jodey Arrington,R,86.7
+Texas,20,Joaquin Castro,D,63.9,Joaquin Castro,D,75.7,Joaquin Castro,D,79.7
+Texas,21,Lamar Smith,R,60.5,Lamar Smith,R,71.8,Lamar Smith,R,57
+Texas,22,Pete Olson,R,64,Pete Olson,R,66.5,Pete Olson,R,59.5
+Texas,23,Pete Gallego,D,50.3,Will Hurd,R,49.8,Will Hurd,R,48.3
+Texas,24,Kenny Marchant ,R,61,Kenny Marchant ,R,65,Kenny Marchant ,R,56.2
+Texas,25,Roger Williams,R,58.4,Roger Williams,R,60.2,Roger Williams,R,58.3
+Texas,26,Michael Burgess,R,68.3,Michael Burgess,R,82.7,Michael Burgess,R,66.4
+Texas,27,Blake Farenthold,R,56.8,Blake Farenthold,R,63.6,Blake Farenthold,R,61.7
+Texas,28,Henry Cuellar,D,67.9,Henry Cuellar,D,82.1,Henry Cuellar,D,66.2
+Texas,29,Gene Green,D,90,Gene Green,D,89.5,Gene Green,D,72.5
+Texas,30,Eddie Bernice Johnson,D,78.8,Eddie Bernice Johnson,D,87.9,Eddie Bernice Johnson,D,77.9
+Texas,31,John Carter ,R,61.3,John Carter ,R,64,John Carter ,R,58.4
+Texas,32,Pete Sessions,R,58.3,Pete Sessions,R,61.8,Pete Sessions,R,71.1
+Texas,33,Marc Veasey,D,72.5,Marc Veasey,D,86.5,Marc Veasey,D,73.7
+Texas,34,Filemon Vela,D,61.9,Filemon Vela,D,59.5,Filemon Vela,D,62.7
+Texas,35,Lloyd Doggett,D,63.9,Lloyd Doggett,D,62.5,Lloyd Doggett,D,63.1
+Texas,36,Steve Stockman,R,70.7,Brian Babin,R,76,Brian Babin,R,88.6
+Utah,1,Rob Bishop,R,71.5,Rob Bishop,R,64.8,Rob Bishop,R,65.9
+Utah,2,Chris Stewart,R,62.2,Chris Stewart,R,60.9,Chris Stewart,R,61.6
+Utah,3,Jason Chaffetz,R,76.6,Jason Chaffetz,R,72.3,Jason Chaffetz,R,73.5
+Utah,4,Jim Matheson,D,48.8,Mia Love,R,50.9,Mia Love,R,53.8
+Vermont,0,Peter Welch,D,72,Peter Welch,D,64.4,Peter Welch,D,90
+Virginia,1,,,,,,,Rob Wittman,R,59.9
+Virginia,2,,,,,,,Scott Taylor,R,61.3
+Virginia,3,,,,,,,Bobby Scott,D,66.7
+Virginia,4,,,,,,,Donald McEachin,D,57.7
+Virginia,5,,,,,,,Tom Garrett,R,58.2
+Virginia,6,,,,,,,Bob Goodlatte,R,66.6
+Virginia,7,,,,,,,David Brat,R,57.5
+Virginia,8,,,,,,,Don Beyer,D,68.4
+Virginia,9,,,,,,,Morgan Griffith,R,68.6
+Virginia,10,,,,,,,Barbara Comstock,R,52.7
+Virginia,11,,,,,,,Gerald Connolly,D,87.9
+Washington,1,Suzan DelBene,D,53.9,Suzan DelBene,D,55,Suzan DelBene,D,55.4
+Washington,2,Rick Larsen,R,61.1,Rick Larsen,R,60.6,Rick Larsen,R,64
+Washington,3,Jaime Herrera Beutler,R,60.4,Jaime Herrera Beutler,R,61.5,Jaime Herrera Beutler,R,61.8
+Washington,4,Doc Hastings,R,66.2,Dan Newhouse,R,50.8,Dan Newhouse,R,57.6
+Washington,5,Cathy McMorris Rodgers,R,61.9,Cathy McMorris Rodgers,R,60.7,Cathy McMorris Rodgers,R,59.6
+Washington,6,Derek Kilmer,D,59,Derek Kilmer,D,63,Derek Kilmer,D,61.5
+Washington,7,Jim McDermott,D,79.7,Jim McDermott,D,81,Pramila Jayapal,D,56
+Washington,8,Dave Reichert,R,59.7,Dave Reichert,R,63.3,Dave Reichert,R,60.2
+Washington,9,Adam Smith,D,71.6,Adam Smith,D,70.8,Adam Smith,D,72.9
+Washington,10,Denny Heck,D,58.6,Denny Heck,D,54.7,Denny Heck,D,46.5
+West Virginia,1,David McKinley,R,62.3,David McKinley,R,63.9,David McKinley,R,69
+West Virginia,2,Shelley Moore Capito,R,69.8,Alex Mooney,R,47.1,Alex Mooney,R,58.2
+West Virginia,3,Nick Rahall,D,53.5,Evan Jenkins,R,55.4,Evan Jenkins,R,67.9
+Wisconsin,1,Paul Ryan,R,54.9,Paul Ryan,R,63.3,Paul Ryan,R,65
+Wisconsin,2,Mark Pocan,D,67.9,Mark Pocan,D,68.4,Mark Pocan,D,68.8
+Wisconsin,3,Ron Kind,D,64.1,Ron Kind,D,56.5,Ron Kind,D,99.9
+Wisconsin,4,Gwen Moore,D,72.2,Gwen Moore,D,70.2,Gwen Moore,D,77
+Wisconsin,5,Jim Sensenbrenner,R,67.7,Jim Sensenbrenner,R,69.5,Jim Sensenbrenner,R,66.8
+Wisconsin,6,Tom Petri,R,62.1,Glenn Grothman,R,56.8,Glenn Grothman,R,57.2
+Wisconsin,7,Sean Duffy,R,56.1,Sean Duffy,R,59.3,Sean Duffy,R,61.7
+Wisconsin,8,Reid Ribble,R,55.9,Reid Ribble,R,65,Mike Gallagher,R,62.7
+Wyoming,0,Cynthia Lummis,R,69,Cynthia Lummis,R,68.5,Liz Cheney,R,62

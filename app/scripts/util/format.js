@@ -1,7 +1,7 @@
 'use strict';
 import { get } from 'object-path';
 
-const fipsToState = require('../static/fipsToState.json');
+const fipsToState = require('../static/fips-to-state.json');
 
 export const na = '--';
 export function pct (n) {
@@ -18,4 +18,35 @@ export function districtName (stateFips, districtFips) {
   }
   const district = Number(districtFips);
   return district ? `${state} - ${district}` : state;
+}
+
+export function districtId (stateFips, districtFips) {
+  let s = +stateFips >= 10 ? stateFips : `0${+stateFips}`;
+  let d = +districtFips >= 10 ? districtFips : `0${+districtFips}`;
+  return `${s}${d}`;
+}
+
+export function party (party) {
+  let p = party.toLowerCase();
+  if (p === 'd' || p === 'dem') {
+    return 'D';
+  } else if (p === 'r' || p === 'rep') {
+    return 'R';
+  } else {
+    return na;
+  }
+}
+
+export function year (year) {
+  let y = parseInt(year, 10);
+  if (y === 2012) {
+    return '`12';
+  } else if (y === 2014) {
+    return '`14';
+  } else if (y === 2016) {
+    return '`16';
+  } else if (y === 2018) {
+    return '`18';
+  }
+  return na;
 }
