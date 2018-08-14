@@ -1,12 +1,27 @@
 'use strict';
 import { get } from 'object-path';
 import { feature as toGeojson, merge } from 'topojson';
+import { districtId } from '../util/format';
+import { error } from '../util/log';
+const nationalThresholds = require('../static/national-analysis.json');
+const districtThresholds = {};
+nationalThresholds.forEach(d => {
+  let id = districtId(d.state, d.district);
+  districtThresholds[id] = districtThresholds[id] || {};
+  districtThresholds[id].national = +d.demvote;
+});
+
 const raw = require('../static/tl_2016_us_cd115-quantized-topo.json');
 const districts = toGeojson(raw, raw.objects.districts).features;
 
-// TODO: remove this and integrate actual data
 districts.forEach(d => {
-  d.properties.threshold = 35 + Math.random() * 30;
+  const { id } = d.properties;
+  const threshold = districtThresholds[id];
+  if (!threshold) {
+    error('No threshold found for district with id ' + id);
+  } else {
+    d.properties.threshold = 100 - threshold.national;
+  }
 });
 
 const initialNationalVote = 50;

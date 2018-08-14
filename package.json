@@ -53,6 +53,7 @@
     "browser-sync": "^2.18.8",
     "browserify": "^15.1.0",
     "browserify-data": "^0.2.0",
+    "csv": "^3.1.0",
     "del": "^3.0.0",
     "envify": "^4.0.0",
     "eslint": "^4.10.0",
@@ -88,7 +89,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.6",
-    "d3": "^5.4.0",
+    "d3": "^5.5.0",
     "d3-geo": "^1.10.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
