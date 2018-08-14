@@ -25,3 +25,28 @@ export function districtId (stateFips, districtFips) {
   let d = +districtFips >= 10 ? districtFips : `0${+districtFips}`;
   return `${s}${d}`;
 }
+
+export function party (party) {
+  let p = party.toLowerCase();
+  if (p === 'd' || p === 'dem') {
+    return 'D';
+  } else if (p === 'r' || p === 'rep') {
+    return 'R';
+  } else {
+    return na;
+  }
+}
+
+export function year (year) {
+  let y = parseInt(year, 10);
+  if (y === 2012) {
+    return '`12';
+  } else if (y === 2014) {
+    return '`14';
+  } else if (y === 2016) {
+    return '`16';
+  } else if (y === 2018) {
+    return '`18';
+  }
+  return na;
+}
