@@ -38,8 +38,10 @@ class Slider extends React.Component {
     const tally = vote.natl;
 
     // Determine the republican and democratic deltas under this tally
-    const demDelta = 100 - tally - 50;
-    const repDelta = tally - 50;
+    const demVote = 100 - tally - 50;
+    const repVote = tally - 50;
+    const demDelta = demVote - repVote;
+    const repDelta = repVote - demVote;
 
     // Determine if we're currently in an unrealistic scenario
     const isUnrealistic = tally < (1 - demLimit) * 100 ||
