@@ -42,7 +42,7 @@
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  padding: 1rem;
+  padding: 0;
   position: fixed;
 }
 
@@ -50,11 +50,30 @@
   margin-left: 2em;
 }
 
-.tooltiop__cont__left {
+.tooltip__cont__left {
   margin-left: -2em;
+}
+
+.tooltip__sect {
+  padding: 1rem 0.75rem;
+}
+
+.tooltip__sect--divider {
+  border-top: 1px solid $light-gray;
 }
 
 .tooltip__title {
   font-size: $medium-text;
+  font-weight: $bold-text;
+}
+
+.hist__cont {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: $xsmall-text;
+  justify-content: space-between;
+}
+
+.hist__label {
   font-weight: $bold-text;
 }
