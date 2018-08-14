@@ -29,8 +29,12 @@ process.stdin.pipe(csv.parse())
   if (!stateFips) {
     console.log('No state name found for', name);
   }
+  let districtFips = name.slice(stateName.length, name.length);
+  if (districtFips === 'al') {
+    districtFips = 0;
+  }
   row[2] = stateFips;
-  row[3] = name.slice(stateName.length, name.length);
+  row[3] = districtFips
   return row;
 }))
 .pipe(csv.stringify())
