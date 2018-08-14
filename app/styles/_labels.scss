@@ -63,17 +63,45 @@
 }
 
 .tooltip__title {
-  font-size: $medium-text;
   font-weight: $bold-text;
 }
 
 .hist__cont {
   display: flex;
-  flex-wrap: wrap;
-  font-size: $xsmall-text;
+  flex-wrap: nowrap;
+  line-height: 1rem;
   justify-content: space-between;
+  margin: 0.4em 0;
+}
+
+.hist__cont--0 {
+  font-weight: $bold-text;
+  line-height: 1.1rem;
 }
 
 .hist__label {
+  font-size: $xsmall-text;
   font-weight: $bold-text;
+}
+
+.hist__item {
+  font-size: $xsmall-text;
+}
+
+.hist__item--first {
+  margin-right: 1rem;
+}
+
+.hist__winner--rep {
+  color: $red;
+}
+
+.hist__winner--dem {
+  color: $blue;
+}
+
+.tooltip__cont__lg {
+  .hist__item {
+    font-size: $small-text;
+  }
 }
