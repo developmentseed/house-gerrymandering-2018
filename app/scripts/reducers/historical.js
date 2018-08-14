@@ -3,6 +3,8 @@ import { error } from '../util/log';
 import { districtId } from '../util/format';
 const stateToFips = require('../static/state-to-fips.json');
 
+const years = ['2012', '2014', '2016'].reverse();
+
 const initialState = {
   loading: false,
   districts: null
@@ -29,7 +31,12 @@ function parseHistoricalResults (results) {
       error('State fips not found for', results[i].state);
     }
     let id = districtId(stateFips, district);
-    districts[id] = results[i];
+    districts[id] = years.map(y => ({
+      year: y,
+      winner: results[i][y + '_winner'],
+      party: results[i][y + '_party'],
+      vote: results[i][y + '_pct']
+    }));
   }
   return { districts };
 }
