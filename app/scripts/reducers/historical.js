@@ -1,5 +1,6 @@
 'use strict';
 import { error } from '../util/log';
+import { districtId } from '../util/format';
 const stateToFips = require('../static/state-to-fips.json');
 
 const initialState = {
@@ -20,18 +21,17 @@ function historical (state = initialState, next) {
 }
 
 function parseHistoricalResults (results) {
-  const next = {};
+  const districts = {};
   for (let i = 0; i < results.length; ++i) {
     let { state, district } = results[i];
     let stateFips = stateToFips[state.toLowerCase()];
     if (!stateFips) {
       error('State fips not found for', results[i].state);
     }
-    let districtFips = +district >= 10 ? district : '0' + district;
-    let id = `${stateFips}${districtFips}`;
-    next[id] = results[i];
+    let id = districtId(stateFips, district);
+    districts[id] = results[i];
   }
-  return next;
+  return { districts };
 }
 
 export default historical;
