@@ -51,7 +51,7 @@
 }
 
 .tooltip__cont__left {
-  margin-left: -2em;
+  margin-left: -2rem;
 }
 
 .tooltip__sect {
@@ -63,7 +63,9 @@
 }
 
 .tooltip__title {
+  font-size: $medium-text;
   font-weight: $bold-text;
+  line-height: $title-line-height;
 }
 
 .hist__cont {
@@ -71,7 +73,7 @@
   flex-wrap: nowrap;
   line-height: 1rem;
   justify-content: space-between;
-  margin: 0.4em 0;
+  margin: 0.4rem 0;
 }
 
 .hist__cont--0 {
@@ -107,4 +109,65 @@
   .tooltip__sect {
     padding: 1rem;
   }
+}
+
+$threshold-margin: 1.8rem;
+$threshold-bar-height: 6px;
+.threshold {
+  position: relative;
+  height: $threshold-bar-height;
+  margin: 1rem $threshold-margin 0;
+}
+
+.threshold__bar {
+  display: block;
+  height: $threshold-bar-height;
+  position: absolute;
+  &--dem {
+    background-color: $blue;
+    border-top-left-radius: $threshold-bar-height / 2;
+    border-bottom-left-radius: $threshold-bar-height / 2;
+  }
+  &--rep {
+    background-color: $red;
+    border-top-right-radius: $threshold-bar-height / 2;
+    border-bottom-right-radius: $threshold-bar-height / 2;
+  }
+}
+
+.threshold__limit {
+  height: $threshold-bar-height + 8px;
+  border-left: 1px solid $black;
+  position: absolute;
+  top: -4px;
+}
+
+.threshold__label {
+  position: absolute;
+}
+
+.threshold__label,
+.lean {
+  font-size: $xsmall-text;
+  font-weight: $bold-text;
+}
+
+.threshold__label--dem {
+  color: $blue;
+  left: -$threshold-margin;
+  top: -0.2rem;
+}
+
+.threshold__label--rep {
+  color: $red;
+  right: -$threshold-margin;
+  top: -0.2rem;
+}
+
+.lean__0 {
+  color: $blue;
+}
+
+.lean__1 {
+  color: $red;
 }
