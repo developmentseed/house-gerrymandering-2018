@@ -155,6 +155,11 @@ class Map extends React.Component {
     return (
       <div ref={this.cont} style={{ width, height }} className='map__cont'>
         {this.state.width && this.state.height ? this.getMapElement() : null}
+        {this.props.selected ? (
+          <div className='map__topleft'>
+            <button className='map__reset' onClick={this.syncMouseClick}>Reset</button>
+          </div>
+        ) : null}
       </div>
     );
   }

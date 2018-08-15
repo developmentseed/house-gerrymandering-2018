@@ -48,3 +48,27 @@ $_inset_box_shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.95);
   -moz-transform: $property;
   transform: $property;
 }
+
+@mixin action-btn () {
+  background-color: $action;
+  color: $white;
+  border: none;
+  font-weight: $bold-text;
+  height: 3rem;
+  padding: 1rem 1rem 1rem 4rem;
+  position: relative;
+  transition: background-color 0.2s;
+  &:before {
+    background-color: darken($action, 5%);
+    content: '';
+    display: block;
+    left: 0;
+    height: 3rem;
+    position: absolute;
+    top: 0;
+    width: 3rem;
+  }
+  &:hover {
+    background-color: lighten($action, 5%);
+  }
+}

@@ -1,3 +1,7 @@
+.map__cont {
+  position: relative;
+}
+
 .map__bg {
   fill: transparent;
 }
@@ -35,4 +39,16 @@
   &:hover {
     stroke-width: $district-stroke-width-hover / 5;
   }
+}
+
+.map__topleft {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.map__reset {
+  @include action-btn;
+  margin-left: 1rem;
+  margin-top: 1rem;
 }
