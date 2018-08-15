@@ -50,3 +50,19 @@ export function year (year) {
   }
   return na;
 }
+
+export function lean (threshold) {
+  if (isNaN(threshold)) {
+    return null;
+  }
+  let t = parseFloat(threshold);
+  if (t >= 65) {
+    return 'Leans heavily Democrat';
+  } else if (t > 50) {
+    return 'Leans Democrat';
+  } else if (t > 45) {
+    return 'Leans Republican';
+  } else {
+    return 'Leans heavily Republican';
+  }
+}
