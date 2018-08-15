@@ -5,12 +5,6 @@ import { geoPath, geoAlbersUsa } from 'd3-geo';
 import { select } from 'd3';
 import c from 'classnames';
 import {
-  dem,
-  rep,
-  districtStrokeColor,
-  districtStrokeWidth
-} from '../static/settings';
-import {
   syncMouseLocation,
   syncSelectedState
 } from '../actions';
@@ -21,7 +15,6 @@ class Map extends React.Component {
   constructor (props) {
     super(props);
     this.setHeight = this.setHeight.bind(this);
-    this.renderCanvasMap = this.renderCanvasMap.bind(this);
     this.renderSvgMap = this.renderSvgMap.bind(this);
     this.getMapElement = this.getMapElement.bind(this);
 
@@ -92,32 +85,6 @@ class Map extends React.Component {
     const translate = [width / 2 - scale * x, height / 2 - scale * y];
     const transform = `translate(${translate})scale(${scale})`;
     return transform;
-  }
-
-  renderCanvasMap () {
-    const { width, height } = this.state;
-    const ctx = select(this.map.current).node().getContext('2d');
-    const path = geoPath().projection(this.projection).context(ctx);
-
-    const { districts, vote } = this.props;
-    ctx.clearRect(0, 0, width, height);
-    ctx.beginPath();
-    path({type: 'FeatureCollection', features: districts.filter(d => d.properties.threshold < vote.natl)});
-    ctx.fillStyle = rep;
-    ctx.fill();
-    ctx.closePath();
-
-    ctx.beginPath();
-    path({type: 'FeatureCollection', features: districts.filter(d => d.properties.threshold > vote.natl)});
-    ctx.fillStyle = dem;
-    ctx.fill();
-    ctx.closePath();
-
-    ctx.beginPath();
-    path({type: 'FeatureCollection', features: districts});
-    ctx.strokeStyle = districtStrokeColor;
-    ctx.lineWidth = districtStrokeWidth;
-    ctx.stroke();
   }
 
   renderSvgMap () {

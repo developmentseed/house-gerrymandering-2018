@@ -22,7 +22,7 @@ const Root = () => (
         repLimit={0.59}
         offset={0.35}
       />
-      <Map width='100%' height='600px' useCanvas={false} />
+      <Map width='100%' height='600px' />
       <Legend />
       <Tooltip />
     </App>
