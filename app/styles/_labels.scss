@@ -73,7 +73,7 @@
   flex-wrap: nowrap;
   line-height: 1rem;
   justify-content: space-between;
-  margin: 0.4rem 0;
+  margin: 0.2rem 0;
 }
 
 .hist__cont--0 {
@@ -116,7 +116,7 @@ $threshold-bar-height: 6px;
 .threshold {
   position: relative;
   height: $threshold-bar-height;
-  margin: 1rem $threshold-margin 0;
+  margin: 0.75rem $threshold-margin 0;
 }
 
 .threshold__bar {
@@ -150,6 +150,7 @@ $threshold-bar-height: 6px;
 .lean {
   font-size: $xsmall-text;
   font-weight: $bold-text;
+  margin-bottom: 0.1rem;
 }
 
 .threshold__label--dem {
