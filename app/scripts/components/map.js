@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { geoPath, geoAlbersUsa } from 'd3-geo';
-import { select } from 'd3';
+import { select, zoomIdentity } from 'd3';
 import c from 'classnames';
 import {
   syncMouseLocation,
@@ -46,7 +46,7 @@ class Map extends React.Component {
   // Use componentDidUpdate to animate between states and national
   componentDidUpdate (prevProps) {
     const { selected } = this.props;
-    if (selected && selected !== prevProps.selected) {
+    if (selected !== prevProps.selected) {
       const transform = this.getTransform(this.path, this.state);
       select(this.refs.districts).transition()
         .duration(400)
@@ -74,7 +74,7 @@ class Map extends React.Component {
   getTransform (path, { width, height }) {
     const { selected } = this.props;
     if (!selected) {
-      return '';
+      return zoomIdentity.toString();
     }
     const bounds = path.bounds(selected);
     const dx = bounds[1][0] - bounds[0][0];
@@ -91,7 +91,7 @@ class Map extends React.Component {
     const { districts, vote, selected, selectedIdMap } = this.props;
     return (
       <svg width={this.state.width} height={this.state.height} className='map'>
-        <rect width={this.state.width} height={this.state.height} className='map__bg' />
+        <rect width={this.state.width} height={this.state.height} className='map__bg' onClick={this.syncMouseClick} />
         <g ref='districts' transform={this.state.transform} className={c('districts', {
           'districts--zoomed': !!selected
         })}>
