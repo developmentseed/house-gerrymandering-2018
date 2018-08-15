@@ -8,7 +8,7 @@ const districtThresholds = {};
 nationalThresholds.forEach(d => {
   let id = districtId(d.state, d.district);
   districtThresholds[id] = districtThresholds[id] || {};
-  districtThresholds[id].national = +d.demvote;
+  districtThresholds[id].national = 100 - d.demvote;
 });
 
 const raw = require('../static/tl_2016_us_cd115-quantized-topo.json');
@@ -20,7 +20,7 @@ districts.forEach(d => {
   if (!threshold) {
     error('No threshold found for district with id ' + id);
   } else {
-    d.properties.threshold = 100 - threshold.national;
+    d.properties.threshold = threshold.national;
   }
 });
 
