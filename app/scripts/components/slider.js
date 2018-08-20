@@ -3,13 +3,27 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { scaleLinear } from 'd3';
 import { get } from 'object-path';
-import { setNatlVote } from '../actions';
-import { stateNameFromFips } from '../util/format';
+import { setNatlVote, setStateVote } from '../actions';
+import { stateNameFromFips, fips } from '../util/format';
 
 class Slider extends React.Component {
   constructor (props) {
     super(props);
     this.setVote = this.setVote.bind(this);
+    this.state = {
+      scenarioEnabledState: null
+    };
+  }
+
+  static getDerivedStateFromProps (props, state) {
+    // Determine we are focused on a state, and whether it is scenario-enabled,
+    // ie whether we have a separate state threshold data point for it.
+    const { selectedStateFips, stateThresholds } = props;
+    if (!props.selectedStateFips || !stateThresholds.hasOwnProperty(selectedStateFips.toString())) {
+      return state.scenarioEnabledState ? { scenarioEnabledState: null } : null;
+    }
+    return state.scenarioEnabledState === selectedStateFips ? null
+      : { scenarioEnabledState: fips(selectedStateFips) };
   }
 
   getOffset () {
@@ -17,21 +31,21 @@ class Slider extends React.Component {
   }
 
   setVote (e) {
-    this.props.setNatlVote(e.currentTarget.value);
-  }
-
-  stateThreshold () {
-    if (!this.props.selectedStateFips) {
-      return null;
+    const { value } = e.currentTarget;
+    const { scenarioEnabledState } = this.state;
+    if (!scenarioEnabledState) {
+      this.props.setNatlVote(value);
+    } else {
+      this.props.setStateVote(scenarioEnabledState, value);
     }
-    return get(this.props.stateThresholds, this.props.selectedStateFips);
   }
 
   threshold () {
-    const stateThreshold = this.stateThreshold();
-    if (!this.props.selectedStateFips || !stateThreshold) {
+    const { scenarioEnabledState } = this.state;
+    if (!scenarioEnabledState) {
       return this.props;
     }
+    const stateThreshold = get(this.props.stateThresholds, scenarioEnabledState);
     return {
       demLimit: parseFloat(stateThreshold.high) / 100,
       repLimit: (100 - parseFloat(stateThreshold.low)) / 100
@@ -39,15 +53,26 @@ class Slider extends React.Component {
   }
 
   title () {
-    const stateThreshold = this.stateThreshold();
     // TODO When we show the national entity on a selected state,
     // we should show a pop-up note specifying that not all states have data.
-    const entity = stateThreshold ? stateNameFromFips(this.props.selectedStateFips) : 'National';
-    return `${entity} Percentage of Votes`;
+    const { scenarioEnabledState } = this.state;
+    if (!scenarioEnabledState) {
+      return 'National';
+    }
+    const stateName = stateNameFromFips(scenarioEnabledState);
+    return `${stateName} Percentage of Votes`;
+  }
+
+  tally () {
+    const { scenarioEnabledState } = this.state;
+    if (!scenarioEnabledState) {
+      return this.props.vote.natl;
+    }
+    const stateVote = get(this.props.vote, this.props.selectedStateFips, 50);
+    return stateVote;
   }
 
   render () {
-    const { natlVote } = this.props;
     const { demLimit, repLimit } = this.threshold();
     // Calculate where the unrealistic scenario markers will go
     const offset = this.getOffset();
@@ -60,7 +85,7 @@ class Slider extends React.Component {
 
     // TODO props or state should control whether this looks at
     // the national vote tally, or a state-wide tally.
-    const tally = natlVote;
+    const tally = this.tally();
 
     // Determine the republican and democratic deltas under this tally
     const demVote = 100 - tally - 50;
@@ -108,9 +133,9 @@ class Slider extends React.Component {
 }
 
 const selector = state => ({
-  natlVote: state.vote.natl,
+  vote: state.vote,
   selectedStateFips: state.geo.selectedStateFips,
   stateThresholds: state.states.thresholds
 });
 
-export default connect(selector, { setNatlVote })(Slider);
+export default connect(selector, { setNatlVote, setStateVote })(Slider);

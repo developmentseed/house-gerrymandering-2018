@@ -31,10 +31,11 @@ const initialGeoState = Object.assign({
   focused: null,
   selected: null,
   selectedIdMap: null,
-  selectedStateFips: null
+  selectedStateFips: null,
+  stateAnalysis: {}
 }, getNatlCount(districts, initialNationalVote));
 
-export function geo (state = initialGeoState, { type, next }) {
+export function geo (state = initialGeoState, { type, next, results }) {
   switch (type) {
     case 'set_natl_vote':
       state = Object.assign({}, state, getNatlCount(state.districts, next.vote));
@@ -46,6 +47,9 @@ export function geo (state = initialGeoState, { type, next }) {
           focused: findDistrict(state.districts, next.district)
         })
         : state;
+      break;
+    case 'get_state_analysis_success':
+      state = Object.assign({}, state, { stateAnalysis: results });
       break;
     case 'sync_selected_state':
       state = Object.assign({}, state, getSelectedState(state.districts, next.districtId));
@@ -100,6 +104,9 @@ export function vote (state = initialVoteState, { type, next }) {
   switch (type) {
     case 'set_natl_vote':
       state = Object.assign({}, state, { natl: next.vote });
+      break;
+    case 'set_state_vote':
+      state = Object.assign({}, state, { [next.stateFips]: next.vote });
       break;
   }
   return state;
