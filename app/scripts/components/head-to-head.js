@@ -66,8 +66,8 @@ class Head2Head extends React.Component {
 
 const selector = state => ({
   vote: state.vote,
-  dem: state.geo.natlDemCount,
-  rep: state.geo.natlRepCount
+  dem: state.summary.natlDemCount,
+  rep: state.summary.natlRepCount
 });
 
 export default connect(selector)(Head2Head);
