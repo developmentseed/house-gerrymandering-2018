@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import {
   setAppDimensions,
   getHistoricalData,
-  getStateThresholds
+  getStateThresholds,
+  getStateAnalysis
 } from '../actions';
 
 class App extends React.Component {
@@ -16,6 +17,7 @@ class App extends React.Component {
   componentWillMount () {
     this.props.getHistoricalData();
     this.props.getStateThresholds();
+    this.props.getStateAnalysis();
   }
 
   componentWillUnmount () {
@@ -39,5 +41,6 @@ class App extends React.Component {
 export default connect(null, {
   setAppDimensions,
   getHistoricalData,
-  getStateThresholds
+  getStateThresholds,
+  getStateAnalysis
 })(App);
