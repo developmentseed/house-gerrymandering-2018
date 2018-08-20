@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import c from 'classnames';
-import { setNatlVote, setStateVote } from '../actions';
+import { setNatlVote, clearStateVote } from '../actions';
 import { stateNameFromFips } from '../util/format';
 
 class Scenario extends React.Component {
@@ -16,7 +16,7 @@ class Scenario extends React.Component {
     if (entity === 'natl') {
       this.props.setNatlVote(50);
     } else {
-      this.props.setStateVote(entity, 50);
+      this.props.clearStateVote(entity);
     }
   }
 
@@ -55,4 +55,4 @@ const selector = state => ({
   vote: state.vote
 });
 
-export default connect(selector, { setNatlVote, setStateVote })(Scenario);
+export default connect(selector, { setNatlVote, clearStateVote })(Scenario);
