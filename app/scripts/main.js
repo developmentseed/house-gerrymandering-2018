@@ -10,6 +10,7 @@ import App from './components/app';
 import Map from './components/map';
 import Slider from './components/slider';
 import Head2Head from './components/head-to-head';
+import Scenario from './components/scenario';
 import Legend from './components/legend';
 import Tooltip from './components/tooltip';
 
@@ -22,6 +23,7 @@ const Root = () => (
         repLimit={0.59}
         offset={0.35}
       />
+      <Scenario />
       <Map width='100%' height='600px' />
       <Legend />
       <Tooltip />
