@@ -1,9 +1,12 @@
 'use strict';
 import { get } from 'object-path';
 import { feature as toGeojson, merge } from 'topojson';
-import { districtId, stateId } from '../util/format';
+import { fips, districtId, stateId } from '../util/format';
 import { error } from '../util/log';
 const stateToFips = require('../static/state-to-fips.json');
+
+// Create a mapping of districts to their national analysis number.
+// Apply this to the districts geojson properties object.
 const nationalThresholds = require('../static/national-analysis.json');
 const districtThresholds = {};
 nationalThresholds.forEach(d => {
@@ -49,7 +52,7 @@ export function geo (state = initialGeoState, { type, next, results }) {
         : state;
       break;
     case 'get_state_analysis_success':
-      state = Object.assign({}, state, { stateAnalysis: results });
+      state = Object.assign({}, state, { stateAnalysis: parseStateAnalysis(results) });
       break;
     case 'sync_selected_state':
       state = Object.assign({}, state, getSelectedState(state.districts, next.districtId));
@@ -96,6 +99,25 @@ function getSelectedState (districts, districtId) {
   return { selected: merged, selectedIdMap: idMap };
 }
 
+// Normalize the state-level raw data.
+// add threshold, ie 100 - demvote
+// normalize district, ie "1" -> "01"
+// Create a dual-layer map object, ie:
+// [stateFips]: {
+//  [districtFips]: {},
+// }
+function parseStateAnalysis (states) {
+  for (let state in states) {
+    let stateMap = {};
+    states[state].forEach(d => {
+      let district = fips(d.district);
+      stateMap[district] = 100 - parseFloat(d.demvote);
+    });
+    states[state] = stateMap;
+  }
+  return states;
+}
+
 const initialVoteState = {
   natl: initialNationalVote
 };
@@ -107,6 +129,10 @@ export function vote (state = initialVoteState, { type, next }) {
       break;
     case 'set_state_vote':
       state = Object.assign({}, state, { [next.stateFips]: next.vote });
+      break;
+    case 'clear_state_vote':
+      state = Object.assign({}, state);
+      delete state[next.stateFips];
       break;
   }
   return state;
