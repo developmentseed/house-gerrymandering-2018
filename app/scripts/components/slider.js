@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setNatlVote } from '../actions';
 import { scaleLinear } from 'd3';
+import { stateNameFromFips } from '../util/format';
 
 class Slider extends React.Component {
   constructor (props) {
@@ -18,9 +19,15 @@ class Slider extends React.Component {
     this.props.setNatlVote(e.currentTarget.value);
   }
 
+  title () {
+    const { selectedStateFips } = this.props;
+    const entity = selectedStateFips ? stateNameFromFips(selectedStateFips) : 'National';
+    return `${entity} Percentage of Votes`;
+  }
+
   render () {
     const {
-      vote,
+      natlVote,
       demLimit,
       repLimit
     } = this.props;
@@ -35,7 +42,7 @@ class Slider extends React.Component {
 
     // TODO props or state should control whether this looks at
     // the national vote tally, or a state-wide tally.
-    const tally = vote.natl;
+    const tally = natlVote;
 
     // Determine the republican and democratic deltas under this tally
     const demVote = 100 - tally - 50;
@@ -67,7 +74,7 @@ class Slider extends React.Component {
           </div>
         </figure>
         <label className='slider__label'>
-          Percentage of Votes
+          {this.title()}
           <input
             className='slider'
             type='range'
@@ -83,7 +90,8 @@ class Slider extends React.Component {
 }
 
 const selector = state => ({
-  vote: state.vote
+  natlVote: state.vote.natl,
+  selectedStateFips: state.geo.selectedStateFips
 });
 
 export default connect(selector, { setNatlVote })(Slider);
