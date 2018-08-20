@@ -12,6 +12,10 @@ export function pct (n) {
   return n + '%';
 }
 
+export function fips (stateOrDistrictFips) {
+  return +stateOrDistrictFips >= 10 ? stateOrDistrictFips : `0${+stateOrDistrictFips}`;
+}
+
 export function districtName (stateFips, districtFips) {
   const state = get(fipsToState, stateFips);
   if (!state) {
@@ -22,8 +26,8 @@ export function districtName (stateFips, districtFips) {
 }
 
 export function districtId (stateFips, districtFips) {
-  let s = +stateFips >= 10 ? stateFips : `0${+stateFips}`;
-  let d = +districtFips >= 10 ? districtFips : `0${+districtFips}`;
+  let s = fips(stateFips);
+  let d = fips(districtFips);
   return `${s}${d}`;
 }
 
