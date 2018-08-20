@@ -1,8 +1,9 @@
 'use strict';
 import { get } from 'object-path';
 import { feature as toGeojson, merge } from 'topojson';
-import { districtId } from '../util/format';
+import { districtId, stateId } from '../util/format';
 import { error } from '../util/log';
+const stateToFips = require('../static/state-to-fips.json');
 const nationalThresholds = require('../static/national-analysis.json');
 const districtThresholds = {};
 nationalThresholds.forEach(d => {
@@ -29,7 +30,8 @@ const initialGeoState = Object.assign({
   districts,
   focused: null,
   selected: null,
-  selectedIdMap: null
+  selectedIdMap: null,
+  selectedStateFips: null
 }, getNatlCount(districts, initialNationalVote));
 
 export function geo (state = initialGeoState, { type, next }) {
@@ -47,6 +49,7 @@ export function geo (state = initialGeoState, { type, next }) {
       break;
     case 'sync_selected_state':
       state = Object.assign({}, state, getSelectedState(state.districts, next.districtId));
+      state.selectedStateFips = next.districtId ? stateId(next.districtId) : null;
       break;
   }
   return state;
@@ -98,6 +101,30 @@ export function vote (state = initialVoteState, { type, next }) {
     case 'set_natl_vote':
       state = Object.assign({}, state, { natl: next.vote });
       break;
+  }
+  return state;
+}
+
+function parseThresholds (results) {
+  const thresholds = {};
+  for (let i = 0; i < results.length; ++i) {
+    let fips = get(stateToFips, results[i].state);
+    if (!fips) {
+      error('No fips found for ' + results[i].state);
+      continue;
+    }
+    thresholds[fips] = results[i];
+  }
+  return thresholds;
+}
+
+const initialStatesState = {
+  thresholds: {}
+};
+
+export function states (state = initialStatesState, { type, results }) {
+  if (type === 'get_state_threshold_success') {
+    return Object.assign({}, state, { thresholds: parseThresholds(results) });
   }
   return state;
 }

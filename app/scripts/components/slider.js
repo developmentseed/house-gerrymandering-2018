@@ -1,8 +1,9 @@
 'use strict';
 import React from 'react';
 import { connect } from 'react-redux';
-import { setNatlVote } from '../actions';
 import { scaleLinear } from 'd3';
+import { get } from 'object-path';
+import { setNatlVote } from '../actions';
 import { stateNameFromFips } from '../util/format';
 
 class Slider extends React.Component {
@@ -19,18 +20,35 @@ class Slider extends React.Component {
     this.props.setNatlVote(e.currentTarget.value);
   }
 
+  stateThreshold () {
+    if (!this.props.selectedStateFips) {
+      return null;
+    }
+    return get(this.props.stateThresholds, this.props.selectedStateFips);
+  }
+
+  threshold () {
+    const stateThreshold = this.stateThreshold();
+    if (!this.props.selectedStateFips || !stateThreshold) {
+      return this.props;
+    }
+    return {
+      demLimit: parseFloat(stateThreshold.high) / 100,
+      repLimit: (100 - parseFloat(stateThreshold.low)) / 100
+    };
+  }
+
   title () {
-    const { selectedStateFips } = this.props;
-    const entity = selectedStateFips ? stateNameFromFips(selectedStateFips) : 'National';
+    const stateThreshold = this.stateThreshold();
+    // TODO When we show the national entity on a selected state,
+    // we should show a pop-up note specifying that not all states have data.
+    const entity = stateThreshold ? stateNameFromFips(this.props.selectedStateFips) : 'National';
     return `${entity} Percentage of Votes`;
   }
 
   render () {
-    const {
-      natlVote,
-      demLimit,
-      repLimit
-    } = this.props;
+    const { natlVote } = this.props;
+    const { demLimit, repLimit } = this.threshold();
     // Calculate where the unrealistic scenario markers will go
     const offset = this.getOffset();
     const scale = scaleLinear()
@@ -91,7 +109,8 @@ class Slider extends React.Component {
 
 const selector = state => ({
   natlVote: state.vote.natl,
-  selectedStateFips: state.geo.selectedStateFips
+  selectedStateFips: state.geo.selectedStateFips,
+  stateThresholds: state.states.thresholds
 });
 
 export default connect(selector, { setNatlVote })(Slider);

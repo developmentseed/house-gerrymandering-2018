@@ -1,7 +1,11 @@
 'use strict';
 import { combineReducers } from 'redux';
 import mouse from './mouse';
-import { geo, vote } from './vote';
+import {
+  geo,
+  vote,
+  states
+} from './vote';
 import historical from './historical';
 
 const initialAppState = {
@@ -16,4 +20,4 @@ function app (state = initialAppState, { type, next }) {
   return state;
 }
 
-export default combineReducers({ app, geo, vote, mouse, historical });
+export default combineReducers({ app, geo, vote, mouse, historical, states });
