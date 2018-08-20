@@ -18,14 +18,22 @@ export function setNatlVote (vote) {
   return { type: 'set_natl_vote', next: { vote } };
 }
 
-export function getHistoricalData () {
+function getCsv (filename, actionName) {
   return (dispatch) => {
-    dispatch({ type: 'get_historical_inflight' });
-    csv('static/historical-results.csv').then(results => {
-      dispatch({ type: 'get_historical_success', results });
+    dispatch({ type: actionName + '_inflight' });
+    csv(`static/${filename}.csv`).then(results => {
+      dispatch({ type: actionName + '_success', results });
     }).catch(e => {
-      error('Loading historical data failed:', e.message);
-      dispatch({ type: 'get_historical_failed', error: e.message });
+      error('Loading data failed:', e.message);
+      dispatch({ type: actionName + '_failed', error: e.message });
     });
   };
+}
+
+export function getHistoricalData () {
+  return getCsv('historical-results', 'get_historical');
+}
+
+export function getStateThresholds () {
+  return getCsv('state-thresholds', 'get_state_threshold');
 }
