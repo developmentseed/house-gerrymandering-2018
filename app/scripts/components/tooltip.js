@@ -11,6 +11,7 @@ import {
   districtName,
   districtId
 } from '../util/format';
+import { error } from '../util/log';
 
 const tooltipWidth = {
   sm: 200,
@@ -69,6 +70,10 @@ class Tooltip extends React.Component {
   }
 
   renderThreshold (threshold) {
+    if (isNaN(threshold)) {
+      error('No threshold found');
+      return null;
+    }
     const demVote = 100 - threshold;
     const partyLean = Math.floor(demVote / 50);
     const opposing = partyLean === 0 ? 'Republicans' : 'Democrats';
@@ -99,7 +104,8 @@ class Tooltip extends React.Component {
       return null;
     }
 
-    const d = get(this.props, 'focused.properties');
+    const { stateAnalysis, vote, focused, selectedStateFips } = this.props;
+    const d = get(focused, 'properties');
     if (!d) {
       return null;
     }
@@ -111,11 +117,15 @@ class Tooltip extends React.Component {
     );
     const id = districtId(d.stateFips, d.fips);
     const historical = get(this.props.historical, id);
+    // Use the state-specific threshold if:
+    // 1. We've specified a threshold
+    // 2. We've clicked into the state
+    const threshold = vote.hasOwnProperty(d.stateFips) || selectedStateFips === d.stateFips ? get(stateAnalysis, [d.stateFips, d.fips]) : d.threshold;
     return (
       <figure style={style} className={classNames}>
         <div className='tooltip__sect'>
           <h3 className='tooltip__title'>{districtName(d.stateFips, d.fips)}</h3>
-          {this.renderThreshold(d.threshold)}
+          {this.renderThreshold(threshold)}
         </div>
         <div className='tooltip__sect tooltip__sect--divider'>
           {this.renderHistorical(historical)}
@@ -129,6 +139,9 @@ const selector = (state) => ({
   appWidth: state.app.width,
   mouse: state.mouse,
   focused: state.geo.focused,
-  historical: state.historical.districts
+  selectedStateFips: state.geo.selectedStateFips,
+  historical: state.historical.districts,
+  stateAnalysis: state.summary.stateAnalysis,
+  vote: state.vote
 });
 export default connect(selector, null)(Tooltip);

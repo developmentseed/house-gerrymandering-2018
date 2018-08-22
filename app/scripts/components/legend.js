@@ -8,7 +8,6 @@ class Legend extends React.Component {
         <figcaption className='legend'>
           <span className='legend__item legend__item--rep'>Republican district</span>
           <span className='legend__item legend__item--dem'>Democrat district</span>
-          <span className='legend__item legend__item--flipped'>Flipped district</span>
         </figcaption>
       </figure>
     );
