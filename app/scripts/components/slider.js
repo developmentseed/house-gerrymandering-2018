@@ -57,10 +57,10 @@ class Slider extends React.Component {
     // we should show a pop-up note specifying that not all states have data.
     const { scenarioEnabledState } = this.state;
     if (!scenarioEnabledState) {
-      return 'National';
+      return 'National scenario';
     }
     const stateName = stateNameFromFips(scenarioEnabledState);
-    return `${stateName} Percentage of Votes`;
+    return `${stateName} scenario`;
   }
 
   tally () {
@@ -70,6 +70,28 @@ class Slider extends React.Component {
     }
     const stateVote = get(this.props.vote, this.props.selectedStateFips, 50);
     return stateVote;
+  }
+
+  renderStateScenario (tally) {
+    const stateAnalysis = get(this.props.stateAnalysis, this.props.selectedStateFips);
+    if (!stateAnalysis) {
+      return null;
+    }
+    let dem = 0;
+    let rep = 0;
+    for (let fips in stateAnalysis) {
+      if (stateAnalysis[fips] > tally) {
+        dem += 1;
+      } else if (stateAnalysis[fips] < tally) {
+        rep += 1;
+      }
+    }
+    return (
+      <React.Fragment>
+        <span className='range__label__scenario range__label__scenario--dem'>{dem}</span>
+        <span className='range__label__scenario range__label__scenario--rep'>{rep}</span>
+      </React.Fragment>
+    );
   }
 
   render () {
@@ -83,8 +105,6 @@ class Slider extends React.Component {
     const rightPct = scale(repLimit);
     const width = rightPct - leftPct;
 
-    // TODO props or state should control whether this looks at
-    // the national vote tally, or a state-wide tally.
     const tally = this.tally();
 
     // Determine the republican and democratic deltas under this tally
@@ -112,6 +132,8 @@ class Slider extends React.Component {
             <span className='range__label__span' style={{left: leftPct + '%', width: width + '%'}} />
             <span className='range__label__limit range__label__limit--right' style={{left: rightPct + '%'}} />
 
+            {this.state.scenarioEnabledState ? this.renderStateScenario(tally) : null}
+
             {demDelta > 0 ? <span className='range__marker range__marker--left'>+{demDelta}%</span> : null}
             {repDelta > 0 ? <span className='range__marker range__marker--right'>+{repDelta}%</span> : null}
           </div>
@@ -135,7 +157,8 @@ class Slider extends React.Component {
 const selector = state => ({
   vote: state.vote,
   selectedStateFips: state.geo.selectedStateFips,
-  stateThresholds: state.states.thresholds
+  stateThresholds: state.states.thresholds,
+  stateAnalysis: state.summary.stateAnalysis
 });
 
 export default connect(selector, { setNatlVote, setStateVote })(Slider);

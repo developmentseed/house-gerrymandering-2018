@@ -91,7 +91,7 @@ input[type=range] {
   color: $warning;
   font-size: $small-text;
   font-weight: $bold-text;
-  margin: -1.7em 0 0;
+  margin: -1.2em 0 0;
   text-align: center;
   position: absolute;
   width: 100%;
@@ -149,8 +149,8 @@ input[type=range] {
   font-size: 1rem;
   font-weight: $bold-text;
   line-height: 1rem;
-  position: absolute;
   margin-top: -0.7rem;
+  position: absolute;
 }
 
 .range__marker--left {
@@ -161,4 +161,22 @@ input[type=range] {
 .range__marker--right {
   color: $red;
   right: -3rem;
+}
+
+.range__label__scenario {
+  font-size: 1rem;
+  font-weight: $bold-text;
+  line-height: 1rem;
+  margin-top: -2rem;
+  position: absolute;
+}
+
+.range__label__scenario--dem {
+  color: $blue;
+  left: 0;
+}
+
+.range__label__scenario--rep {
+  color: $red;
+  right: 0;
 }
