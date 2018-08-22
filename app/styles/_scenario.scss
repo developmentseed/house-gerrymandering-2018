@@ -1,11 +1,12 @@
 .scenario__cont {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .scenario {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
   height: 1.6rem;
   width: 100%;
 }

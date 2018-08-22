@@ -24,7 +24,7 @@ const Root = () => (
         offset={0.35}
       />
       <Scenario />
-      <Map width='100%' height='600px' />
+      <Map width='100%' height='420px' />
       <Legend />
       <Tooltip />
     </App>
