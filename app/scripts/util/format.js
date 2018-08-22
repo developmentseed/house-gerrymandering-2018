@@ -3,6 +3,7 @@ import { get } from 'object-path';
 import { error } from './log';
 
 const fipsToState = require('../static/fips-to-state.json');
+const fipsToStateAbbrev = require('../static/fips-to-state-abbrev.json');
 
 export const na = '--';
 export function pct (n) {
@@ -51,6 +52,15 @@ export function stateNameFromFips (stateFips) {
     return na;
   }
   return stateName;
+}
+
+export function stateAbbrevFromFips (stateFips) {
+  let stateAbbrev = get(fipsToStateAbbrev, stateFips.toString());
+  if (!stateAbbrev) {
+    error('Malformed state fips ' + stateFips);
+    return na;
+  }
+  return stateAbbrev;
 }
 
 export function party (party) {

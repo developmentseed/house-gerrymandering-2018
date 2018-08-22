@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import c from 'classnames';
 import { setNatlVote, clearStateVote } from '../actions';
-import { stateNameFromFips } from '../util/format';
+import { stateAbbrevFromFips } from '../util/format';
 
 class Scenario extends React.Component {
   constructor (props) {
@@ -22,9 +22,9 @@ class Scenario extends React.Component {
 
   label (scenario) {
     if (scenario === 'natl') {
-      return 'National';
+      return 'US';
     } else {
-      return stateNameFromFips(scenario);
+      return stateAbbrevFromFips(scenario);
     }
   }
 
