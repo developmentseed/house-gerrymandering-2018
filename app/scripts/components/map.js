@@ -175,7 +175,7 @@ const selector = (state) => ({
   vote: state.vote,
   selected: state.geo.selected,
   selectedIdMap: state.geo.selectedIdMap,
-  stateAnalysis: state.geo.stateAnalysis
+  stateAnalysis: state.summary.stateAnalysis
 });
 
 export default connect(selector, {

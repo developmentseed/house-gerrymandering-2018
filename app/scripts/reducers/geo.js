@@ -33,11 +33,10 @@ const initialGeoState = {
   focused: null,
   selected: null,
   selectedIdMap: null,
-  selectedStateFips: null,
-  stateAnalysis: {}
+  selectedStateFips: null
 };
 
-export function geo (state = initialGeoState, { type, next, results }) {
+export function geo (state = initialGeoState, { type, next }) {
   switch (type) {
     case 'sync_mouse_location':
       // Only set new state on a new hovered district
@@ -46,9 +45,6 @@ export function geo (state = initialGeoState, { type, next, results }) {
           focused: findDistrict(state.districts, next.district)
         })
         : state;
-      break;
-    case 'get_state_analysis_success':
-      state = Object.assign({}, state, { stateAnalysis: parseStateAnalysis(results) });
       break;
     case 'sync_selected_state':
       state = Object.assign({}, state, getSelectedState(state.districts, next.districtId));
@@ -89,6 +85,39 @@ function getSelectedState (districts, districtId) {
   return { selected: merged, selectedIdMap: idMap };
 }
 
+const initialVoteState = { votes: { natl: initialNationalVote } };
+const initialNatlSummary = getNatlCount(initialVoteState.votes);
+
+// {
+//  votes: { natl: Number, [stateFips]: Number, ... },
+//  natlDemCount: Number,
+//  natlRepCount: Number,
+//  stateAnalysis: {}
+//  }
+const initialSummaryState = Object.assign({
+  stateAnalysis: {}
+}, initialVoteState, initialNatlSummary);
+
+// Note, this reducer is functionally very similar to the one in `./vote.js`.
+// The reason for duplication is we need access to the current vote state
+// to determine summary numbers, as state-specific scenarios override national.
+// For organizational reasons, it's easier to duplicate them.
+export function summary (state = initialSummaryState, { type, next, results }) {
+  switch (type) {
+    case 'get_state_analysis_success':
+      state = Object.assign({}, state, { stateAnalysis: parseStateAnalysis(results) });
+      break;
+    case 'set_natl_vote':
+    case 'set_state_vote':
+      let loc = next.stateFips || 'natl';
+      let votes = Object.assign({}, state.votes, { [loc]: next.vote });
+      state = Object.assign({}, state, getNatlCount(votes, state.stateAnalysis));
+      state.votes = votes;
+      break;
+  }
+  return state;
+}
+
 // Normalize the state-level raw data.
 // add threshold, ie 100 - demvote
 // normalize district, ie "1" -> "01"
@@ -108,19 +137,20 @@ function parseStateAnalysis (states) {
   return states;
 }
 
-const initialSummaryState = getNatlCount(districts, initialNationalVote);
-
-export function summary (state = initialSummaryState, { type, next }) {
-  switch (type) {
-    case 'set_natl_vote':
-      state = Object.assign({}, state, getNatlCount(districts, next.vote));
-      break;
+function getNatlCount (vote, stateAnalysis) {
+  let natlDemCount = 0;
+  let natlRepCount = 0;
+  for (let i = 0; i < districts.length; ++i) {
+    let { stateFips, fips } = districts[i].properties;
+    let stateScenario = vote[stateFips];
+    let scenario = stateScenario || vote.natl;
+    let threshold = stateScenario ? get(stateAnalysis, [stateFips, fips])
+      : districts[i].properties.threshold;
+    if (threshold > scenario) {
+      natlDemCount += 1;
+    } else if (threshold < scenario) {
+      natlRepCount += 1;
+    }
   }
-  return state;
-}
-
-function getNatlCount (districts, vote) {
-  const natlDemCount = districts.filter(d => d.properties.threshold > vote).length;
-  const natlRepCount = districts.filter(d => d.properties.threshold < vote).length;
   return { natlDemCount, natlRepCount };
 }
