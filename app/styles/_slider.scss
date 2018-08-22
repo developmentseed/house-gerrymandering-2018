@@ -6,7 +6,12 @@ $range-label-offset: 1px;
   margin: 2rem auto;
   text-align: center;
   position: relative;
-  width: 40%;
+  width: 72%;
+  @include media(small-up) {
+    width: 60%;
+  }
+  @include media(medium-up) {
+  }
 }
 
 .slider {
@@ -89,12 +94,15 @@ input[type=range] {
 
 .range__warning {
   color: $warning;
-  font-size: $small-text;
+  font-size: $xsmall-text;
   font-weight: $bold-text;
   margin: -1.2em 0 0;
   text-align: center;
   position: absolute;
   width: 100%;
+  @include media(small-up) {
+    font-size: $small-text;
+  }
 }
 
 .range__label {

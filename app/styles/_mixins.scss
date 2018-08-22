@@ -72,3 +72,15 @@ $_inset_box_shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.95);
     background-color: lighten($action, 5%);
   }
 }
+
+@mixin media($arg) {
+  @if $arg == small-up {
+    @media #{$screen} and (min-width: 542px) { @content; }
+  }
+  @if $arg == medium-up {
+    @media #{$screen} and (min-width: 800px) { @content; }
+  }
+  @if $arg == large-up {
+    @media #{$screen} and (min-width: 992px) { @content; }
+  }
+}

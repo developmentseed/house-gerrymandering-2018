@@ -4,7 +4,7 @@ $hh-track-height: 16px;
   display: flex;
   flex-wrap: wrap;
   margin: 1rem auto 0.5rem;
-  width: 70%;
+  width: 95%;
 }
 
 .hh__party {
@@ -70,4 +70,11 @@ $hh-track-height: 16px;
 .hh__delta__num {
   font-weight: $bold-text;
   display: block;
+}
+
+.hh__prior {
+  display: none;
+  @include media(small-up) {
+    display: inline;
+  }
 }
