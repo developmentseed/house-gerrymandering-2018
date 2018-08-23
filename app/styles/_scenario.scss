@@ -1,0 +1,60 @@
+.scenario__cont {
+  padding: 0.5rem 1rem;
+}
+
+.scenario {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.scenario__item {
+  color: $white;
+  cursor: pointer;
+  border-radius: 0.1rem;
+  font-size: $xsmall-text;
+  height: 1rem;
+  margin: 0.1rem 0.1rem;
+  padding: 0.4rem 0.8rem 0.2rem 2.8rem;
+  position: relative;
+}
+
+@mixin party-btn {
+  content: 'x';
+  font-size: 1rem;
+  line-height: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 1.6rem;
+  text-align: center;
+}
+
+.scenario__item--rep {
+  background-color: $red;
+  &:after {
+    @include party-btn;
+    background-color: $dark-red;
+  }
+  &:hover {
+    background-color: lighten($red, 10%);
+  }
+}
+
+.scenario__item--dem {
+  background-color: $blue;
+  &:after {
+    @include party-btn;
+    background-color: $dark-blue;
+  }
+  &:hover {
+    background-color: lighten($blue, 10%);
+  }
+}
+
+.scenario__item__margin {
+  font-weight: $bold-text;
+}

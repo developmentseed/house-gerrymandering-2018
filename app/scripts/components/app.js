@@ -1,7 +1,12 @@
 'use strict';
 import React from 'react';
 import { connect } from 'react-redux';
-import { setAppDimensions, getHistoricalData } from '../actions';
+import {
+  setAppDimensions,
+  getHistoricalData,
+  getStateThresholds,
+  getStateAnalysis
+} from '../actions';
 
 class App extends React.Component {
   componentDidMount () {
@@ -11,6 +16,8 @@ class App extends React.Component {
 
   componentWillMount () {
     this.props.getHistoricalData();
+    this.props.getStateThresholds();
+    this.props.getStateAnalysis();
   }
 
   componentWillUnmount () {
@@ -31,4 +38,9 @@ class App extends React.Component {
     );
   }
 }
-export default connect(null, { setAppDimensions, getHistoricalData })(App);
+export default connect(null, {
+  setAppDimensions,
+  getHistoricalData,
+  getStateThresholds,
+  getStateAnalysis
+})(App);

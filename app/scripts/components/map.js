@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { geoPath, geoAlbersUsa } from 'd3-geo';
 import { select, zoomIdentity } from 'd3';
 import c from 'classnames';
+import { get } from 'object-path';
 import {
   syncMouseLocation,
   syncSelectedState
@@ -88,7 +89,7 @@ class Map extends React.Component {
   }
 
   renderSvgMap () {
-    const { districts, vote, selected, selectedIdMap } = this.props;
+    const { districts, vote, selected, selectedIdMap, stateAnalysis } = this.props;
     return (
       <svg width={this.state.width} height={this.state.height} className='map'>
         <rect width={this.state.width} height={this.state.height} className='map__bg' onClick={this.syncMouseClick} />
@@ -96,9 +97,13 @@ class Map extends React.Component {
           'districts--zoomed': !!selected
         })}>
           {districts.map(d => {
+            let stateScenario = vote[d.properties.stateFips];
+            let scenario = stateScenario || vote.natl;
+            let threshold = stateScenario ? get(stateAnalysis, [d.properties.stateFips, d.properties.fips])
+              : d.properties.threshold;
             // District classname
-            let outcome = d.properties.threshold > vote.natl ? '--blue'
-              : d.properties.threshold < vote.natl ? '--red' : '--tie';
+            let outcome = threshold > scenario ? '--blue'
+              : threshold < scenario ? '--red' : '--tie';
             // Unfocused district, aka zoomed into a different state
             if (selectedIdMap && !selectedIdMap.has(d.properties.id)) {
               outcome += '--out';
@@ -157,7 +162,7 @@ class Map extends React.Component {
         {this.state.width && this.state.height ? this.getMapElement() : null}
         {this.props.selected ? (
           <div className='map__topleft'>
-            <button className='map__reset' onClick={this.syncMouseClick}>Reset</button>
+            <button className='map__reset' onClick={this.syncMouseClick}>Zoom out</button>
           </div>
         ) : null}
       </div>
@@ -169,7 +174,8 @@ const selector = (state) => ({
   districts: state.geo.districts,
   vote: state.vote,
   selected: state.geo.selected,
-  selectedIdMap: state.geo.selectedIdMap
+  selectedIdMap: state.geo.selectedIdMap,
+  stateAnalysis: state.summary.stateAnalysis
 });
 
 export default connect(selector, {

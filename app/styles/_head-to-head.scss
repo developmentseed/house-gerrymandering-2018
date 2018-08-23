@@ -3,8 +3,14 @@ $hh-track-height: 16px;
 .hh__cont {
   display: flex;
   flex-wrap: wrap;
-  margin: 1rem auto;
-  width: 70%;
+  margin: 1rem auto 0.5rem;
+  width: 95%;
+  @include media(small-up) {
+    width: 85%;
+  }
+  @include media(medium-up) {
+    width: 75%;
+  }
 }
 
 .hh__party {
@@ -70,4 +76,11 @@ $hh-track-height: 16px;
 .hh__delta__num {
   font-weight: $bold-text;
   display: block;
+}
+
+.hh__prior {
+  display: none;
+  @include media(small-up) {
+    display: inline;
+  }
 }

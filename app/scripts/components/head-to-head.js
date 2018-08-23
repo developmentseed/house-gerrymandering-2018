@@ -53,11 +53,11 @@ class Head2Head extends React.Component {
         </figure>
 
         <figure className='hh__delta hh__delta__dem'>
-          <figcaption><span className='hh__delta__num'>{demDelta}</span> ({houseDems} seats held prior to midterms)</figcaption>
+          <figcaption><span className='hh__delta__num'>{demDelta}</span> <span className='hh__prior'>({houseDems} seats held prior to midterms)</span></figcaption>
         </figure>
 
         <figure className='hh__delta hh__delta__rep'>
-          <figcaption><span className='hh__delta__num'>{repDelta}</span> ({houseReps} seats held prior to midterms)</figcaption>
+          <figcaption><span className='hh__delta__num'>{repDelta}</span> <span className='hh__prior'>({houseReps} seats held prior to midterms)</span></figcaption>
         </figure>
       </div>
     );
@@ -66,8 +66,8 @@ class Head2Head extends React.Component {
 
 const selector = state => ({
   vote: state.vote,
-  dem: state.geo.natlDemCount,
-  rep: state.geo.natlRepCount
+  dem: state.summary.natlDemCount,
+  rep: state.summary.natlRepCount
 });
 
 export default connect(selector)(Head2Head);
