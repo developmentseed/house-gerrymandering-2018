@@ -10,8 +10,8 @@ export function syncMouseLocation (next) {
   return { type: 'sync_mouse_location', next };
 }
 
-export function syncSelectedState (districtId) {
-  return { type: 'sync_selected_state', next: { districtId } };
+export function syncSelectedState (stateId) {
+  return { type: 'sync_selected_state', next: { stateId } };
 }
 
 export function setNatlVote (vote) {

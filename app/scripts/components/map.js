@@ -9,6 +9,7 @@ import {
   syncMouseLocation,
   syncSelectedState
 } from '../actions';
+import { stateId } from '../util/format';
 
 const districtPaths = {};
 
@@ -148,7 +149,7 @@ class Map extends React.Component {
     if (this.state.lockMouseEvents) return;
     const id = e.currentTarget.getAttribute('data-id');
     this.props.syncMouseLocation({ event: null });
-    this.props.syncSelectedState(id);
+    this.props.syncSelectedState(stateId(id));
     this.setState({ lockMouseEvents: true });
   }
 
