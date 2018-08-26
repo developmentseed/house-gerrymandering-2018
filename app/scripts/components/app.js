@@ -56,9 +56,6 @@ class App extends React.Component {
     if (state !== prevProps.match.params.state) {
       this.syncState(state);
     }
-    if (this.props.location.search !== prevProps.location.search) {
-      this.syncVote();
-    }
   }
 
   syncState (state) {
@@ -80,6 +77,7 @@ class App extends React.Component {
       if (!isStateFips(stateFips) || isNaN(value)) {
         continue;
       }
+      value = Math.round(value);
       if (isWithinThreshold(value) && (!vote[stateFips] || +vote[stateFips] !== +value)) {
         nextVoteState[stateFips] = value;
         shouldSyncVoteState = true;
