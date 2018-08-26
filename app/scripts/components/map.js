@@ -147,9 +147,10 @@ class Map extends React.Component {
 
   syncMouseClick (e) {
     if (this.state.lockMouseEvents) return;
-    const id = e.currentTarget.getAttribute('data-id');
+    let id = e.currentTarget.getAttribute('data-id');
+    id = id ? stateId(id) : null;
     this.props.syncMouseLocation({ event: null });
-    this.props.syncSelectedState(stateId(id));
+    this.props.syncSelectedState(id);
     this.setState({ lockMouseEvents: true });
   }
 
