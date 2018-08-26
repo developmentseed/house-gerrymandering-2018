@@ -63,6 +63,10 @@ export function stateAbbrevFromFips (stateFips) {
   return stateAbbrev;
 }
 
+export function isStateFips (id) {
+  return id === 'natl' || stateNameFromFips(id) !== na;
+}
+
 export function party (party) {
   let p = party.toLowerCase();
   if (p === 'd' || p === 'dem') {
@@ -102,4 +106,8 @@ export function lean (threshold) {
   } else {
     return 'Leans heavily Republican';
   }
+}
+
+export function slug (s) {
+  return s.toString().toLowerCase().split(' ').join('-');
 }

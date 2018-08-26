@@ -1,7 +1,7 @@
 'use strict';
 import { get } from 'object-path';
 import { feature as toGeojson, merge } from 'topojson';
-import { fips, districtId, stateId } from '../util/format';
+import { fips, districtId } from '../util/format';
 import { error } from '../util/log';
 import { initialNationalVote } from './vote';
 
@@ -47,8 +47,8 @@ export function geo (state = initialGeoState, { type, next }) {
         : state;
       break;
     case 'sync_selected_state':
-      state = Object.assign({}, state, getSelectedState(state.districts, next.districtId));
-      state.selectedStateFips = next.districtId ? stateId(next.districtId) : null;
+      state = Object.assign({}, state, getSelectedState(state.districts, next.stateId));
+      state.selectedStateFips = next.stateId || null;
       break;
   }
   return state;
@@ -63,23 +63,13 @@ function findDistrict (districts, id) {
   return null;
 }
 
-function getStateDistricts (districts, id) {
-  const district = findDistrict(districts, id);
-  const { fips, stateFips } = district.properties;
-  if (Number(fips) === 0) {
-    return [district];
-  } else {
-    return districts.filter(d => d.properties.stateFips === stateFips);
-  }
-}
-
-// Returns a geojson feature representing the state that the district is part of.
-function getSelectedState (districts, districtId) {
+// Returns a geojson feature representing the selected state
+function getSelectedState (districts, stateId) {
   // a null value here will reset the map view to national
-  if (!districtId) {
+  if (!stateId) {
     return { selected: null, selectedIdMap: null };
   }
-  const selected = getStateDistricts(districts, districtId);
+  const selected = districts.filter(d => d.properties.stateFips === stateId);
   const idMap = new Map(selected.map(d => [d.properties.id, true]));
   const merged = merge(raw, raw.objects.districts.geometries.filter(d => idMap.has(d.properties.id)));
   return { selected: merged, selectedIdMap: idMap };
@@ -103,14 +93,19 @@ const initialSummaryState = Object.assign({
 // to determine summary numbers, as state-specific scenarios override national.
 // For organizational reasons, it's easier to duplicate them.
 export function summary (state = initialSummaryState, { type, next, results }) {
+  let votes;
   switch (type) {
     case 'get_state_analysis_success':
       state = Object.assign({}, state, { stateAnalysis: parseStateAnalysis(results) });
       break;
-    case 'set_natl_vote':
-    case 'set_state_vote':
+    case 'set_vote':
       let loc = next.stateFips || 'natl';
-      let votes = Object.assign({}, state.votes, { [loc]: next.vote });
+      votes = Object.assign({}, state.votes, { [loc]: next.vote });
+      state = Object.assign({}, state, getNatlCount(votes, state.stateAnalysis));
+      state.votes = votes;
+      break;
+    case 'sync_vote_state':
+      votes = Object.assign({}, state.votes, next.voteState);
       state = Object.assign({}, state, getNatlCount(votes, state.stateAnalysis));
       state.votes = votes;
       break;
