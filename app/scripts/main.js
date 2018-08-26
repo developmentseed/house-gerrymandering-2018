@@ -3,31 +3,19 @@ import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import store from './get-store';
-
 import App from './components/app';
-import Map from './components/map';
-import Slider from './components/slider';
-import Head2Head from './components/head-to-head';
-import Scenario from './components/scenario';
-import Legend from './components/legend';
-import Tooltip from './components/tooltip';
 
 const Root = () => (
   <Provider store={store}>
-    <App>
-      <Head2Head />
-      <Slider
-        demLimit={0.55}
-        repLimit={0.59}
-        offset={0.25}
-      />
-      <Scenario />
-      <Map width='100%' height='420px' />
-      <Legend />
-      <Tooltip />
-    </App>
+    <HashRouter>
+      <Switch>
+        <Route exact path='/' component={App} />
+        <Route path='/state/:state/' component={App} />
+        <Route render={() => <Redirect to='/' />} />
+      </Switch>
+    </HashRouter>
   </Provider>
 );
 
