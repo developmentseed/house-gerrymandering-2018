@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { scaleLinear } from 'd3';
 import { get } from 'object-path';
-import { setNatlVote, setStateVote } from '../actions';
+import { setVote } from '../actions';
 import { stateNameFromFips, fips } from '../util/format';
 
 class Slider extends React.Component {
@@ -34,9 +34,9 @@ class Slider extends React.Component {
     const { value } = e.currentTarget;
     const { scenarioEnabledState } = this.state;
     if (!scenarioEnabledState) {
-      this.props.setNatlVote(value);
+      this.props.setVote('natl', value);
     } else {
-      this.props.setStateVote(scenarioEnabledState, value);
+      this.props.setVote(scenarioEnabledState, value);
     }
   }
 
@@ -161,4 +161,4 @@ const selector = state => ({
   stateAnalysis: state.summary.stateAnalysis
 });
 
-export default connect(selector, { setNatlVote, setStateVote })(Slider);
+export default connect(selector, { setVote })(Slider);
