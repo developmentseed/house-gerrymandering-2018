@@ -93,14 +93,19 @@ const initialSummaryState = Object.assign({
 // to determine summary numbers, as state-specific scenarios override national.
 // For organizational reasons, it's easier to duplicate them.
 export function summary (state = initialSummaryState, { type, next, results }) {
+  let votes;
   switch (type) {
     case 'get_state_analysis_success':
       state = Object.assign({}, state, { stateAnalysis: parseStateAnalysis(results) });
       break;
-    case 'set_natl_vote':
-    case 'set_state_vote':
+    case 'set_vote':
       let loc = next.stateFips || 'natl';
-      let votes = Object.assign({}, state.votes, { [loc]: next.vote });
+      votes = Object.assign({}, state.votes, { [loc]: next.vote });
+      state = Object.assign({}, state, getNatlCount(votes, state.stateAnalysis));
+      state.votes = votes;
+      break;
+    case 'sync_vote_state':
+      votes = Object.assign({}, state.votes, next.voteState);
       state = Object.assign({}, state, getNatlCount(votes, state.stateAnalysis));
       state.votes = votes;
       break;
