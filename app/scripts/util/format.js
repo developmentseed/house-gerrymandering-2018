@@ -103,3 +103,7 @@ export function lean (threshold) {
     return 'Leans heavily Republican';
   }
 }
+
+export function slug (s) {
+  return s.toString().toLowerCase().split(' ').join('-');
+}

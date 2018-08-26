@@ -1,15 +1,19 @@
 'use strict';
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import { geoPath, geoAlbersUsa } from 'd3-geo';
 import { select, zoomIdentity } from 'd3';
 import c from 'classnames';
 import { get } from 'object-path';
 import {
-  syncMouseLocation,
-  syncSelectedState
+  syncMouseLocation
 } from '../actions';
-import { stateId } from '../util/format';
+import {
+  stateId,
+  stateNameFromFips,
+  slug
+} from '../util/format';
 
 const districtPaths = {};
 
@@ -147,11 +151,15 @@ class Map extends React.Component {
 
   syncMouseClick (e) {
     if (this.state.lockMouseEvents) return;
-    let id = e.currentTarget.getAttribute('data-id');
-    id = id ? stateId(id) : null;
     this.props.syncMouseLocation({ event: null });
-    this.props.syncSelectedState(id);
     this.setState({ lockMouseEvents: true });
+    const id = e.currentTarget.getAttribute('data-id');
+    if (id) {
+      const stateName = stateNameFromFips(stateId(id));
+      this.props.history.push(`/state/${slug(stateName)}`);
+    } else {
+      this.props.history.push('/');
+    }
   }
 
   render () {
@@ -180,7 +188,6 @@ const selector = (state) => ({
   stateAnalysis: state.summary.stateAnalysis
 });
 
-export default connect(selector, {
-  syncMouseLocation,
-  syncSelectedState
-})(Map);
+export default withRouter(connect(selector, {
+  syncMouseLocation
+})(Map));
