@@ -50,7 +50,7 @@ $_inset_box_shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.95);
 }
 
 @mixin action-btn () {
-  background-color: $action;
+  background-color: lighten($dark-gray, 8%);
   color: $white;
   border: none;
   font-weight: $bold-text;
@@ -61,7 +61,7 @@ $_inset_box_shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.95);
   padding: 0 0.75rem 0 3rem;
   transition: background-color 0.2s;
   &:before {
-    background-color: darken($action, 5%);
+    background-color: $dark-gray;
     content: '↩	';
     display: block;
     left: 0;
@@ -72,7 +72,7 @@ $_inset_box_shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.95);
     width: 2rem;
   }
   &:hover {
-    background-color: lighten($action, 5%);
+    background-color: lighten($dark-gray, 15%);
   }
 }
 
