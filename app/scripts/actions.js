@@ -26,8 +26,9 @@ export function syncVoteState (voteState) {
   return { type: 'sync_vote_state', next: { voteState } };
 }
 
-export function openShareModal () {
-  return { type: 'open_share_modal' };
+export function openShareModal (reactSyntheticEvent) {
+  const { pageX, pageY } = reactSyntheticEvent;
+  return { type: 'open_share_modal', next: { pageX, pageY } };
 }
 
 export function closeShareModal () {

@@ -1,0 +1,17 @@
+
+.modal__bg {
+  @include full-screen;
+  background-color: $white;
+  background-color: rgba(254, 254, 254, 0.7);
+  filter: blur(5px);
+}
+
+.modal__cont {
+  @include full-screen;
+}
+
+.modal__inner {
+  position: relative;
+}
+
+
