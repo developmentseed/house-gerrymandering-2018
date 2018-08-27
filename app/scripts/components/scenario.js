@@ -35,7 +35,9 @@ class Scenario extends React.Component {
 
   render () {
     const { vote } = this.props;
-    const scenarios = Object.keys(vote).filter(name => parseFloat(vote[name]) !== 50.0);
+    // Scenarios should be sorted national-first, then alphabetically by state name.
+    const scenarios = ['natl'].concat(Object.keys(vote).filter(name => name !== 'natl'))
+      .filter(name => parseFloat(vote[name]) !== 50.0);
     return (
       <div className='scenario__cont'>
         <ul className='scenario'>
