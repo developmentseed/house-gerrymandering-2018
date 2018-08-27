@@ -8,6 +8,7 @@ import {
 import vote from './vote';
 import states from './states';
 import historical from './historical';
+import share from './share';
 
 const initialAppState = {
   width: 0,
@@ -21,4 +22,4 @@ function app (state = initialAppState, { type, next }) {
   return state;
 }
 
-export default combineReducers({ app, geo, summary, vote, mouse, historical, states });
+export default combineReducers({ app, geo, summary, vote, mouse, historical, states, share });

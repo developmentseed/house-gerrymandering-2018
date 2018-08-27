@@ -2,8 +2,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import c from 'classnames';
-import { setVote, clearVote } from '../actions';
+import { setVote, clearVote, openShareModal } from '../actions';
 import { stateAbbrevFromFips } from '../util/format';
+
+class _Share extends React.Component {
+  render () {
+    return (
+      <li className='scenario__item scenario__item--share' onClick={this.props.openShareModal}><span className='scenario__link'><span className='collecticon collecticon-link' /></span>Share scenario</li>
+    );
+  }
+}
+
+const Share = connect(null, {openShareModal})(_Share);
 
 class Scenario extends React.Component {
   constructor (props) {
@@ -47,6 +57,7 @@ class Scenario extends React.Component {
               'scenario__item--dem': vote[s] < 50
             })} onClick={this.resetVote} data-id={s}>{this.label(s)} {this.margin(vote[s])}</li>
           ))}
+          <Share />
         </ul>
       </div>
     );

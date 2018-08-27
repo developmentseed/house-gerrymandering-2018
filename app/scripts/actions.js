@@ -26,6 +26,14 @@ export function syncVoteState (voteState) {
   return { type: 'sync_vote_state', next: { voteState } };
 }
 
+export function openShareModal () {
+  return { type: 'open_share_modal' };
+}
+
+export function closeShareModal () {
+  return { type: 'close_share_modal' };
+}
+
 export function getHistoricalData () {
   return getCsv('historical-results.csv', 'get_historical');
 }
