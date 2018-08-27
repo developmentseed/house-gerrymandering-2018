@@ -16,6 +16,7 @@ import Head2Head from './head-to-head';
 import Scenario from './scenario';
 import Legend from './legend';
 import Tooltip from './tooltip';
+import ShareModal from './share-modal';
 import { isStateFips } from '../util/format';
 
 const sliderOffset = 0.25;
@@ -107,6 +108,7 @@ class App extends React.Component {
         <Map width='100%' height='420px' />
         <Legend />
         <Tooltip />
+        <ShareModal />
       </div>
     );
   }
