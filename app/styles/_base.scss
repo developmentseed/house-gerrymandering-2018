@@ -17,6 +17,10 @@
   }
 }
 
+html {
+  @include sans-serif;
+}
+
 // Scss starts here!
 .header {
   padding: 256px 32px;
@@ -33,4 +37,8 @@
       vertical-align: top;
     }
   }
+}
+
+.hidden {
+  display: none;
 }

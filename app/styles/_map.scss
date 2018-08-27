@@ -1,0 +1,55 @@
+.map__cont {
+  position: relative;
+}
+
+.map__bg {
+  cursor: pointer;
+  fill: transparent;
+}
+
+.district {
+  cursor: pointer;
+  stroke: $district-stroke;
+  stroke-width: $district-stroke-width;
+  &:hover {
+    stroke: $district-stroke-hover;
+    stroke-width: $district-stroke-width-hover;
+  }
+  &--red {
+    fill: $district-red;
+  }
+  &--blue {
+    fill: $district-blue;
+  }
+  &--tie {
+    fill: $district-tie;
+  }
+  &--red--out {
+    fill: $district-light-red;
+  }
+  &--blue--out {
+    fill: $district-light-blue;
+  }
+  &--tie--out {
+    fill: $district-light-tie;
+  }
+}
+
+.districts--zoomed .district {
+  stroke-width: $district-stroke-width / 5;
+  &:hover {
+    stroke-width: $district-stroke-width-hover / 5;
+  }
+}
+
+.map__topleft {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.map__reset {
+  @include action-btn;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}

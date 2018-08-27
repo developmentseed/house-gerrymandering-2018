@@ -1,0 +1,175 @@
+@mixin party-icon ($color) {
+  &:before {
+    background-color: $color;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    left: -1.1rem;
+    position: absolute;
+  }
+}
+
+.slider__cont {
+  margin: 1rem 0;
+}
+
+.legend {
+  font-size: $small-text;
+  font-weight: $semi-bold-text;
+  display: flex;
+  justify-content: center;
+}
+
+.legend__item {
+  margin: 1rem 1rem 1rem 1.5rem;
+  position: relative;
+}
+
+.legend__item--rep {
+  @include party-icon($red);
+}
+
+.legend__item--dem {
+  @include party-icon($blue);
+}
+
+.tooltip__cont {
+  @include box-shadow;
+  background-color: $white;
+  border-radius: .25rem;
+  margin-top: -4em;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding: 0;
+  position: fixed;
+}
+
+.tooltip__cont__right {
+  margin-left: 2em;
+}
+
+.tooltip__cont__left {
+  margin-left: -2rem;
+}
+
+.tooltip__sect {
+  padding: 1rem 0.75rem;
+}
+
+.tooltip__sect--divider {
+  border-top: 1px solid $light-gray;
+}
+
+.tooltip__title {
+  font-size: $medium-text;
+  font-weight: $bold-text;
+  line-height: $title-line-height;
+}
+
+.hist__cont {
+  display: flex;
+  flex-wrap: nowrap;
+  line-height: 1rem;
+  justify-content: space-between;
+  margin: 0.2rem 0;
+}
+
+.hist__cont--0 {
+  font-weight: $bold-text;
+  line-height: 1.1rem;
+}
+
+.hist__label {
+  font-size: $xsmall-text;
+  font-weight: $bold-text;
+}
+
+.hist__item {
+  font-size: $xsmall-text;
+}
+
+.hist__item--first {
+  margin-right: 1rem;
+}
+
+.hist__winner--rep {
+  color: $red;
+}
+
+.hist__winner--dem {
+  color: $blue;
+}
+
+.tooltip__cont__lg {
+  .hist__item {
+    font-size: $small-text;
+  }
+  .tooltip__sect {
+    padding: 1rem;
+  }
+}
+
+$threshold-margin: 1.8rem;
+$threshold-bar-height: 6px;
+.threshold {
+  position: relative;
+  height: $threshold-bar-height;
+  margin: 0.75rem $threshold-margin 0;
+}
+
+.threshold__bar {
+  display: block;
+  height: $threshold-bar-height;
+  position: absolute;
+  &--dem {
+    background-color: $blue;
+    border-top-left-radius: $threshold-bar-height / 2;
+    border-bottom-left-radius: $threshold-bar-height / 2;
+  }
+  &--rep {
+    background-color: $red;
+    border-top-right-radius: $threshold-bar-height / 2;
+    border-bottom-right-radius: $threshold-bar-height / 2;
+  }
+}
+
+.threshold__limit {
+  height: $threshold-bar-height + 8px;
+  border-left: 1px solid $black;
+  position: absolute;
+  top: -4px;
+}
+
+.threshold__label {
+  position: absolute;
+}
+
+.threshold__label,
+.lean {
+  font-size: $xsmall-text;
+  font-weight: $bold-text;
+  margin-bottom: 0.1rem;
+}
+
+.threshold__label--dem {
+  color: $blue;
+  left: -$threshold-margin;
+  top: -0.2rem;
+}
+
+.threshold__label--rep {
+  color: $red;
+  right: -$threshold-margin;
+  top: -0.2rem;
+}
+
+.lean__0 {
+  color: $blue;
+}
+
+.lean__1 {
+  color: $red;
+}

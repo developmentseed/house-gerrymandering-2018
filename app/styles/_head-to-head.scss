@@ -1,0 +1,86 @@
+$hh-track-height: 16px;
+
+.hh__cont {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem auto 0.5rem;
+  width: 95%;
+  @include media(small-up) {
+    width: 85%;
+  }
+  @include media(medium-up) {
+    width: 75%;
+  }
+}
+
+.hh__party {
+  flex-grow: 1;
+  font-size: $large-text;
+  font-weight: $bold-text;
+}
+
+.hh__delta__dem,
+.hh__party__dem {
+  color: $blue;
+  text-align: left;
+}
+
+.hh__delta__rep,
+.hh__party__rep {
+  color: $red;
+  text-align: right;
+}
+
+.hh__party__label {
+  font-size: $small-text;
+  font-weight: $base-text;
+}
+
+.hh__figure {
+  @include box-shadow;
+  height: $hh-track-height;
+  flex-basis: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hh__figure__span {
+  height: $hh-track-height;
+  position: absolute;
+}
+
+.hh__figure__span--dem {
+  background: $blue;
+}
+
+.hh__figure__span--rep {
+  background: $red;
+  border-left: 1px solid $white;
+}
+
+.hh__figure__center {
+  border-right: 1px solid $dark-gray;
+  height: $hh-track-height + 12px;
+  left: 50%;
+  margin-top: -6px;
+  position: absolute;
+}
+
+.hh__delta {
+  flex-grow: 1;
+  font-size: $small-text;
+  line-height: 1.3rem;
+  margin: 0.5rem 0 0;
+}
+
+.hh__delta__num {
+  font-weight: $bold-text;
+  display: block;
+}
+
+.hh__prior {
+  display: none;
+  @include media(small-up) {
+    display: inline;
+  }
+}

@@ -1,0 +1,47 @@
+/* General colors */
+$white: #FEFEFE;
+$light-gray: #DDDDDD;
+$med-gray: #A9A9A9;
+$dark-gray: #333333;
+$black: #000000;
+
+/* Semantic colors */
+$warning: #E05D30;
+$action: #F6AC2C;
+
+$blue: #306E9F;
+$light-blue: lighten($blue, 20%);
+$dark-blue: #1B5280;
+
+$red: #D64640;
+$light-red: lighten($red, 20%);
+$dark-red: #8F2323;
+
+/* Text sizes */
+$large-text: 1.75rem;
+$medium-text: 1.25rem;
+$xsmall-text: 0.75rem;
+$small-text: 0.875rem;
+$bold-text: 600;
+$semi-bold-text: 500;
+$base-text: 400;
+
+$title-line-height: 2.25rem;
+
+/* Map stroke and fill colors */
+$district-stroke: #FEFEFE;
+$district-stroke-width: 0.3;
+$district-stroke-hover: #FFFFFF;
+$district-stroke-width-hover: 1.2;
+$district-red: $red;
+$district-blue: $blue;
+$district-tie: $light-gray;
+$district-light-red: $light-red;
+$district-light-blue: $light-blue;
+$district-light-tie: lighten($light-gray, 20%);
+
+/* Media queries */
+$screen: "only screen";
+$small-range: (543px, 799px);
+$medium-range: (800px, 991px);
+$large-range: (992px, 1199px);
