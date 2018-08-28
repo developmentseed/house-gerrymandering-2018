@@ -116,11 +116,10 @@ export function slug (s) {
 export function searchUrl (voteObj) {
   let search = {};
   for (let k in voteObj) {
-    if (k === 'natl') {
-      search[k] = voteObj[k];
-    } else {
-      search[slug(stateNameFromFips(k))] = voteObj[k];
+    if (k === 'natl' && +voteObj[k] === 50) {
+      continue
     }
+    search[k] = voteObj[k];
   }
   return Object.keys(search).length ? '?' + qs.stringify(search) : '';
 }

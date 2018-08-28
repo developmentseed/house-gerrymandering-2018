@@ -25,7 +25,7 @@ class _Share extends React.Component {
   open () {
     const { vote, location } = this.props;
     const hash = path.join(location.pathname, searchUrl(vote));
-    const src = `${baseUrl}/#${hash}`;
+    const src = `${baseUrl}#${hash}`;
     this.setState({ isOpen: true, src });
     window.setTimeout(() => window.addEventListener('click', this.close), 0);
   }
