@@ -35,6 +35,10 @@
   @include party-icon($blue);
 }
 
+.legend__item--tied {
+  @include party-icon($light-gray);
+}
+
 .tooltip__cont {
   @include box-shadow;
   background-color: $white;
