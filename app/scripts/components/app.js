@@ -100,7 +100,7 @@ class App extends React.Component {
         <Head2Head />
         <Slider
           demLimit={0.55}
-          repLimit={0.59}
+          repLimit={0.55}
           offset={sliderOffset}
         />
         <Scenario />
