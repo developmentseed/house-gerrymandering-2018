@@ -1,19 +1,87 @@
 'use strict';
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import c from 'classnames';
-import { setVote, clearVote, openShareModal } from '../actions';
-import { stateAbbrevFromFips } from '../util/format';
+import path from 'path';
+import { setVote, clearVote } from '../actions';
+import { stateAbbrevFromFips, searchUrl } from '../util/format';
+import baseUrl from '../static/base-url';
+import copyToClipboard from '../util/copy';
 
 class _Share extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      copied: false,
+      src: ''
+    };
+    this.open = this.open.bind(this);
+    this.close = this.close.bind(this);
+    this.copy = this.copy.bind(this);
+  }
+
+  open () {
+    const { vote, location } = this.props;
+    const hash = path.join(location.pathname, searchUrl(vote));
+    const src = `${baseUrl}/#${hash}`;
+    this.setState({ isOpen: true, src });
+    window.setTimeout(() => window.addEventListener('click', this.close), 0);
+  }
+
+  close () {
+    this.setState({ isOpen: false, copied: false });
+    window.removeEventListener('click', this.close);
+  }
+
+  copy (e) {
+    e.stopPropagation();
+    copyToClipboard(this.state.src);
+    this.setState({ copied: true });
+    window.setTimeout(() => this.close(), 600);
+  }
+
+  renderShare () {
+    if (!this.state.isOpen) {
+      return null;
+    }
+    return (
+      <div className='share'>
+        <div className='share__inner'>
+          <h4 className='share__title'>Copy this link to share this scenario</h4>
+          <div className='share__form'>
+            <input className='share__link' type='text' readOnly aria-label='Link to this scenario' value={this.state.src} />
+            <button className='share__btn' onClick={this.copy}>
+              {this.state.copied
+                ? <span className='collecticon collecticon-clipboard-tick' />
+                : <span className='collecticon collecticon-clipboard-list' />
+              }
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   render () {
     return (
-      <li className='scenario__item scenario__item--share' onClick={this.props.openShareModal}><span className='scenario__link'><span className='collecticon collecticon-link' /></span>Share scenario</li>
+      <div className='share__cont'>
+        <li className='scenario__item scenario__item--share' onClick={this.open}>
+          <span className='scenario__link'><span className='collecticon collecticon-link' /></span>
+          Share scenario <span className='scenario__triangle'><span className='collecticon collecticon-triangle-down' /></span>
+        </li>
+        {this.renderShare()}
+      </div>
     );
   }
 }
 
-const Share = connect(null, {openShareModal})(_Share);
+const shareSelector = (state) => ({
+  vote: state.vote
+});
+
+const Share = withRouter(connect(shareSelector)(_Share));
 
 class Scenario extends React.Component {
   constructor (props) {

@@ -42,6 +42,17 @@ $_inset_box_shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.95);
   box-shadow: $_inset_box_shadow;
 }
 
+$_light_inset_box_shadow: inset 0 1px 2px rgba(27,31,35,0.075);
+@mixin light-inset-box-shadow {
+  -webkit-box-shadow: $_light_inset_box_shadow;
+  -moz-box-shadow: $_light_inset_box_shadow;
+  box-shadow: $_light_inset_box_shadow;
+}
+
+@mixin form-border {
+  border: 1px solid #d1d5da;
+}
+
 @mixin transform ($property) {
   -webkit-transform: $property;
   -ms-transform: $property;
@@ -91,4 +102,11 @@ $_inset_box_shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.95);
 @mixin full-screen {
   position: fixed;
   top: 0; right: 0; bottom: 0; left: 0;
+}
+
+$_blur: blur(5px);
+@mixin blur {
+  -moz-filter: $_blur;
+  -webkit-filter: $_blur;
+  filter: $_blur;
 }
