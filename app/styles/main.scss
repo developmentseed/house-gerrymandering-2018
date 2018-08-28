@@ -1,44 +1,16 @@
-/* ==========================================================================
-   Main
-   ========================================================================== */
+@charset 'UTF-8';
+@import 'normalize';
+@import 'reset';
+@import 'normalize-opentype';
 
-/**
- * Following Necolas' Principles of writing consistent, idiomatic CSS:
- * https://github.com/necolas/idiomatic-css
- */
+@import 'vendor/icons';
 
-/* Charset */
-
-@charset "UTF-8";
-
-
-/* Reboot
-   ========================================================================== */
-
-@import "normalize";
-@import "reset";
-
-/**
- * Using Kenneth Ormandy's OpenType features—ligatures, kerning, and
- * more—to Normalize.css:
- * https://github.com/kennethormandy/normalize-opentype.css
- */
-
-@import "normalize-opentype";
-
-
-/* Settings
-   ========================================================================== */
-
-
-/* Main
-   ========================================================================== */
-
-@import "settings";
-@import "mixins";
-@import "base";
-@import "map";
-@import "labels";
-@import "slider";
-@import "head-to-head";
-@import "scenario";
+@import 'settings';
+@import 'mixins';
+@import 'base';
+@import 'map';
+@import 'labels';
+@import 'slider';
+@import 'head-to-head';
+@import 'scenario';
+@import 'share';

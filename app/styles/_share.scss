@@ -1,0 +1,77 @@
+
+.modal__bg {
+  @include full-screen;
+  background-color: $white;
+  background-color: rgba(254, 254, 254, 0.7);
+  filter: blur(5px);
+}
+
+.modal__cont {
+  @include full-screen;
+}
+
+.modal__inner {
+  position: relative;
+}
+
+.share__cont {
+  position: relative;
+}
+
+.share {
+  @include box-shadow;
+  background-color: $white;
+  margin: 0.25rem 0 0;
+  padding: 1rem;
+
+  right: 1rem;
+  position: fixed;
+  @include media(medium-up) {
+    right: 0;
+    position: absolute;
+  }
+
+  width: 240px;
+  z-index: 99;
+}
+
+.share__title {
+  font-size: $small-text;
+  line-height: 1.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.share__form {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: no-wrap;
+}
+
+.share__link {
+  @include light-inset-box-shadow;
+  @include form-border;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  font-size: $xsmall-text;
+  line-height: 1.5rem;
+  padding: 0.25rem 0.1rem 0.1rem 0.25rem;
+  width: 240px;
+}
+
+.share__btn {
+  background-color: $white;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-left: none;
+  transition: background 200ms;
+  width: 32px;
+  > .collecticon {
+    line-height: 1.5rem;
+  }
+  &:hover {
+    background-color: darken($white, 5%);
+  }
+  &:active {
+    @include light-inset-box-shadow;
+  }
+}
