@@ -26,15 +26,6 @@ export function syncVoteState (voteState) {
   return { type: 'sync_vote_state', next: { voteState } };
 }
 
-export function openShareModal (reactSyntheticEvent) {
-  const { pageX, pageY } = reactSyntheticEvent;
-  return { type: 'open_share_modal', next: { pageX, pageY } };
-}
-
-export function closeShareModal () {
-  return { type: 'close_share_modal' };
-}
-
 export function getHistoricalData () {
   return getCsv('historical-results.csv', 'get_historical');
 }
