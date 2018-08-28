@@ -117,7 +117,7 @@ export function searchUrl (voteObj) {
   let search = {};
   for (let k in voteObj) {
     if (k === 'natl' && +voteObj[k] === 50) {
-      continue
+      continue;
     }
     search[k] = voteObj[k];
   }
