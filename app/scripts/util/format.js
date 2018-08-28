@@ -1,4 +1,5 @@
 'use strict';
+import qs from 'qs';
 import { get } from 'object-path';
 import { error } from './log';
 
@@ -110,4 +111,16 @@ export function lean (threshold) {
 
 export function slug (s) {
   return s.toString().toLowerCase().split(' ').join('-');
+}
+
+export function searchUrl (voteObj) {
+  let search = {};
+  for (let k in voteObj) {
+    if (k === 'natl') {
+      search[k] = voteObj[k];
+    } else {
+      search[slug(stateNameFromFips(k))] = voteObj[k];
+    }
+  }
+  return Object.keys(search).length ? '?' + qs.stringify(search) : '';
 }

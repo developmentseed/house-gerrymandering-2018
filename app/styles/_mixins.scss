@@ -42,6 +42,17 @@ $_inset_box_shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.95);
   box-shadow: $_inset_box_shadow;
 }
 
+$_light_inset_box_shadow: inset 0 1px 2px rgba(27,31,35,0.075);
+@mixin light-inset-box-shadow {
+  -webkit-box-shadow: $_light_inset_box_shadow;
+  -moz-box-shadow: $_light_inset_box_shadow;
+  box-shadow: $_light_inset_box_shadow;
+}
+
+@mixin form-border {
+  border: 1px solid #d1d5da;
+}
+
 @mixin transform ($property) {
   -webkit-transform: $property;
   -ms-transform: $property;
@@ -50,26 +61,29 @@ $_inset_box_shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.95);
 }
 
 @mixin action-btn () {
-  background-color: $action;
+  background-color: lighten($dark-gray, 8%);
   color: $white;
   border: none;
   font-weight: $bold-text;
-  height: 3rem;
-  padding: 1rem 1rem 1rem 4rem;
+  font-size: $small-text;
+  height: 2rem;
+  line-height: 2.2rem;
   position: relative;
+  padding: 0 0.75rem 0 3rem;
   transition: background-color 0.2s;
   &:before {
-    background-color: darken($action, 5%);
-    content: '';
+    background-color: $dark-gray;
+    content: '↩	';
     display: block;
     left: 0;
-    height: 3rem;
+    height: 2rem;
+    line-height: 2.4rem;
     position: absolute;
     top: 0;
-    width: 3rem;
+    width: 2rem;
   }
   &:hover {
-    background-color: lighten($action, 5%);
+    background-color: lighten($dark-gray, 15%);
   }
 }
 
@@ -83,4 +97,16 @@ $_inset_box_shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.95);
   @if $arg == large-up {
     @media #{$screen} and (min-width: 992px) { @content; }
   }
+}
+
+@mixin full-screen {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+$_blur: blur(5px);
+@mixin blur {
+  -moz-filter: $_blur;
+  -webkit-filter: $_blur;
+  filter: $_blur;
 }

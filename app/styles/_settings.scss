@@ -41,7 +41,7 @@ $district-light-blue: $light-blue;
 $district-light-tie: lighten($light-gray, 20%);
 
 /* Media queries */
-$screen: "only screen";
+$screen: 'only screen';
 $small-range: (543px, 799px);
 $medium-range: (800px, 991px);
 $large-range: (992px, 1199px);

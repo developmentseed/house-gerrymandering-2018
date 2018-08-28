@@ -52,6 +52,10 @@ $range-label-offset: 1px;
   height: $slider-track-height;
 }
 
+input[type=range]::-moz-focus-outer {
+  border: 0;
+}
+
 input[type=range] {
   @include appearance-none;
   background: transparent;

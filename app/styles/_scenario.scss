@@ -15,20 +15,22 @@
   cursor: pointer;
   border-radius: 0.1rem;
   font-size: $xsmall-text;
+  line-height: 1rem;
   height: 1rem;
   margin: 0.1rem 0.1rem;
   padding: 0.4rem 0.8rem 0.2rem 2.8rem;
   position: relative;
 }
 
+$party-btn-width: 2rem;
 @mixin party-btn {
-  content: 'x';
+  content: '×';
   font-size: 1rem;
   line-height: 1.5rem;
   position: absolute;
   left: 0;
   top: 0;
-  width: 2rem;
+  width: $party-btn-width;
   height: 1.6rem;
   text-align: center;
 }
@@ -57,4 +59,29 @@
 
 .scenario__item__margin {
   font-weight: $bold-text;
+}
+
+.scenario__item--share {
+  background-color: $action;
+  font-weight: $bold-text;
+  text-transform: uppercase;
+  &:before {
+    @include party-btn;
+    content: '';
+    background-color: darken($action, 5%);
+  }
+  &:hover {
+    background-color: lighten($action, 10%);
+  }
+}
+
+.scenario__link {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: $party-btn-width;
+}
+
+.scenario__triangle {
+  margin-left: 0.2rem;
 }
