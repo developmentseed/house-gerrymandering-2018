@@ -23,7 +23,10 @@
 }
 
 .legend__item {
-  margin: 1rem 1rem 1rem 1.5rem;
+  margin: 0 0.5rem 0 2rem;
+  @include media(medium-up) {
+    margin: 1rem 1rem 1rem 1.5rem;
+  }
   position: relative;
 }
 
@@ -33,6 +36,10 @@
 
 .legend__item--dem {
   @include party-icon($blue);
+}
+
+.legend__item--tied {
+  @include party-icon($light-gray);
 }
 
 .tooltip__cont {

@@ -96,7 +96,8 @@ export function summary (state = initialSummaryState, { type, next, results }) {
   let votes;
   switch (type) {
     case 'get_state_analysis_success':
-      state = Object.assign({}, state, { stateAnalysis: parseStateAnalysis(results) });
+      let stateAnalysis = parseStateAnalysis(results);
+      state = Object.assign({}, state, { stateAnalysis }, getNatlCount(state.votes, stateAnalysis));
       break;
     case 'set_vote':
       let loc = next.stateFips || 'natl';
