@@ -7,6 +7,7 @@
     width: 0.75rem;
     height: 0.75rem;
     left: -1.1rem;
+    top: 0.2rem;
     position: absolute;
   }
 }
@@ -151,12 +152,13 @@ $threshold-bar-height: 6px;
 }
 
 .threshold__label {
+  @include numeric;
   position: absolute;
 }
 
 .threshold__label,
 .lean {
-  font-size: $xsmall-text;
+  font-size: $small-text;
   font-weight: $bold-text;
   margin-bottom: 0.1rem;
 }
@@ -164,13 +166,13 @@ $threshold-bar-height: 6px;
 .threshold__label--dem {
   color: $blue;
   left: -$threshold-margin;
-  top: -0.2rem;
+  top: -0.4rem;
 }
 
 .threshold__label--rep {
   color: $red;
   right: -$threshold-margin;
-  top: -0.2rem;
+  top: -0.4rem;
 }
 
 .lean__0 {

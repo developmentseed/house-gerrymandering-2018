@@ -46,3 +46,14 @@ html {
 .blur {
   @include blur;
 }
+
+.numeric {
+  @include numeric;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// Overwrite collecticons line height
+[class^='collecticon-'], [class*=' collecticon-'] {
+  line-height: 0;
+}
