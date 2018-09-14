@@ -107,8 +107,8 @@ class Scenario extends React.Component {
   }
 
   margin (vote) {
-    const v = Math.abs(vote - 50) * 2;
-    return <span className='scenario__item__margin'>+{v}</span>;
+    const v = Math.abs(vote - 50) + 50;
+    return <span className='scenario__item__margin'>{v}%</span>;
   }
 
   party (vote) {
