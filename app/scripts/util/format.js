@@ -99,9 +99,9 @@ export function lean (threshold) {
   }
   let t = parseFloat(threshold);
   if (t >= 65) {
-    return 'Leans heavily Democrat';
+    return 'Leans heavily Democratic';
   } else if (t > 50) {
-    return 'Leans Democrat';
+    return 'Leans Democratic';
   } else if (t > 45) {
     return 'Leans Republican';
   } else {
