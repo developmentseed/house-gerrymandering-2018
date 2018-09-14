@@ -69,7 +69,7 @@ class Tooltip extends React.Component {
     );
   }
 
-  renderThreshold (threshold) {
+  renderThreshold (threshold, useStateThreshold, hasNoStateThreshold) {
     if (isNaN(threshold)) {
       error('No threshold found');
       return null;
@@ -78,15 +78,18 @@ class Tooltip extends React.Component {
     const partyLean = Math.floor(demVote / 50);
     const opposing = partyLean === 0 ? 'Republicans' : 'Democrats';
     const opposingLean = partyLean ? 'lean__0' : 'lean__1';
-    const delta = Math.abs(demVote - threshold);
+    const opposingVote = Math.round(partyLean === 0 ? threshold : demVote);
     return (
       <React.Fragment>
         <p className='lean'>
-          <span className={'lean__' + partyLean}>{lean(threshold)}</span>.
+          <span className={'lean__' + partyLean}>{lean(threshold)}</span>
         </p>
         <p className='lean'>
-          <span className={opposingLean}>{opposing}</span> win at <span className={opposingLean}>+{pct(Math.round(delta))}</span>.
+          <span className={opposingLean}>{opposing}</span> need <span className={opposingLean}>{opposingVote}%</span> of {useStateThreshold && !hasNoStateThreshold ? 'state' : 'national'} vote
         </p>
+        {hasNoStateThreshold ? (
+          <p className='lean lean__nodata'>State-level analysis unavailable</p>
+        ) : null}
         <figure className='threshold'>
           <span className='threshold__bar threshold__bar--dem' style={{ width: demVote + '%' }}/>
           <span className='threshold__bar threshold__bar--rep' style={{ left: demVote + '%', width: (100 - demVote) + '%' }}/>
@@ -120,12 +123,21 @@ class Tooltip extends React.Component {
     // Use the state-specific threshold if:
     // 1. We've specified a threshold
     // 2. We've clicked into the state
-    const threshold = vote.hasOwnProperty(d.stateFips) || selectedStateFips === d.stateFips ? get(stateAnalysis, [d.stateFips, d.fips]) : d.threshold;
+    const useStateThreshold = vote.hasOwnProperty(d.stateFips) || selectedStateFips === d.stateFips;
+
+    // Some states, however, do not have a threshold available.
+    // These are single-district states like WY and ND.
+    // Fallback to the national threshold in this case, but call it out.
+    let threshold = useStateThreshold ? get(stateAnalysis, [d.stateFips, d.fips]) : d.threshold;
+    const hasNoStateThreshold = useStateThreshold && !threshold;
+    if (hasNoStateThreshold) {
+      threshold = d.threshold;
+    }
     return (
       <figure style={style} className={classNames}>
         <div className='tooltip__sect'>
           <h3 className='tooltip__title'>{districtName(d.stateFips, d.fips)}</h3>
-          {this.renderThreshold(threshold)}
+          {this.renderThreshold(threshold, useStateThreshold, hasNoStateThreshold)}
         </div>
         <div className='tooltip__sect tooltip__sect--divider'>
           {this.renderHistorical(historical)}

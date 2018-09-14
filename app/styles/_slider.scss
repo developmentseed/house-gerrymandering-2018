@@ -152,12 +152,13 @@ input[type=range] {
   color: $med-gray;
   font-size: $small-text;
   left: 50%;
-  margin-top: $slider-thumb-height / 2 + $range-label-offset + $slider-track-height + 8px;
+  margin-top: $slider-thumb-height / 2 + $range-label-offset + $slider-track-height + 3px;
   position: absolute;
   @include transform(translateX(-50%));
 }
 
 .range__marker {
+  @include numeric;
   font-size: 1rem;
   font-weight: $bold-text;
   line-height: 1rem;
@@ -176,6 +177,7 @@ input[type=range] {
 }
 
 .range__label__scenario {
+  @include numeric;
   font-size: 1rem;
   font-weight: $bold-text;
   line-height: 1rem;

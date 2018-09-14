@@ -7,7 +7,7 @@ class Legend extends React.Component {
       <figure className='legend__cont'>
         <figcaption className='legend'>
           <span className='legend__item legend__item--rep'>Republican</span>
-          <span className='legend__item legend__item--dem'>Democrat</span>
+          <span className='legend__item legend__item--dem'>Democratic</span>
           <span className='legend__item legend__item--tied'>Tied</span>
         </figcaption>
       </figure>

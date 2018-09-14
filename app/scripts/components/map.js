@@ -149,16 +149,21 @@ class Map extends React.Component {
     this.props.syncMouseLocation({ event: null });
   }
 
+  // This moves the focus of the map to a different state.
   syncMouseClick (e) {
     if (this.state.lockMouseEvents) return;
-    this.props.syncMouseLocation({ event: null });
-    this.setState({ lockMouseEvents: true });
     const id = e.currentTarget.getAttribute('data-id');
+    // Check to make sure the target district is actually in a different state.
+    if (this.props.selectedIdMap && this.props.selectedIdMap.has(id)) return;
+    this.props.syncMouseLocation({ event: null });
     if (id) {
       const stateName = stateNameFromFips(stateId(id));
       this.props.history.push(`/state/${slug(stateName)}`);
-    } else {
+      this.setState({ lockMouseEvents: true });
+    } else if (this.props.selected) {
+      // Only reset to national if we have something selected.
       this.props.history.push('/');
+      this.setState({ lockMouseEvents: true });
     }
   }
 

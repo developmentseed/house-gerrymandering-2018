@@ -15,7 +15,7 @@ nationalThresholds.forEach(d => {
   districtThresholds[id].national = 100 - d.demvote;
 });
 
-const raw = require('../static/tl_2016_us_cd115-quantized-topo.json');
+const raw = require('../static/cb_2017_us_cd115_5m-quantized-topo.json');
 const districts = toGeojson(raw, raw.objects.districts).features;
 
 districts.forEach(d => {

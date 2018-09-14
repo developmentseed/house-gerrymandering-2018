@@ -24,7 +24,7 @@ export function districtName (stateFips, districtFips) {
     return na;
   }
   const district = Number(districtFips);
-  return district ? `${state} - ${district}` : state;
+  return district ? `${get(fipsToStateAbbrev, stateFips)}-${district}` : state;
 }
 
 export function districtId (stateFips, districtFips) {
@@ -99,9 +99,9 @@ export function lean (threshold) {
   }
   let t = parseFloat(threshold);
   if (t >= 65) {
-    return 'Leans heavily Democrat';
+    return 'Leans heavily Democratic';
   } else if (t > 50) {
-    return 'Leans Democrat';
+    return 'Leans Democratic';
   } else if (t > 45) {
     return 'Leans Republican';
   } else {

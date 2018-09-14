@@ -110,8 +110,6 @@ class Slider extends React.Component {
     // Determine the republican and democratic deltas under this tally
     const demVote = 100 - tally - 50;
     const repVote = tally - 50;
-    const demDelta = demVote - repVote;
-    const repDelta = repVote - demVote;
 
     // Determine if we're currently in an unrealistic scenario
     const isUnrealistic = tally < (1 - demLimit) * 100 ||
@@ -134,8 +132,8 @@ class Slider extends React.Component {
 
             {this.state.scenarioEnabledState ? this.renderStateScenario(tally) : null}
 
-            {demDelta > 0 ? <span className='range__marker range__marker--left'>+{demDelta}%</span> : null}
-            {repDelta > 0 ? <span className='range__marker range__marker--right'>+{repDelta}%</span> : null}
+            <span className='range__marker range__marker--left'>{50 + demVote}%</span>
+            <span className='range__marker range__marker--right'>{50 + repVote}%</span>
           </div>
         </figure>
         <label className='slider__label'>

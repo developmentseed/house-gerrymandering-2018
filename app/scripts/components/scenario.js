@@ -20,6 +20,8 @@ class _Share extends React.Component {
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
     this.copy = this.copy.bind(this);
+    this.openTwitter = this.openTwitter.bind(this);
+    this.openFb = this.openFb.bind(this);
   }
 
   open () {
@@ -42,6 +44,16 @@ class _Share extends React.Component {
     window.setTimeout(() => this.close(), 600);
   }
 
+  openTwitter () {
+    const url = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(this.state.src) + '&hashtags=fairmaps';
+    window.open(url, '_blank', 'resizable=yes');
+  }
+
+  openFb () {
+    const url = 'https://www.facebook.com/dialog/share?href=' + encodeURIComponent(this.state.src);
+    window.open(url, '_blank', 'resizable=yes');
+  }
+
   renderShare () {
     if (!this.state.isOpen) {
       return null;
@@ -49,14 +61,22 @@ class _Share extends React.Component {
     return (
       <div className='share'>
         <div className='share__inner'>
-          <h4 className='share__title'>Copy this link to share this scenario</h4>
+          <h4 className='share__title'>Share or copy a link to this scenario</h4>
           <div className='share__form'>
             <input className='share__link' type='text' readOnly aria-label='Link to this scenario' value={this.state.src} />
-            <button className='share__btn' onClick={this.copy}>
+            <button className='share__btn share__btn--copy' onClick={this.copy}>
               {this.state.copied
                 ? <span className='collecticon collecticon-clipboard-tick' />
                 : <span className='collecticon collecticon-clipboard-list' />
               }
+            </button>
+
+            <button className='share__btn share__btn--twitter' onClick={this.openTwitter}>
+              <span className='collecticon collecticon-twitter' />
+            </button>
+
+            <button className='share__btn share__btn--fb' onClick={this.openFb}>
+              <span className='collecticon collecticon-facebook' />
             </button>
           </div>
         </div>
@@ -107,8 +127,17 @@ class Scenario extends React.Component {
   }
 
   margin (vote) {
-    const v = Math.abs(vote - 50) * 2;
-    return <span className='scenario__item__margin'>+{v}</span>;
+    const v = Math.abs(vote - 50) + 50;
+    return <span className='scenario__item__margin'>{v}%</span>;
+  }
+
+  party (vote) {
+    if (vote > 50) {
+      return 'R ';
+    } else if (vote < 50) {
+      return 'D ';
+    }
+    return null;
   }
 
   render () {
@@ -123,7 +152,7 @@ class Scenario extends React.Component {
             <li key={s} className={c('scenario__item', {
               'scenario__item--rep': vote[s] > 50,
               'scenario__item--dem': vote[s] < 50
-            })} onClick={this.resetVote} data-id={s}>{this.label(s)} {this.margin(vote[s])}</li>
+            })} onClick={this.resetVote} data-id={s}>{this.label(s)} {this.party(vote[s])}{this.margin(vote[s])}</li>
           ))}
           <Share />
         </ul>
