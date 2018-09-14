@@ -44,7 +44,7 @@
 .share__form {
   align-items: stretch;
   display: flex;
-  flex-wrap: no-wrap;
+  flex-wrap: nowrap;
 }
 
 .share__link {
@@ -53,16 +53,13 @@
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   font-size: $xsmall-text;
-  line-height: 1.5rem;
+  line-height: 1rem;
   padding: 0.25rem 0.1rem 0.1rem 0.25rem;
   width: 240px;
 }
 
 .share__btn {
   background-color: $white;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-left: none;
   transition: background 200ms;
   width: 32px;
   > .collecticon {
@@ -73,5 +70,29 @@
   }
   &:active {
     @include light-inset-box-shadow;
+  }
+}
+
+.share__btn--copy {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-left: none;
+}
+
+.share__btn--twitter {
+  margin-left: 0.5rem;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-right: none;
+  > .collecticon {
+    color: #1A97F0;
+  }
+}
+
+.share__btn--fb {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  > .collecticon {
+    color: #2D629C;
   }
 }
