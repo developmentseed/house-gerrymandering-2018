@@ -69,7 +69,7 @@ class Tooltip extends React.Component {
     );
   }
 
-  renderThreshold (threshold, useStateThreshold) {
+  renderThreshold (threshold, useStateThreshold, hasNoStateThreshold) {
     if (isNaN(threshold)) {
       error('No threshold found');
       return null;
@@ -82,11 +82,14 @@ class Tooltip extends React.Component {
     return (
       <React.Fragment>
         <p className='lean'>
-          <span className={'lean__' + partyLean}>{lean(threshold)}</span>.
+          <span className={'lean__' + partyLean}>{lean(threshold)}</span>
         </p>
         <p className='lean'>
-          <span className={opposingLean}>{opposing}</span> win with <span className={opposingLean}>{opposingVote}%</span> of {useStateThreshold ? 'state' : 'national'} vote.
+          <span className={opposingLean}>{opposing}</span> need <span className={opposingLean}>{opposingVote}%</span> of {useStateThreshold && !hasNoStateThreshold ? 'state' : 'national'} vote
         </p>
+        {hasNoStateThreshold ? (
+          <p className='lean lean__nodata'>State-level analysis unavailable</p>
+        ) : null}
         <figure className='threshold'>
           <span className='threshold__bar threshold__bar--dem' style={{ width: demVote + '%' }}/>
           <span className='threshold__bar threshold__bar--rep' style={{ left: demVote + '%', width: (100 - demVote) + '%' }}/>
@@ -121,12 +124,20 @@ class Tooltip extends React.Component {
     // 1. We've specified a threshold
     // 2. We've clicked into the state
     const useStateThreshold = vote.hasOwnProperty(d.stateFips) || selectedStateFips === d.stateFips;
-    const threshold = useStateThreshold ? get(stateAnalysis, [d.stateFips, d.fips]) : d.threshold;
+
+    // Some states, however, do not have a threshold available.
+    // These are single-district states like WY and ND.
+    // Fallback to the national threshold in this case, but call it out.
+    let threshold = useStateThreshold ? get(stateAnalysis, [d.stateFips, d.fips]) : d.threshold;
+    const hasNoStateThreshold = useStateThreshold && !threshold;
+    if (hasNoStateThreshold) {
+      threshold = d.threshold;
+    }
     return (
       <figure style={style} className={classNames}>
         <div className='tooltip__sect'>
           <h3 className='tooltip__title'>{districtName(d.stateFips, d.fips)}</h3>
-          {this.renderThreshold(threshold, useStateThreshold)}
+          {this.renderThreshold(threshold, useStateThreshold, hasNoStateThreshold)}
         </div>
         <div className='tooltip__sect tooltip__sect--divider'>
           {this.renderHistorical(historical)}
