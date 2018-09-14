@@ -24,7 +24,7 @@ export function districtName (stateFips, districtFips) {
     return na;
   }
   const district = Number(districtFips);
-  return district ? `${state} - ${district}` : state;
+  return district ? `${get(fipsToStateAbbrev, stateFips)}-${district}` : state;
 }
 
 export function districtId (stateFips, districtFips) {
