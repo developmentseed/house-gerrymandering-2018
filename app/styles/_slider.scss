@@ -177,6 +177,7 @@ input[type=range] {
 }
 
 .range__label__scenario {
+  @include numeric;
   font-size: 1rem;
   font-weight: $bold-text;
   line-height: 1rem;
