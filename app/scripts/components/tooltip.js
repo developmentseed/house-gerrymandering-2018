@@ -69,7 +69,7 @@ class Tooltip extends React.Component {
     );
   }
 
-  renderThreshold (threshold) {
+  renderThreshold (threshold, useStateThreshold) {
     if (isNaN(threshold)) {
       error('No threshold found');
       return null;
@@ -78,14 +78,14 @@ class Tooltip extends React.Component {
     const partyLean = Math.floor(demVote / 50);
     const opposing = partyLean === 0 ? 'Republicans' : 'Democrats';
     const opposingLean = partyLean ? 'lean__0' : 'lean__1';
-    const delta = Math.abs(demVote - threshold);
+    const opposingVote = Math.round(partyLean === 0 ? threshold : demVote);
     return (
       <React.Fragment>
         <p className='lean'>
           <span className={'lean__' + partyLean}>{lean(threshold)}</span>.
         </p>
         <p className='lean'>
-          <span className={opposingLean}>{opposing}</span> win at <span className={opposingLean}>+{pct(Math.round(delta))}</span>.
+          <span className={opposingLean}>{opposing}</span> win with <span className={opposingLean}>{opposingVote}%</span> of {useStateThreshold ? 'state' : 'national'} vote.
         </p>
         <figure className='threshold'>
           <span className='threshold__bar threshold__bar--dem' style={{ width: demVote + '%' }}/>
@@ -120,12 +120,13 @@ class Tooltip extends React.Component {
     // Use the state-specific threshold if:
     // 1. We've specified a threshold
     // 2. We've clicked into the state
-    const threshold = vote.hasOwnProperty(d.stateFips) || selectedStateFips === d.stateFips ? get(stateAnalysis, [d.stateFips, d.fips]) : d.threshold;
+    const useStateThreshold = vote.hasOwnProperty(d.stateFips) || selectedStateFips === d.stateFips;
+    const threshold = useStateThreshold ? get(stateAnalysis, [d.stateFips, d.fips]) : d.threshold;
     return (
       <figure style={style} className={classNames}>
         <div className='tooltip__sect'>
           <h3 className='tooltip__title'>{districtName(d.stateFips, d.fips)}</h3>
-          {this.renderThreshold(threshold)}
+          {this.renderThreshold(threshold, useStateThreshold)}
         </div>
         <div className='tooltip__sect tooltip__sect--divider'>
           {this.renderHistorical(historical)}
