@@ -111,6 +111,15 @@ class Scenario extends React.Component {
     return <span className='scenario__item__margin'>+{v}</span>;
   }
 
+  party (vote) {
+    if (vote > 50) {
+      return 'R ';
+    } else if (vote < 50) {
+      return 'D ';
+    }
+    return null;
+  }
+
   render () {
     const { vote } = this.props;
     // Scenarios should be sorted national-first, then alphabetically by state name.
@@ -123,7 +132,7 @@ class Scenario extends React.Component {
             <li key={s} className={c('scenario__item', {
               'scenario__item--rep': vote[s] > 50,
               'scenario__item--dem': vote[s] < 50
-            })} onClick={this.resetVote} data-id={s}>{this.label(s)} {this.margin(vote[s])}</li>
+            })} onClick={this.resetVote} data-id={s}>{this.label(s)} {this.party(vote[s])}{this.margin(vote[s])}</li>
           ))}
           <Share />
         </ul>
