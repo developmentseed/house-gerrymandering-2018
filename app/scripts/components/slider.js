@@ -3,13 +3,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { scaleLinear } from 'd3';
 import { get } from 'object-path';
-import { setVote } from '../actions';
+import InfoBox from './infobox';
+import { setVote, openInfoBox } from '../actions';
 import { stateNameFromFips, fips } from '../util/format';
 
 class Slider extends React.Component {
   constructor (props) {
     super(props);
     this.setVote = this.setVote.bind(this);
+    this.openInfoBox = this.openInfoBox.bind(this);
     this.state = {
       scenarioEnabledState: null
     };
@@ -28,6 +30,10 @@ class Slider extends React.Component {
 
   getOffset () {
     return isNaN(this.props.offset) ? 0 : this.props.offset;
+  }
+
+  openInfoBox (e) {
+    this.props.openInfoBox('scenario');
   }
 
   setVote (e) {
@@ -94,6 +100,14 @@ class Slider extends React.Component {
     );
   }
 
+  renderInfoBox () {
+    return (
+      <InfoBox stateId='scenario'>
+        <p>Brennan provides analysis at national and state-wide level. State-wide analysis, while not available for every state, is more precise.</p>
+      </InfoBox>
+    );
+  }
+
   render () {
     const { demLimit, repLimit } = this.threshold();
     // Calculate where the unrealistic scenario markers will go
@@ -138,6 +152,10 @@ class Slider extends React.Component {
         </figure>
         <label className='slider__label'>
           {this.title()}
+          <span className='infobox__trigger' onClick={this.openInfoBox}>
+            <span className='collecticon collecticon-circle-information' />
+            {this.props.infobox ? this.renderInfoBox() : null}
+          </span>
           <input
             className='slider'
             type='range'
@@ -156,7 +174,8 @@ const selector = state => ({
   vote: state.vote,
   selectedStateFips: state.geo.selectedStateFips,
   stateThresholds: state.states.thresholds,
-  stateAnalysis: state.summary.stateAnalysis
+  stateAnalysis: state.summary.stateAnalysis,
+  infobox: state.infobox.scenario
 });
 
-export default connect(selector, { setVote })(Slider);
+export default connect(selector, { setVote, openInfoBox })(Slider);

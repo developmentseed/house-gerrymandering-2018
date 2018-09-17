@@ -87,7 +87,6 @@
 
 .hist__cont--0 {
   font-weight: $bold-text;
-  line-height: 1.1rem;
 }
 
 .hist__label {
@@ -186,4 +185,37 @@ $threshold-bar-height: 6px;
 
 .lean__nodata {
   color: $med-gray;
+}
+
+.infobox__trigger {
+  display: inline-block;
+  position: relative;
+
+  > .collecticon {
+    color: $med-gray;
+    cursor: pointer;
+    margin-left: 0.3rem;
+    transition: color 0.2s;
+    &:hover {
+      color: $action;
+    }
+  }
+}
+
+.infobox__cont {
+  @include light-box-shadow;
+  color: $dark-gray;
+  background-color: $white;
+  font-weight: $base-text;
+  padding: 0.5rem;
+  position: absolute;
+  text-align: left;
+  text-transform: none;
+  top: 1.2rem;
+  width: 12rem;
+  z-index: 10;
+  left: -12rem;
+  @include media(medium-up) {
+    left: 1.2rem;
+  }
 }

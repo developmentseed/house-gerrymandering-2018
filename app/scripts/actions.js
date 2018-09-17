@@ -38,6 +38,18 @@ export function getStateAnalysis () {
   return getJson('state-analysis.json', 'get_state_analysis');
 }
 
+export function openInfoBox (id) {
+  return { type: 'open_info_box', next: { id } };
+}
+
+export function closeInfoBox (id) {
+  return { type: 'close_info_box', next: { id } };
+}
+
+export function getSupplementaryData () {
+  return getJson('supplementary-analysis.json', 'get_supplementary_analysis');
+}
+
 var getCsv = getData.bind(null, csv);
 var getJson = getData.bind(null, json);
 

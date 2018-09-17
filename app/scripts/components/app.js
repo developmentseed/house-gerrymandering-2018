@@ -8,7 +8,8 @@ import {
   getStateThresholds,
   getStateAnalysis,
   syncSelectedState,
-  syncVoteState
+  syncVoteState,
+  getSupplementaryData
 } from '../actions';
 import Map from './map';
 import Slider from './slider';
@@ -45,6 +46,7 @@ class App extends React.Component {
     this.props.getHistoricalData();
     this.props.getStateThresholds();
     this.props.getStateAnalysis();
+    this.props.getSupplementaryData();
   }
 
   componentWillUnmount () {
@@ -122,5 +124,6 @@ export default connect(selector, {
   getStateThresholds,
   getStateAnalysis,
   syncSelectedState,
-  syncVoteState
+  syncVoteState,
+  getSupplementaryData
 })(App);
