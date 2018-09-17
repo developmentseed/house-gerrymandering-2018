@@ -82,6 +82,7 @@
     "ndjson-cli": "^0.3.1",
     "node-notifier": "^5.1.2",
     "node-sass": "^4.5.1",
+    "request-promise": "^4.2.2",
     "require-globify": "^1.4.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^2.0.0",
