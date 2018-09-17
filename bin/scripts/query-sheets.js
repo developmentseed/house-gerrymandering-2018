@@ -28,5 +28,20 @@ query(sheetsApi);
 
 async function query (url) {
   const results = await request(url);
-  fs.writeFileSync(path.resolve(__dirname, '../../app/static/supplementary-analysis.json'), JSON.stringify(results));
+  const d = JSON.parse(results);
+  const out = d.values.map(d => {
+    let district = d[0].split('-');
+    if (district.length !== 2) {
+      return null;
+    }
+    let result = [
+      district[0],
+      district[1],
+      d[1],
+      d[2],
+      d[3]
+    ];
+    return result;
+  }).filter(Boolean);
+  fs.writeFileSync(path.resolve(__dirname, '../../app/static/supplementary-analysis.json'), JSON.stringify(out));
 }
