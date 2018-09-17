@@ -1,4 +1,4 @@
 'use strict';
 
-export const houseDems = 194;
-export const houseReps = 241;
+export const houseDems = 193;
+export const houseReps = 236;
