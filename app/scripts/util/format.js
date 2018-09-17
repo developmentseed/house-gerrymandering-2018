@@ -6,6 +6,11 @@ import { error } from './log';
 const fipsToState = require('../static/fips-to-state.json');
 const fipsToStateAbbrev = require('../static/fips-to-state-abbrev.json');
 
+const stateAbbrevToFips = {};
+Object.keys(fipsToStateAbbrev).forEach(k => {
+  stateAbbrevToFips[fipsToStateAbbrev[k]] = k;
+});
+
 export const na = '--';
 export function pct (n) {
   if (isNaN(n)) {
@@ -62,6 +67,15 @@ export function stateAbbrevFromFips (stateFips) {
     return na;
   }
   return stateAbbrev;
+}
+
+export function stateFipsFromAbbrev (stateAbbrev) {
+  let stateFips = stateAbbrevToFips[stateAbbrev.toUpperCase()];
+  if (!stateFips) {
+    error('Malformed state abbrev ' + stateAbbrev);
+    return na;
+  }
+  return stateFips;
 }
 
 export function isStateFips (id) {

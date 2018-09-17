@@ -27,7 +27,7 @@ jobs:
           name: Building site
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              yarn build
+              yarn predeploy
             else
               echo "Skip building site"
             fi
