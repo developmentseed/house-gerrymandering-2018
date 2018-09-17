@@ -69,6 +69,25 @@ class Tooltip extends React.Component {
     );
   }
 
+  renderSupplementary (supplementary) {
+    if (!supplementary) {
+      return <p>No supplementary data available.</p>;
+    }
+    return (
+      <React.Fragment>
+        <h6 className='hist__label'>Supplementary analysis</h6>
+        <p className='hist__cont'>
+          <span className='hist__item hist__item--first'>538</span>
+          <span className='hist__item'>{supplementary.fivethirtyeight} D</span>
+        </p>
+        <p className='hist__cont'>
+          <span className='hist__item hist__item--first'>Sabato</span>
+          <span className='hist__item'>{supplementary.sabato}</span>
+        </p>
+      </React.Fragment>
+    );
+  }
+
   renderThreshold (threshold, useStateThreshold, hasNoStateThreshold) {
     if (isNaN(threshold)) {
       error('No threshold found');
@@ -120,6 +139,7 @@ class Tooltip extends React.Component {
     );
     const id = districtId(d.stateFips, d.fips);
     const historical = get(this.props.historical, id);
+    const supplementary = get(this.props.supplementary, id);
     // Use the state-specific threshold if:
     // 1. We've specified a threshold
     // 2. We've clicked into the state
@@ -140,6 +160,9 @@ class Tooltip extends React.Component {
           {this.renderThreshold(threshold, useStateThreshold, hasNoStateThreshold)}
         </div>
         <div className='tooltip__sect tooltip__sect--divider'>
+          {this.renderSupplementary(supplementary)}
+        </div>
+        <div className='tooltip__sect tooltip__sect--divider'>
           {this.renderHistorical(historical)}
         </div>
       </figure>
@@ -154,6 +177,7 @@ const selector = (state) => ({
   selectedStateFips: state.geo.selectedStateFips,
   historical: state.historical.districts,
   stateAnalysis: state.summary.stateAnalysis,
-  vote: state.vote
+  vote: state.vote,
+  supplementary: state.supplementary
 });
 export default connect(selector, null)(Tooltip);
