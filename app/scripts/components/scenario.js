@@ -50,7 +50,7 @@ class _Share extends React.Component {
   }
 
   openFb () {
-    const url = 'https://www.facebook.com/dialog/share?app_id=2344773662417263&href=' + encodeURIComponent(this.state.src);
+    const url = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(this.state.src);
     window.open(url, '_blank', 'resizable=yes');
   }
 
