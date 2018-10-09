@@ -5,7 +5,6 @@ const initialState = {};
 function supplementary (state = initialState, { type, results }) {
   if (type === 'get_supplementary_analysis_success') {
     state = processState(state, results);
-    console.log(state);
   }
   return state;
 }
