@@ -13,6 +13,16 @@ function csvname (state) {
   return s + '.csv';
 }
 
+// Filter any empty rows. If any property has a value, then keep it.
+function filterEmptyRows (row) {
+  for (let key in row) {
+    if (row[key]) {
+      return true;
+    }
+  }
+  return false;
+}
+
 const states = {};
 for (let state in stateToFips) {
   let filename = path.join(stateFilePath, csvname(state));
@@ -23,7 +33,7 @@ for (let state in stateToFips) {
     continue
   }
   let csv = fs.readFileSync(filename).toString();
-  let json = csvParse(csv);
+  let json = csvParse(csv).filter(filterEmptyRows);
   states[stateToFips[state]] = json;
 }
 

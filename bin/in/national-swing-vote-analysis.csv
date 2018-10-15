@@ -1,436 +1,436 @@
-demvote,current,name,tossup
-3.48%,dem,New York15,
-6.90%,dem,New York13,
-8.65%,dem,New York7,
-9.34%,dem,Florida24,
-10.01%,dem,New York8,
-10.82%,dem,California13,
-11.44%,dem,New Jersey10,
-11.46%,dem,New York5,
-12.58%,dem,New York9,
-12.87%,dem,California37,
-13.40%,dem,California44,
-13.56%,dem,Illinois7,
-13.74%,dem,California12,
-14.51%,dem,California34,
-14.73%,rep,Pennsylvania10,
-15.55%,dem,Michigan13,
-15.94%,dem,Georgia5,
-16.11%,dem,Massachusetts7,
-16.47%,dem,California40,
-16.94%,dem,New York14,
-17.32%,dem,Ohio11,
-17.70%,dem,Washington7,
-17.87%,dem,Illinois4,
-17.97%,dem,Michigan14,
-18.27%,dem,New York12,
-18.66%,dem,Hawaii2,
-18.68%,dem,Texas30,
-19.06%,dem,New Jersey8,
-19.10%,dem,Florida20,
-19.88%,dem,Louisiana2,
-20.26%,dem,Missouri1,
-20.36%,dem,Oregon3,
-20.51%,dem,Texas9,
-20.68%,dem,California14,
-21.04%,dem,New York10,
-21.79%,dem,California29,
-21.88%,dem,Tennessee9,
-22.34%,dem,Illinois2,
-23.44%,dem,Maryland7,
-23.61%,dem,Maryland4,
-23.73%,dem,California43,
-23.88%,dem,California28,
-23.89%,dem,Texas18,
-24.02%,dem,New York16,
-24.51%,dem,Minnesota5,
-25.12%,dem,California6,
-25.15%,dem,California2,
-25.20%,dem,Wisconsin4,
-25.52%,dem,California5,
-25.84%,dem,Illinois1,
-25.85%,dem,Alabama7,
-26.23%,dem,Georgia4,
-26.56%,dem,Massachusetts5,
-26.59%,dem,California17,
-26.70%,dem,South Carolina6,
-27.00%,dem,New York26,
-27.11%,dem,Texas33,
-27.23%,dem,California19,
-27.28%,dem,Massachusetts8,
-27.57%,dem,California20,
-27.67%,dem,New Jersey9,
-27.73%,dem,Washington9,
-27.92%,dem,Virginia8,
-28.36%,dem,California15,
-28.50%,dem,California51,
-28.56%,dem,Arizona7,
-28.67%,dem,Ohio9,
-28.76%,dem,Colorado1,
-29.09%,dem,North Carolina1,
-29.22%,dem,Georgia13,
-29.23%,rep,Pennsylvania4,
-29.23%,dem,Connecticut3,
-29.24%,dem,VermontAL,
-29.71%,dem,California18,
-29.83%,dem,California11,
-29.84%,dem,Ohio13,
-29.87%,dem,Texas16,
-30.10%,dem,Illinois5,
-30.73%,dem,Michigan12,
-30.83%,dem,New York6,
-31.03%,dem,California30,
-31.08%,dem,Maryland5,
-31.08%,dem,Wisconsin2,
-31.19%,dem,North Carolina4,
-31.25%,dem,Ohio3,
-31.73%,dem,California35,
-32.02%,dem,Mississippi2,
-32.27%,dem,Texas29,
-32.39%,dem,North Carolina12,
-32.56%,dem,Virginia3,
-32.62%,dem,Texas28,
-32.71%,dem,Connecticut1,
-33.16%,dem,Michigan5,
-33.20%,dem,New Jersey12,
-33.21%,dem,Illinois9,
-33.22%,dem,Connecticut2,
-33.34%,dem,Texas35,
-33.59%,dem,Massachusetts3,
-33.65%,dem,New York20,
-33.81%,dem,California38,
-34.07%,dem,Illinois3,
-34.13%,dem,Maryland2,
-34.39%,dem,Virginia11,
-34.47%,dem,Nevada1,
-34.54%,dem,Florida10,
-34.80%,dem,Minnesota4,
-34.82%,dem,Maryland3,
-35.11%,dem,Massachusetts1,
-35.18%,dem,Florida5,
-35.28%,dem,Tennessee5,
-35.33%,dem,Florida21,
-35.34%,dem,Kentucky3,
-35.68%,dem,Massachusetts4,
-35.74%,dem,Indiana1,
-35.89%,dem,California32,
-35.92%,dem,California27,
-35.93%,dem,New Jersey1,
-35.98%,dem,Maryland8,
-36.34%,dem,New Jersey6,
-36.46%,dem,Maine1,
-36.47%,dem,Rhode Island2,
-36.56%,dem,Texas20,
-36.67%,dem,Oregon1,
-36.75%,dem,California46,
-36.88%,dem,Michigan9,
-37.08%,dem,California53,
-37.15%,dem,New Mexico3,
-37.37%,dem,Texas34,
-37.53%,rep,Pennsylvania18,
-37.60%,dem,Washington2,
-37.62%,dem,Florida14,
-37.81%,dem,DelawareAL,
-37.93%,rep,Pennsylvania5,
-38.12%,dem,Georgia2,
-38.34%,dem,Washington6,
-38.54%,dem,New Mexico1,
-38.67%,dem,Hawaii1,
-38.76%,dem,Indiana7,
-38.86%,dem,Massachusetts9,
-39.21%,dem,Rhode Island1,
-39.32%,dem,New York17,
-39.32%,dem,California41,
-39.65%,dem,California33,
-39.69%,dem,Oregon4,
-39.89%,dem,Massachusetts2,
-40.13%,dem,Texas15,
-40.16%,dem,New York4,
-40.25%,dem,Arizona3,
-40.47%,dem,Florida22,
-40.75%,dem,Colorado2,
-40.75%,dem,California47,
-40.78%,dem,Missouri5,
-40.93%,rep,Pennsylvania9,
-41.07%,dem,Florida23,
-41.54%,dem,Virginia4,
-41.64%,dem,Wisconsin3,
-41.64%,dem,Connecticut4,
-41.93%,dem,Florida9,
-42.02%,dem,Illinois11,
-42.20%,dem,Washington10,
-42.77%,dem,Minnesota7,
-42.87%,dem,Colorado7,
-42.91%,dem,Maryland6,
-42.92%,dem,Arizona9,
-43.11%,dem,Oregon5,
-43.12%,dem,California36,
-43.16%,dem,Illinois17,
-43.25%,dem,Illinois8,
-43.84%,dem,Massachusetts6,
-44.08%,dem,California3,
-44.12%,dem,California16,
-44.23%,dem,New York3,
-44.42%,dem,California9,
-44.71%,dem,California26,
-44.71%,dem,Washington1,
-44.90%,dem,New York25,
-45.14%,dem,Connecticut5,
-45.19%,dem,Iowa2,
-45.42%,dem,Minnesota1,
-45.73%,rep,Pennsylvania11,
-46.03%,dem,California24,
-46.23%,dem,New Hampshire2,
-46.41%,dem,California52,
-46.67%,dem,New York18,
-46.70%,dem,Arizona1,
-47.51%,dem,Florida13,
-47.69%,dem,Minnesota8,
-47.84%,dem,Nevada4,
-47.93%,dem,Florida7,
-48.43%,dem,California7,
-48.58%,rep,Iowa1,Morris
-48.86%,dem,Illinois10,
-49.07%,dem,California31,
-49.13%,rep,Pennsylvania7,Morris
-49.20%,dem,New Hampshire1,
-49.28%,rep,Texas23,Morris
-49.36%,rep,Maine2,
-49.40%,rep,Nebraska2,
-49.73%,rep,Pennsylvania3,
-51.33%,rep,Pennsylvania15,Morris
-51.70%,rep,Arizona2,Morris
-52.31%,rep,Virginia10,Morris
-52.39%,rep,Illinois12,
-52.52%,rep,Utah4,
-52.89%,dem,New Jersey5,
-52.92%,rep,Colorado6,Morris
-53.03%,rep,California10,Morris
-53.14%,rep,New York1,
-53.38%,rep,Michigan1,
-53.73%,rep,Georgia12,
-54.21%,rep,Minnesota2,Morris
-54.30%,rep,Florida27,Morris
-54.62%,rep,California25,Morris
-54.73%,rep,Pennsylvania12,
-54.73%,rep,Pennsylvania8,Morris
-54.85%,rep,Florida18,
-54.86%,dem,Nevada3,
-55.24%,rep,New York24,Morris
-55.31%,rep,Iowa3,
-55.51%,rep,North Carolina13,
-55.58%,rep,Michigan11,Morris
-55.67%,rep,Florida26,Morris
-55.68%,rep,Illinois13,
-55.71%,rep,California49,Morris
-56.09%,rep,Michigan7,
-56.11%,rep,New Jersey3,
-56.12%,rep,North Carolina2,
-56.56%,rep,Kansas3,
-56.57%,rep,New York23,
-56.64%,rep,MontanaAL,
-56.72%,rep,New York19,
-56.82%,rep,New York11,
-56.87%,rep,Florida15,
-56.95%,rep,California21,Morris
-57.06%,rep,Virginia7,
-57.17%,rep,Indiana2,
-57.20%,rep,Kentucky6,
-57.49%,rep,Arkansas2,
-57.59%,rep,North Carolina9,
-57.75%,rep,Virginia5,
-57.81%,rep,New Jersey7,
-57.81%,rep,South Carolina5,
-57.81%,rep,North Carolina5,
-57.92%,rep,West Virginia3,
-57.98%,rep,Florida6,
-57.99%,rep,Michigan3,
-58.06%,rep,New York22,
-58.09%,rep,Minnesota6,
-58.12%,rep,Florida3,
-58.15%,rep,Colorado3,
-58.15%,rep,Michigan6,
-58.18%,rep,North Carolina8,
-58.33%,rep,Michigan8,
-58.37%,rep,South Carolina7,
-58.56%,rep,Iowa4,
-58.58%,rep,Minnesota3,Morris
-58.64%,rep,North Carolina6,
-58.66%,rep,California1,
-58.69%,rep,Indiana9,
-58.82%,rep,Wisconsin7,
-58.95%,rep,Arkansas4,
-59.18%,rep,Florida16,
-59.30%,rep,New York21,
-59.36%,rep,Texas14,
-59.40%,rep,West Virginia2,
-59.72%,rep,Texas32,
-59.80%,rep,Wisconsin6,
-59.83%,rep,Pennsylvania16,
-59.88%,rep,Ohio16,
-60.17%,rep,New Jersey11,Morris
-60.22%,rep,California45,
-60.26%,rep,Texas6,
-60.26%,rep,Washington5,
-60.32%,rep,North Carolina7,
-60.35%,rep,New Jersey2,Morris
-60.44%,rep,AlaskaAL,
-60.51%,rep,Ohio1,
-60.54%,rep,Tennessee4,
-60.55%,rep,Washington8,Morris
-60.64%,rep,Texas7,
-60.65%,rep,California48,
-60.69%,rep,Illinois14,
-60.70%,rep,California39,Morris
-60.73%,rep,Washington3,
-60.75%,rep,Wisconsin8,
-60.83%,rep,Georgia1,
-60.87%,rep,Ohio6,
-60.87%,rep,Virginia2,
-60.88%,rep,Texas25,
-60.94%,rep,Oklahoma5,
-60.96%,rep,Kansas2,
-61.09%,rep,Ohio7,
-61.13%,rep,Indiana8,
-61.23%,rep,California42,
-61.37%,rep,Illinois6,Morris
-61.41%,rep,Alabama2,
-61.46%,rep,Virginia1,
-61.58%,rep,Texas27,
-61.61%,rep,New Mexico2,
-61.70%,rep,Ohio14,
-61.77%,rep,Florida25,
-61.83%,rep,Texas10,
-61.99%,rep,Wisconsin1,
-62.15%,rep,Georgia7,
-62.16%,rep,California4,
-62.20%,rep,South DakotaAL,
-62.35%,rep,Texas24,
-62.50%,rep,Missouri2,
-62.53%,rep,New York27,
-62.55%,rep,North Carolina10,
-62.68%,rep,South Carolina2,
-62.83%,rep,Pennsylvania6,
-62.89%,rep,Michigan4,
-62.94%,rep,Texas21,
-62.95%,rep,North DakotaAL,
-62.97%,rep,California8,
-63.03%,rep,New York2,
-63.11%,rep,Colorado5,
-63.19%,rep,Ohio2,
-63.20%,rep,South Carolina1,
-63.44%,rep,Arizona6,
-63.47%,rep,Texas31,
-63.50%,rep,North Carolina11,
-63.59%,rep,Georgia6,
-63.76%,rep,Florida17,
-63.77%,rep,Nevada2,
-63.82%,rep,Indiana5,
-63.83%,rep,Texas17,
-63.90%,rep,Arkansas1,
-64.03%,dem,Pennsylvania17,
-64.09%,rep,Ohio15,
-64.19%,rep,Texas22,
-64.40%,rep,Utah2,
-64.40%,rep,Idaho2,
-64.51%,rep,Ohio10,
-64.63%,rep,West Virginia1,
-64.71%,rep,Michigan2,
-65.18%,rep,Colorado4,
-65.24%,rep,Ohio4,
-65.28%,rep,Georgia10,
-65.29%,rep,Alabama3,
-65.31%,rep,Florida19,
-65.32%,rep,Tennessee3,
-65.38%,rep,Florida8,
-65.44%,rep,Louisiana4,
-65.62%,rep,Arizona8,
-65.68%,rep,New Jersey4,
-65.79%,rep,Texas2,
-65.93%,rep,Indiana4,
-66.14%,rep,Illinois16,
-66.17%,rep,Ohio5,
-66.19%,rep,Virginia6,
-66.24%,rep,Kansas4,
-66.28%,rep,Alabama1,
-66.30%,rep,Idaho1,
-66.40%,rep,Georgia8,
-66.47%,rep,Arizona5,
-66.51%,rep,Alabama5,
-66.61%,rep,North Carolina3,
-66.63%,dem,Pennsylvania13,
-66.67%,rep,California22,
-66.82%,rep,Florida11,
-66.86%,rep,Washington4,
-66.96%,rep,California50,
-67.19%,rep,Kentucky4,
-67.28%,rep,Mississippi1,
-67.28%,rep,Mississippi3,
-67.30%,rep,South Carolina4,
-67.37%,rep,Ohio12,
-67.41%,rep,Texas3,
-67.52%,rep,Indiana6,
-67.63%,dem,Pennsylvania14,
-67.63%,rep,Texas5,
-67.90%,rep,Louisiana5,
-68.00%,rep,Florida12,
-68.16%,rep,Missouri4,
-68.18%,rep,Michigan10,
-68.24%,rep,Oklahoma1,
-68.34%,rep,Missouri6,
-68.36%,rep,Nebraska1,
-68.48%,rep,Wisconsin5,
-68.51%,rep,Florida1,
-68.61%,rep,Missouri7,
-68.63%,rep,Florida2,
-68.63%,rep,Kentucky2,
-68.76%,rep,Ohio8,
-68.94%,rep,Georgia11,
-68.94%,rep,Missouri3,
-69.24%,rep,Oklahoma2,
-69.62%,rep,Maryland1,
-69.66%,rep,Louisiana6,
-69.78%,rep,South Carolina3,
-69.85%,rep,Georgia3,
-69.86%,rep,California23,
-70.19%,rep,Virginia9,
-70.50%,rep,Arkansas3,
-70.58%,rep,Mississippi4,
-70.66%,rep,Indiana3,
-70.69%,rep,Texas26,
-70.93%,dem,Pennsylvania1,
-71.08%,rep,Arizona4,
-71.18%,rep,Florida4,
-71.31%,rep,Kentucky1,
-71.31%,rep,Oregon2,
-71.35%,rep,Utah1,
-71.73%,rep,WyomingAL,
-71.93%,dem,Pennsylvania2,
-72.05%,rep,Kansas1,
-72.11%,rep,Texas12,
-72.18%,rep,Oklahoma4,
-72.21%,rep,Tennessee8,
-72.93%,rep,Illinois15,
-73.18%,rep,Illinois18,
-73.49%,rep,Tennessee6,
-73.55%,rep,Alabama6,
-73.69%,rep,Tennessee7,
-74.33%,rep,Missouri8,
-74.67%,rep,Texas1,
-74.95%,rep,Utah3,
-75.37%,rep,Texas36,
-75.54%,rep,Nebraska3,
-76.09%,rep,Georgia14,
-76.25%,rep,Tennessee2,
-77.60%,rep,Texas4,
-77.99%,rep,Alabama4,
-78.16%,rep,Oklahoma3,
-78.71%,rep,Texas19,
-78.73%,rep,Louisiana1,
-78.80%,rep,Kentucky5,
-79.14%,rep,Georgia9,
-79.43%,rep,Louisiana3,
-80.74%,rep,Texas8,
-81.11%,rep,Tennessee1,
-83.10%,rep,Texas11,
-85.43%,rep,Texas13,
+demvote,current,name
+66.92%,rep,Alabama1
+62.05%,rep,Alabama2
+65.93%,rep,Alabama3
+78.63%,rep,Alabama4
+67.15%,rep,Alabama5
+74.19%,rep,Alabama6
+26.49%,dem,Alabama7
+61.08%,rep,AlaskaAL
+47.34%,dem,Arizona1
+52.34%,rep,Arizona2
+40.89%,dem,Arizona3
+71.72%,rep,Arizona4
+67.11%,rep,Arizona5
+64.08%,rep,Arizona6
+29.20%,dem,Arizona7
+66.26%,rep,Arizona8
+43.56%,dem,Arizona9
+64.54%,rep,Arkansas1
+58.13%,rep,Arkansas2
+71.14%,rep,Arkansas3
+59.59%,rep,Arkansas4
+59.30%,rep,California1
+53.67%,rep,California10
+30.47%,dem,California11
+14.38%,dem,California12
+11.46%,dem,California13
+21.32%,dem,California14
+29.00%,dem,California15
+44.76%,dem,California16
+27.23%,dem,California17
+30.35%,dem,California18
+27.87%,dem,California19
+25.79%,dem,California2
+28.21%,dem,California20
+57.59%,rep,California21
+67.31%,rep,California22
+70.50%,rep,California23
+46.67%,dem,California24
+55.26%,rep,California25
+45.35%,dem,California26
+36.56%,dem,California27
+24.52%,dem,California28
+22.43%,dem,California29
+44.72%,dem,California3
+31.67%,dem,California30
+49.71%,dem,California31
+36.53%,dem,California32
+40.29%,dem,California33
+15.15%,dem,California34
+32.37%,dem,California35
+43.76%,dem,California36
+13.51%,dem,California37
+34.45%,dem,California38
+61.34%,rep,California39
+62.80%,rep,California4
+17.11%,dem,California40
+39.96%,dem,California41
+61.87%,rep,California42
+24.37%,dem,California43
+14.04%,dem,California44
+60.86%,rep,California45
+37.39%,dem,California46
+41.39%,dem,California47
+61.29%,rep,California48
+56.35%,rep,California49
+26.16%,dem,California5
+67.60%,rep,California50
+29.14%,dem,California51
+47.05%,dem,California52
+37.72%,dem,California53
+25.76%,dem,California6
+49.07%,dem,California7
+63.61%,rep,California8
+45.06%,dem,California9
+29.40%,dem,Colorado1
+41.39%,dem,Colorado2
+58.79%,rep,Colorado3
+65.82%,rep,Colorado4
+63.75%,rep,Colorado5
+53.56%,rep,Colorado6
+43.51%,dem,Colorado7
+33.35%,dem,Connecticut1
+33.86%,dem,Connecticut2
+29.87%,dem,Connecticut3
+42.28%,dem,Connecticut4
+45.78%,dem,Connecticut5
+38.45%,dem,DelawareAL
+69.53%,rep,Florida1
+37.24%,dem,Florida10
+63.83%,rep,Florida11
+61.57%,rep,Florida12
+46.78%,dem,Florida13
+40.33%,dem,Florida14
+55.46%,rep,Florida15
+57.36%,rep,Florida16
+61.55%,rep,Florida17
+53.90%,rep,Florida18
+63.63%,rep,Florida19
+67.64%,rep,Florida2
+18.62%,dem,Florida20
+37.79%,dem,Florida21
+42.41%,dem,Florida22
+40.16%,dem,Florida23
+12.14%,dem,Florida24
+58.76%,rep,Florida25
+50.46%,rep,Florida26
+50.97%,rep,Florida27
+58.43%,rep,Florida3
+69.51%,rep,Florida4
+36.11%,dem,Florida5
+56.01%,rep,Florida6
+49.59%,dem,Florida7
+61.96%,rep,Florida8
+43.49%,dem,Florida9
+61.47%,rep,Georgia1
+65.92%,rep,Georgia10
+69.58%,rep,Georgia11
+54.37%,rep,Georgia12
+29.86%,dem,Georgia13
+76.73%,rep,Georgia14
+38.76%,dem,Georgia2
+70.49%,rep,Georgia3
+26.87%,dem,Georgia4
+16.58%,dem,Georgia5
+64.23%,rep,Georgia6
+62.79%,rep,Georgia7
+67.04%,rep,Georgia8
+79.78%,rep,Georgia9
+39.31%,dem,Hawaii1
+19.30%,dem,Hawaii2
+66.94%,rep,Idaho1
+65.04%,rep,Idaho2
+26.48%,dem,Illinois1
+49.50%,dem,Illinois10
+42.66%,dem,Illinois11
+53.03%,rep,Illinois12
+56.32%,rep,Illinois13
+61.33%,rep,Illinois14
+73.57%,rep,Illinois15
+66.78%,rep,Illinois16
+43.80%,dem,Illinois17
+73.82%,rep,Illinois18
+22.98%,dem,Illinois2
+34.71%,dem,Illinois3
+18.51%,dem,Illinois4
+30.74%,dem,Illinois5
+62.01%,rep,Illinois6
+14.20%,dem,Illinois7
+43.89%,dem,Illinois8
+33.85%,dem,Illinois9
+36.38%,dem,Indiana1
+57.81%,rep,Indiana2
+71.30%,rep,Indiana3
+66.57%,rep,Indiana4
+64.46%,rep,Indiana5
+68.16%,rep,Indiana6
+39.40%,dem,Indiana7
+61.77%,rep,Indiana8
+59.33%,rep,Indiana9
+49.22%,rep,Iowa1
+45.83%,dem,Iowa2
+55.95%,rep,Iowa3
+59.20%,rep,Iowa4
+72.69%,rep,Kansas1
+61.60%,rep,Kansas2
+57.20%,rep,Kansas3
+66.88%,rep,Kansas4
+71.95%,rep,Kentucky1
+69.27%,rep,Kentucky2
+35.98%,dem,Kentucky3
+67.83%,rep,Kentucky4
+79.44%,rep,Kentucky5
+57.84%,rep,Kentucky6
+79.37%,rep,Louisiana1
+20.52%,dem,Louisiana2
+80.07%,rep,Louisiana3
+66.08%,rep,Louisiana4
+68.54%,rep,Louisiana5
+70.30%,rep,Louisiana6
+37.10%,dem,Maine1
+50.00%,rep,Maine2
+70.26%,rep,Maryland1
+34.77%,dem,Maryland2
+35.46%,dem,Maryland3
+24.25%,dem,Maryland4
+31.72%,dem,Maryland5
+43.55%,dem,Maryland6
+24.08%,dem,Maryland7
+36.62%,dem,Maryland8
+35.75%,dem,Massachusetts1
+40.53%,dem,Massachusetts2
+34.23%,dem,Massachusetts3
+36.32%,dem,Massachusetts4
+27.20%,dem,Massachusetts5
+44.48%,dem,Massachusetts6
+16.75%,dem,Massachusetts7
+27.92%,dem,Massachusetts8
+39.50%,dem,Massachusetts9
+54.02%,rep,Michigan1
+68.82%,rep,Michigan10
+56.22%,rep,Michigan11
+31.37%,dem,Michigan12
+16.19%,dem,Michigan13
+18.61%,dem,Michigan14
+65.35%,rep,Michigan2
+58.63%,rep,Michigan3
+63.53%,rep,Michigan4
+33.80%,dem,Michigan5
+58.79%,rep,Michigan6
+56.73%,rep,Michigan7
+58.97%,rep,Michigan8
+37.52%,dem,Michigan9
+46.06%,dem,Minnesota1
+54.85%,rep,Minnesota2
+59.22%,rep,Minnesota3
+35.44%,dem,Minnesota4
+25.15%,dem,Minnesota5
+58.73%,rep,Minnesota6
+43.41%,dem,Minnesota7
+48.33%,dem,Minnesota8
+67.92%,rep,Mississippi1
+32.66%,dem,Mississippi2
+67.92%,rep,Mississippi3
+71.22%,rep,Mississippi4
+20.90%,dem,Missouri1
+63.14%,rep,Missouri2
+69.58%,rep,Missouri3
+68.80%,rep,Missouri4
+41.42%,dem,Missouri5
+68.98%,rep,Missouri6
+69.25%,rep,Missouri7
+74.97%,rep,Missouri8
+57.28%,rep,MontanaAL
+69.00%,rep,Nebraska1
+50.04%,rep,Nebraska2
+76.18%,rep,Nebraska3
+35.11%,dem,Nevada1
+64.41%,rep,Nevada2
+55.50%,dem,Nevada3
+48.48%,dem,Nevada4
+49.84%,dem,New Hampshire1
+46.87%,dem,New Hampshire2
+36.57%,dem,New Jersey1
+12.08%,dem,New Jersey10
+60.81%,rep,New Jersey11
+33.84%,dem,New Jersey12
+60.99%,rep,New Jersey2
+56.75%,rep,New Jersey3
+66.32%,rep,New Jersey4
+53.53%,dem,New Jersey5
+36.98%,dem,New Jersey6
+58.45%,rep,New Jersey7
+19.70%,dem,New Jersey8
+28.31%,dem,New Jersey9
+39.18%,dem,New Mexico1
+62.25%,rep,New Mexico2
+37.79%,dem,New Mexico3
+53.78%,rep,New York1
+21.68%,dem,New York10
+57.46%,rep,New York11
+18.91%,dem,New York12
+7.54%,dem,New York13
+17.58%,dem,New York14
+4.12%,dem,New York15
+24.66%,dem,New York16
+39.96%,dem,New York17
+47.31%,dem,New York18
+57.36%,rep,New York19
+63.67%,rep,New York2
+34.29%,dem,New York20
+59.94%,rep,New York21
+58.70%,rep,New York22
+57.21%,rep,New York23
+55.88%,rep,New York24
+45.54%,dem,New York25
+27.64%,dem,New York26
+63.17%,rep,New York27
+44.87%,dem,New York3
+40.80%,dem,New York4
+12.10%,dem,New York5
+31.47%,dem,New York6
+9.29%,dem,New York7
+10.65%,dem,New York8
+13.22%,dem,New York9
+30.82%,dem,North Carolina1
+61.40%,rep,North Carolina10
+62.52%,rep,North Carolina11
+32.62%,dem,North Carolina12
+55.03%,rep,North Carolina13
+56.88%,rep,North Carolina2
+63.33%,rep,North Carolina3
+33.67%,dem,North Carolina4
+58.08%,rep,North Carolina5
+58.04%,rep,North Carolina6
+58.88%,rep,North Carolina7
+57.21%,rep,North Carolina8
+57.22%,rep,North Carolina9
+63.59%,dem,North DakotaAL
+61.15%,rep,Ohio1
+65.15%,rep,Ohio10
+17.96%,dem,Ohio11
+68.01%,rep,Ohio12
+30.48%,dem,Ohio13
+62.34%,rep,Ohio14
+64.73%,rep,Ohio15
+60.52%,rep,Ohio16
+63.83%,rep,Ohio2
+31.89%,dem,Ohio3
+65.88%,rep,Ohio4
+66.81%,rep,Ohio5
+61.51%,rep,Ohio6
+61.73%,rep,Ohio7
+69.40%,rep,Ohio8
+29.31%,dem,Ohio9
+68.88%,rep,Oklahoma1
+69.88%,rep,Oklahoma2
+78.80%,rep,Oklahoma3
+72.82%,rep,Oklahoma4
+61.58%,rep,Oklahoma5
+37.31%,dem,Oregon1
+71.95%,rep,Oregon2
+21.00%,dem,Oregon3
+40.33%,dem,Oregon4
+43.75%,dem,Oregon5
+50.37%,rep,Pennsylvania1
+55.34%,rep,Pennsylvania10
+63.70%,rep,Pennsylvania11
+66.77%,rep,Pennsylvania12
+71.27%,rep,Pennsylvania13
+62.79%,rep,Pennsylvania14
+68.89%,rep,Pennsylvania15
+57.60%,rep,Pennsylvania16
+53.01%,dem,Pennsylvania17
+37.21%,dem,Pennsylvania18
+24.87%,dem,Pennsylvania2
+8.72%,dem,Pennsylvania3
+43.06%,rep,Pennsylvania4
+37.02%,rep,Pennsylvania5
+48.23%,rep,Pennsylvania6
+49.26%,rep,Pennsylvania7
+50.49%,dem,Pennsylvania8
+63.91%,rep,Pennsylvania9
+39.85%,dem,Rhode Island1
+37.11%,dem,Rhode Island2
+63.84%,rep,South Carolina1
+63.32%,rep,South Carolina2
+70.42%,rep,South Carolina3
+67.94%,rep,South Carolina4
+58.45%,rep,South Carolina5
+27.34%,dem,South Carolina6
+59.01%,rep,South Carolina7
+62.84%,rep,South DakotaAL
+81.75%,rep,Tennessee1
+76.89%,rep,Tennessee2
+65.96%,rep,Tennessee3
+61.18%,rep,Tennessee4
+35.92%,dem,Tennessee5
+74.13%,rep,Tennessee6
+74.33%,rep,Tennessee7
+72.85%,rep,Tennessee8
+22.52%,dem,Tennessee9
+75.31%,rep,Texas1
+62.47%,rep,Texas10
+83.74%,rep,Texas11
+72.75%,rep,Texas12
+86.07%,rep,Texas13
+60.00%,rep,Texas14
+40.77%,dem,Texas15
+30.51%,dem,Texas16
+64.47%,rep,Texas17
+24.53%,dem,Texas18
+79.35%,rep,Texas19
+66.43%,rep,Texas2
+37.20%,dem,Texas20
+63.58%,rep,Texas21
+64.83%,rep,Texas22
+49.92%,rep,Texas23
+62.99%,rep,Texas24
+61.52%,rep,Texas25
+71.33%,rep,Texas26
+62.22%,rep,Texas27
+33.26%,dem,Texas28
+32.91%,dem,Texas29
+68.05%,rep,Texas3
+19.32%,dem,Texas30
+64.11%,rep,Texas31
+60.36%,rep,Texas32
+27.75%,dem,Texas33
+38.01%,dem,Texas34
+33.98%,dem,Texas35
+76.01%,rep,Texas36
+78.24%,rep,Texas4
+68.27%,rep,Texas5
+60.90%,rep,Texas6
+61.28%,rep,Texas7
+81.38%,rep,Texas8
+21.15%,dem,Texas9
+71.99%,rep,Utah1
+65.04%,rep,Utah2
+75.59%,rep,Utah3
+53.16%,rep,Utah4
+29.88%,dem,VermontAL
+59.35%,rep,Virginia1
+52.08%,rep,Virginia10
+36.27%,dem,Virginia11
+56.66%,rep,Virginia2
+32.80%,dem,Virginia3
+40.94%,dem,Virginia4
+56.25%,rep,Virginia5
+63.67%,rep,Virginia6
+56.80%,rep,Virginia7
+30.38%,dem,Virginia8
+67.97%,rep,Virginia9
+45.35%,dem,Washington1
+42.84%,dem,Washington10
+38.24%,dem,Washington2
+61.37%,rep,Washington3
+67.50%,rep,Washington4
+60.90%,rep,Washington5
+38.98%,dem,Washington6
+18.34%,dem,Washington7
+61.19%,rep,Washington8
+28.37%,dem,Washington9
+65.27%,rep,West Virginia1
+60.04%,rep,West Virginia2
+58.56%,rep,West Virginia3
+62.63%,rep,Wisconsin1
+31.72%,dem,Wisconsin2
+42.28%,dem,Wisconsin3
+25.84%,dem,Wisconsin4
+69.12%,rep,Wisconsin5
+60.44%,rep,Wisconsin6
+59.46%,rep,Wisconsin7
+61.39%,rep,Wisconsin8
+72.37%,rep,WyomingAL
