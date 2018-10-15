@@ -106,9 +106,6 @@ class Tooltip extends React.Component {
         <p className='lean'>
           <span className={opposingLean}>{opposing}</span> need <span className={opposingLean}>{opposingVote}%</span> of {useStateThreshold && !hasNoStateThreshold ? 'state' : 'national'} vote
         </p>
-        {hasNoStateThreshold ? (
-          <p className='lean lean__nodata'>State-level analysis unavailable</p>
-        ) : null}
         <figure className='threshold'>
           <span className='threshold__bar threshold__bar--dem' style={{ width: demVote + '%' }}/>
           <span className='threshold__bar threshold__bar--rep' style={{ left: demVote + '%', width: (100 - demVote) + '%' }}/>
