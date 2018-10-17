@@ -100,7 +100,7 @@ class Tooltip extends React.Component {
     return (
       <React.Fragment>
         <p className='lean'>
-          <span className={opposingLean}>{opposing}</span> will win seat if they win <span className={opposingLean}>{opposingVote}%</span> of {useStateThreshold && !hasNoStateThreshold ? 'state' : 'national'} vote
+          <span className={opposingLean}>{opposing}</span> would likely win this seat if they win <span className={opposingLean}>{opposingVote}%</span> of {useStateThreshold && !hasNoStateThreshold ? 'state' : 'national'} vote
         </p>
         <figure className='threshold'>
           <span className='threshold__bar threshold__bar--dem' style={{ width: demVote + '%' }}/>
