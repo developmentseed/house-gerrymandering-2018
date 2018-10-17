@@ -76,8 +76,8 @@ class Tooltip extends React.Component {
       <React.Fragment>
         <h6 className='hist__label'>Supplementary analysis</h6>
         <p className='hist__cont'>
-          <span className='hist__item hist__item--first'>538</span>
-          <span className='hist__item'>{supplementary.fivethirtyeight} D</span>
+          <span className='hist__item hist__item--first'>538 chance of D win</span>
+          <span className='hist__item'>{supplementary.fivethirtyeight}</span>
         </p>
         <p className='hist__cont'>
           <span className='hist__item hist__item--first'>Sabato</span>
