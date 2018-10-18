@@ -4,6 +4,7 @@ $light-gray: #DDDDDD;
 $med-gray: #A9A9A9;
 $dark-gray: #333333;
 $black: #000000;
+$purple: #670067;
 
 /* Semantic colors */
 $warning: #E05D30;
@@ -35,10 +36,10 @@ $district-stroke-hover: #FFFFFF;
 $district-stroke-width-hover: 1.2;
 $district-red: $red;
 $district-blue: $blue;
-$district-tie: $light-gray;
+$district-tie: $purple;
 $district-light-red: $light-red;
 $district-light-blue: $light-blue;
-$district-light-tie: lighten($light-gray, 20%);
+$district-light-tie: lighten($purple, 20%);
 
 /* Media queries */
 $screen: 'only screen';

@@ -17,7 +17,7 @@ export default function states (state = initialStatesState, { type, results }) {
 function parseThresholds (results) {
   const thresholds = {};
   for (let i = 0; i < results.length; ++i) {
-    let fips = get(stateToFips, results[i].state);
+    let fips = get(stateToFips, results[i].state.toLowerCase());
     if (!fips) {
       error('No fips found for ' + results[i].state);
       continue;
