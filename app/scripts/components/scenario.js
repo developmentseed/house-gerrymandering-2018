@@ -9,7 +9,8 @@ import { stateAbbrevFromFips, searchUrl } from '../util/format';
 import baseUrl from '../static/base-url';
 import copyToClipboard from '../util/copy';
 
-const socialText = encodeURIComponent('I just used this interactive map to find out how many votes both parties would need to control Congress. Try it now!');
+const twitterSocialText = encodeURIComponent('I just used this interactive map from @BrennanCenter to find out how many votes both parties would need to control Congress. Try it now!');
+
 
 class _Share extends React.Component {
   constructor (props) {
@@ -47,7 +48,7 @@ class _Share extends React.Component {
   }
 
   openTwitter () {
-    const url = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(this.state.src) + '&hashtags=fairmaps&text=' + socialText;
+    const url = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(this.state.src) + '&hashtags=fairmaps&text=' + twitterSocialText;
     window.open(url, '_blank', 'resizable=yes');
   }
 
