@@ -11,7 +11,6 @@ import copyToClipboard from '../util/copy';
 
 const twitterSocialText = encodeURIComponent('I just used this interactive map from @BrennanCenter to find out how many votes both parties would need to control Congress. Try it now!');
 
-
 class _Share extends React.Component {
   constructor (props) {
     super(props);
